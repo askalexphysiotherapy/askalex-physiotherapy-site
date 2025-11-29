@@ -1,0 +1,16 @@
+import { ReactNode } from "react";
+import { cn } from "@/lib/utils";
+
+export function Container({
+	children,
+	className
+}: {
+	children: ReactNode;
+	className?: string;
+}) {
+	return (
+		<div className={cn("container mx-auto max-w-content", className)}>
+			{children}
+		</div>
+	);
+}

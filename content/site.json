@@ -1,0 +1,563 @@
+{
+    "brand": {
+      "name": "Ask Alex Physiotherapy",
+      "logo": "https://static1.squarespace.com/static/6847f68b1080fe0cccc5899d/t/6853d7df0344223ecfa53cc5/1750325217105/Correct+Branding.png",
+      "email": "hello@askalexphysiotherapy.com",
+      "phone": "+44 7594 909780",
+      "areaServed": "North London",
+      "colors": {
+        "green": "#4CAF50",
+        "blue": "#007B9E",
+        "aqua": "#3BA6A0",
+        "bg": "#EAF4FB"
+      }
+    },
+  
+    "header": {
+      "topbar": {
+        "show": true,
+        "items": [
+          { "type": "phone", "label": "07594 909 780", "href": "tel:07594909780" },
+          { "type": "email", "label": "hello@askalexphysiotherapy.com", "href": "mailto:hello@askalexphysiotherapy.com" }
+        ]
+      },
+      "nav": [
+        { "label": "Home", "href": "/" },
+        { "label": "About", "href": "/about" },
+        { "label": "Services", "href": "/services" },
+        { "label": "FAQ", "href": "/faq" },
+        { "label": "Contact", "href": "/contact" }
+      ],
+      "cta": { "label": "Book Now", "href": "/contact" },
+      "behavior": { "sticky": true, "mobileMenu": "burger" }
+    },
+  
+    "social": [
+      { "platform": "instagram", "href": "https://www.instagram.com/ask_alex_physiotherapy" },
+      { "platform": "linkedin", "href": "https://www.linkedin.com/in/alexander-vikentiou-1b88a3398/" },
+      { "platform": "tiktok", "href": "https://www.tiktok.com/askalexphysiotherapy" },
+      { "platform": "google", "href": "https://g.page/r/your-google-profile" }
+    ],
+  
+    "business": {
+      "type": "MedicalBusiness",
+      "name": "Ask Alex Physiotherapy",
+      "telephone": "+44 7594 909780",
+      "email": "hello@askalexphysiotherapy.com",
+      "image": "https://static1.squarespace.com/static/6847f68b1080fe0cccc5899d/t/6853d7df0344223ecfa53cc5/1750325217105/Correct+Branding.png",
+      "url": "https://askalexphysiotherapy.com",
+      "address": {
+        "addressLocality": "Barnet",
+        "addressRegion": "London",
+        "addressCountry": "GB"
+      },
+      "openingHours": {
+        "days": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "08:00",
+        "closes": "19:00"
+      },
+      "priceRange": "££"
+    },
+  
+    "home": {
+      "hero": {
+        "title": "Expert Physiotherapy in Rehabilitation",
+        "subtitle": "Specialist care designed to support neurological recovery, functional mobility, and overall wellbeing — at home, in clinic, or online.",
+        "inlineLinks": [
+          { "label": "Services", "href": "/services" }
+        ],
+        "primaryCta": { "label": "Book Now", "href": "/contact" },
+        "secondaryCta": { "label": "Our Services", "href": "/services" },
+        "mission": "Your Partner in Movement and Recovery.",
+        "image": {
+          "src": "https://static1.squarespace.com/static/6847f68b1080fe0cccc5899d/t/690b5d3c25cd6d08af6e50c7/1762352444939/Canva+Portrait+1024.png",
+          "alt": "Physiotherapist Alexander Vikentiou smiling",
+          "overlay": { "name": "Alexander Vikentiou", "title": "Physiotherapist" }
+        }
+      },
+      "learn": [
+        {
+          "title": "Why Choose Ask Alex Physiotherapy",
+          "text": "Discover how our personalised, expert-led approach helps individuals regain strength, independence, and confidence — with care that adapts to you.",
+          "href": "/about",
+          "cta": "Meet Alex",
+          "icon": "shield-check"
+        },
+        {
+          "title": "FAQs",
+          "text": "Find answers to common questions about physiotherapy, how appointments work, and what to expect from your care.",
+          "href": "/faq",
+          "cta": "View FAQs",
+          "icon": "question-circle"
+        }
+      ],
+      "servicesTeaser": {
+        "heading": "Our Services",
+        "cards": [
+          { "title": "Home Visits", "text": "Personalised care at your home — ideal for rehab or mobility needs.", "href": "/services#home", "icon": "house" },
+          { "title": "In-Clinic Sessions", "text": "Hands-on treatment in a professional setting.", "href": "/services#clinic", "icon": "clinic" },
+          { "title": "Online Consultations", "text": "Expert guidance from anywhere — perfect for follow-ups.", "href": "/services#online", "icon": "laptop-call" }
+        ],
+        "cta": { "label": "See full service options", "href": "/services" }
+      }
+    },
+  
+    "about": {
+      "hero": {
+        "heading": "Your Physiotherapist",
+        "subheading": "",
+        "paragraphs": [
+          "Alex is a qualified physiotherapist with experience across the NHS and private settings in the UK and New Zealand. His work spans acute care, rehabilitation and injury recovery.",
+          "Alex has a focused interest in rehabilitation — specifically around injury recovery, pain management and supporting stroke recovery, Parkinson’s, mobility issues, and post-hospital rehabilitation. He also helps older adults build confidence and independence.",
+          "Alex founded Ask Alex Physiotherapy to deliver expert, personalised care around your life — in your home, at a clinic, or online."
+        ],
+        "image": {
+          "src": "https://static1.squarespace.com/static/6847f68b1080fe0cccc5899d/t/690b5d3c25cd6d08af6e50c7/1762352444939/Canva+Portrait+1024.png",
+          "alt": "Alex, physiotherapist at Ask Alex Physiotherapy",
+          "overlay": { "name": "Alexander Vikentiou", "title": "Physiotherapist" }
+        },
+        "ctas": [
+          { "label": "Get in touch", "href": "/contact", "variant": "primary" },
+          { "label": "View services", "href": "/services", "variant": "ghost" }
+        ],
+        "trustRow": [
+          "Insured • CSP member",
+          "Secure online sessions",
+          "North London coverage",
+          "HCPC Registered • Enhanced DBS"
+        ]
+      },
+      "heading": "Our Values",
+      "subheading": "The principles that guide every session — from first call to discharge.",
+      "values": [
+        { "icon": "thermometer-sun", "title": "Expertise", "text": "Specialised rehabilitation and neurological care." },
+        { "icon": "accessibility", "title": "Accessibility", "text": "Home visits, online sessions, and flexible scheduling." },
+        { "icon": "shield-check", "title": "Trust", "text": "HCPC registered, insured, and transparent communication." }
+      ],
+      "quote": { "text": "My goal is to help every client move better, feel stronger, and regain confidence — wherever they are in their journey." },
+      "testimonialsHeading": "What Clients Say",
+      "testimonials": [
+        { "quote": "Alex was professional, kind, and incredibly knowledgeable. He helped my father regain his balance and confidence after his stroke. Highly recommend!", "author": "S. James" },
+        { "quote": "The home visits were a game-changer. Alex made physio feel achievable and personal.", "author": "M. Roberts" },
+        { "quote": "I saw huge improvements in mobility after just a few sessions. I felt listened to, supported, and never rushed.", "author": "A. Lewis" }
+      ],
+      "credentials": [
+        { "icon": "award", "label": "HCPC Registered" },
+        { "icon": "check-circle", "label": "CSP Insured" },
+        { "icon": "heart-pulse", "label": "Trusted Care" }
+      ]
+    },
+  
+    "services": {
+      "title": "Services",
+      "subtitle": "Clear options. Same standard of care. Choose the setting that suits you — home, clinic, or online.",
+      "cards": [
+        {
+          "key": "home",
+          "title": "Home Visits",
+          "intro": "Personalised physiotherapy at your home across North London. Ideal when travel is difficult or after surgery.",
+          "details": [
+            "Initial 60–75 mins; follow-ups 45–60 mins",
+            "Full assessment and tailored rehab plan",
+            "Essential equipment provided; infection-control standards"
+          ],
+          "image": {
+            "src": "https://static1.squarespace.com/static/6847f68b1080fe0cccc5899d/t/690b848c4110c167ce377e26/1762362509305/Home+Visit+Pic.PNG",
+            "alt": "Physiotherapist assisting a patient at home"
+          },
+          "cta": { "label": "Request visit", "href": "/contact" }
+        },
+        {
+          "key": "clinic",
+          "title": "In-Clinic Appointments",
+          "intro": "Hands-on care in a fully equipped space for manual therapy, exercise progressions and performance goals.",
+          "details": [
+            "Initial 60 mins; follow-ups 45 mins",
+            "Manual therapy + exercise; strength, balance & gait work",
+            "Accessible treatment room; wear comfortable clothing"
+          ],
+          "image": {
+            "src": "https://static1.squarespace.com/static/6847f68b1080fe0cccc5899d/t/690b8354c57d075cf2ff1265/1762362196834/Clinic+Session+Pic.PNG",
+            "alt": "Clinic treatment room with rehab equipment"
+          },
+          "cta": { "label": "Arrange slot", "href": "/contact" }
+        },
+        {
+          "key": "online",
+          "title": "Online Consultations",
+          "intro": "Convenient, effective sessions for assessment, pain management and guided rehab from your own space.",
+          "details": [
+            "45–60 mins via secure video",
+            "Clear exercise demos & self-management strategies",
+            "Great for progress check-ins and follow-ups"
+          ],
+          "image": {
+            "src": "https://static1.squarespace.com/static/6847f68b1080fe0cccc5899d/t/690b8557c57d075cf2ffc0cf/1762362711547/Online+Pic.PNG",
+            "alt": "Laptop with video call on a desk"
+          },
+          "cta": { "label": "Book online", "href": "/contact" }
+        }
+      ],
+      "primaryCtaStrip": {
+        "cta": { "label": "Book now", "href": "/contact" },
+        "helper": "Not sure what service you need? Book a free 15-minute phone consultation and I’ll guide you.",
+        "helperHref": "/contact"
+      },
+      "compare": {
+        "intro": "Here’s a quick side-by-side to help you choose the right service for you. Each option delivers the same high standard of care.",
+        "columns": ["Feature", "Home Visit", "Clinic", "Online"],
+        "rows": [
+          { "feature": "Who it’s for", "home": "Mobility limits, early rehab, carer involvement", "clinic": "Hands-on treatment, equipment-based progressions", "online": "Convenience, follow-ups, education & program checks" },
+          { "feature": "What we do", "home": "Assessment + functional practice in your space", "clinic": "Manual therapy + targeted strengthening/testing", "online": "Assessment, coaching, pain/self-management" },
+          { "feature": "Session length", "home": "Initial 60–75m; FU 45–60m", "clinic": "Initial 60m; FU 45m", "online": "45–60m video" },
+          { "feature": "Location", "home": "Your home", "clinic": "Equipped treatment room", "online": "Your chosen space (secure video)" },
+          { "feature": "Hands-on treatment", "home": "Yes (portable kit)", "clinic": "Yes (full clinic)", "online": "No — coaching & exercise only" },
+          { "feature": "Equipment access", "home": "Essential portable kit", "clinic": "Full clinic kit", "online": "Body-weight / home kit" },
+          { "feature": "Extra costs", "home": "Travel band may apply", "clinic": "Room fee included", "online": "—" },
+          { "feature": "Neuro suitability", "home": "✓", "clinic": "✓", "online": "✓ (selected goals)" },
+          { "feature": "Booking", "home": "Request visit", "clinic": "Arrange slot", "online": "Book online" }
+        ]
+      },
+      "expertise": {
+        "heading": "Our Areas of Expertise",
+        "items": [
+          { "icon": "brain", "title": "Neurological Rehab", "text": "Stroke, Parkinson’s, MS — targeted rehab for function, balance and confidence." },
+          { "icon": "walk", "title": "Falls Prevention", "text": "Strength, balance and home-safety strategies to reduce risk." },
+          { "icon": "activity", "title": "Pain & MSK", "text": "Evidence-based care for back/neck pain, arthritis and injuries." },
+          { "icon": "scalpel", "title": "Post-Surgical Rehab", "text": "Safe, structured recovery after surgery to restore strength and function." },
+          { "icon": "lungs", "title": "Pulmonary Rehab", "text": "Breathlessness management and exercise programmes for COPD/asthma." },
+          { "icon": "elderly", "title": "Care of the Elderly", "text": "Compassionate support to maintain independence and quality of life." }
+        ]
+      },
+      "seo": {
+        "blurb": "Ask Alex Physiotherapy provides private physiotherapy in London and online with specialist neurological rehabilitation alongside MSK, falls prevention, post-operative recovery and elderly care. Sessions are personalised to your goals using evidence-based practice — delivered at home, in-clinic or remotely."
+      }
+    },
+  
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "intro": "Quick answers about care at home, in-clinic, and online. If you can’t find your answer, send a message and Alex will help.",
+      "nav": [
+        { "label": "General", "href": "#faq-general" },
+        { "label": "Appointments & Booking", "href": "#faq-booking" },
+        { "label": "Home Visits", "href": "#faq-home" },
+        { "label": "In-Clinic & Online", "href": "#faq-clinic" },
+        { "label": "Pricing & Admin", "href": "#faq-pricing" }
+      ],
+      "groups": [
+        {
+          "id": "faq-general",
+          "title": "General",
+          "items": [
+            {
+              "q": "What conditions do you treat?",
+              "a": "I have an extensive background in rehab for neurological (stroke, Parkinson’s, MS, traumatic brain injury), respiratory (COPD, IPF, bronchiectasis and others), and general physical impairments. I also treat MSK pain, soft tissue injuries, arthritis, and support post-surgical recovery.",
+              "links": [{ "label": "Services", "href": "/services" }]
+            },
+            {
+              "q": "Where do you cover?",
+              "a": "Home visits across North London (e.g., Barnet, Finchley, Enfield, Hampstead and nearby). If you’re unsure if I cover your area, ask and I’ll confirm.",
+              "links": [{ "label": "Contact", "href": "/contact" }]
+            },
+            { "q": "Are you HCPC registered?", "a": "Yes — I’m HCPC registered (reg number PH134533) and fully insured as a member of the Chartered Society of Physiotherapy." }
+          ]
+        },
+        {
+          "id": "faq-booking",
+          "title": "Appointments & Booking",
+          "items": [
+            {
+              "q": "How do I book?",
+              "a": "Tap any “Book Now” button or use the contact form. You'll get a free 10–15 minute intro call, then a Stripe payment link to confirm your booking, along with a consent form and appointment details.",
+              "links": [{ "label": "Contact", "href": "/contact" }]
+            },
+            { "q": "How long are sessions?", "a": "Home visits: Initial 60–75 mins; follow-ups 45–60 mins. In-clinic: Initial 60 mins; follow-ups 45–60 mins. Online: 45–60 mins via secure video." },
+            { "q": "What’s your cancellation policy?", "a": "Please give 24 hours’ notice to reschedule or cancel. Charges may apply to late cancellations or missed appointments." }
+          ]
+        },
+        {
+          "id": "faq-home",
+          "title": "Home Visits",
+          "items": [
+            { "q": "What should I prepare for a home visit?", "a": "Clear a small safe space, wear comfortable clothing, and have any recent clinic letters or medication lists to hand. I bring essential equipment and follow infection-control standards." },
+            { "q": "Do you charge for travel?", "a": "Travel within my normal coverage is included. For addresses further out, I’ll confirm any small travel supplement in advance." }
+          ]
+        },
+        {
+          "id": "faq-clinic",
+          "title": "In-Clinic & Online",
+          "items": [
+            {
+              "q": "Where is the clinic?",
+              "a": "I organise an accessible treatment room in North London — full address and access info are provided when you book. If you prefer not to travel, you can book home or online sessions.",
+              "links": [{ "label": "Services", "href": "/services" }]
+            },
+            { "q": "What do I need for online sessions?", "a": "A device with camera and a stable internet connection. I’ll send a secure video link. Try to position the camera so I can see you moving clearly." }
+          ]
+        },
+        {
+          "id": "faq-pricing",
+          "title": "Pricing, Insurance & Admin",
+          "items": [
+            { "q": "How do I pay?", "a": "Secure card payment via Stripe or a bank transfer. You’ll receive a receipt and invoice automatically." },
+            { "q": "Do you accept private medical insurance?", "a": "I’m a private practice and can provide invoices/receipts for you to claim back if your insurer allows self-pay reimbursement. Please check your policy." },
+            { "q": "Is my data secure?", "a": "Yes. Records are stored in a GDPR-compliant system (WriteUpp) with appropriate access controls. I only keep information necessary for your care." }
+          ]
+        }
+      ],
+      "cta": { "label": "Still unsure which appointment is right for you? Ask a question", "href": "/contact" },
+      "structuredData": [
+        { "q": "What conditions do you treat?", "a": "Neurological physiotherapy (stroke, Parkinson’s, MS, balance and mobility issues) plus MSK pain, falls prevention, post-surgical rehab and elderly care." },
+        { "q": "Where do you cover?", "a": "Home visits across North London including Barnet, Finchley, Enfield, Hampstead and nearby. Contact to confirm availability." },
+        { "q": "How do I book?", "a": "Use the contact form or a Book Now button. You’ll get a free 10–15 minute intro call, then a Stripe link, consent form and appointment details." },
+        { "q": "How long are sessions?", "a": "Home visits: Initial 60–75 minutes; follow-ups 45–60. In-clinic: Initial 60; follow-ups 45–60. Online: 45–60 via secure video." },
+        { "q": "What’s your cancellation policy?", "a": "Please give 24 hours’ notice to reschedule or cancel. Late cancellations or missed appointments may be charged in full." },
+        { "q": "What should I prepare for a home visit?", "a": "Clear a safe space, wear comfortable clothing, have recent clinic letters or medication lists available. Equipment is provided and infection-control standards are followed." },
+        { "q": "How do I pay?", "a": "Secure card payment via Stripe with automatic receipts and invoices." },
+        { "q": "Is my data secure?", "a": "Yes. Records are stored in a GDPR-compliant system (WriteUpp) with appropriate access controls." }
+      ]
+    },
+  
+    "contact": {
+      "title": "Take control of your movement and recovery — let’s start with a conversation.",
+      "lead": "New here? Book a free 15-minute consultation. Returning client? Use the form to request a follow-up and I’ll be in touch.",
+      "route": "/booking",
+      "actions": { "submitLabel": "Send" },
+      "successRedirect": "/thank-you",
+      "altContact": {
+        "email": "hello@askalexphysiotherapy.com",
+        "phone": "+447594909780",
+        "blurb": "Prefer email or phone? Reach me at"
+      },
+      "consent": {
+        "label": "I agree to the processing of my data for the purposes of responding to my enquiry.",
+        "privacyText": "Privacy Policy",
+        "privacyHref": "/privacy-policy",
+        "required": true
+      },
+      "prefillFromQuery": {
+        "param": "service",
+        "map": {
+          "home-visits": "Home Visit",
+          "home-visit": "Home Visit",
+          "in-clinic": "In-Clinic",
+          "clinic": "In-Clinic",
+          "online-consultations": "Online",
+          "online": "Online"
+        }
+      },
+      "fields": [
+        { "type": "text", "name": "first_name", "label": "First name", "required": true, "autocomplete": "given-name" },
+        { "type": "text", "name": "last_name", "label": "Last name", "required": true, "autocomplete": "family-name" },
+        { "type": "email", "name": "email", "label": "Email", "required": true, "autocomplete": "email" },
+        { "type": "tel", "name": "phone", "label": "Phone", "required": false, "placeholder": "07… or landline", "pattern": "^\\+?\\d[\\d\\s()-]{7,}$", "autocomplete": "tel" },
+        { "type": "select", "name": "appointment_type", "label": "What type of appointment?", "required": true, "options": ["Home Visit", "In-Clinic", "Online", "Not sure"] },
+        { "type": "text", "name": "postcode", "label": "Postcode", "placeholder": "e.g. N3 1AB", "required": false, "showWhen": { "field": "appointment_type", "equals": "Home Visit" } },
+        { "type": "radio-group", "name": "contact_pref", "label": "Preferred contact method", "required": false, "options": ["Phone", "Email", "Either"], "default": "Either" },
+        { "type": "select", "name": "best_time", "label": "Best time to contact", "required": false, "options": ["Any time", "Morning (8–12)", "Afternoon (12–4)", "Evening (4–7)"], "default": "" },
+        { "type": "select", "name": "preferred_day", "label": "Preferred day", "required": false, "options": ["Any day", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"], "default": "" },
+        { "type": "textarea", "name": "message", "label": "Briefly describe your issue or goals", "required": false, "placeholder": "e.g. pain location, recent injury, mobility issues, goals, etc." }
+      ],
+      "tracking": {
+        "includeSourceUrl": true,
+        "utm": ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content"]
+      }
+    },
+  
+    "footer": {
+      "brand": {
+        "logo": "https://static1.squarespace.com/static/6847f68b1080fe0cccc5899d/t/6853d7df0344223ecfa53cc5/1750325217105/Correct+Branding.png",
+        "blurb": "Professional physiotherapy services in London. Offering comprehensive treatment with in-clinic, home visit and online options."
+      },
+      "social": [
+        { "platform": "instagram", "label": "Instagram", "href": "https://www.instagram.com/ask_alex_physiotherapy" },
+        { "platform": "linkedin", "label": "LinkedIn", "href": "https://www.linkedin.com/in/alexander-vikentiou-1b88a3398/" },
+        { "platform": "tiktok", "label": "TikTok", "href": "https://www.tiktok.com/ask_alex_physiotherapy" },
+        { "platform": "google", "label": "Google Business Profile", "href": "https://g.page/r/your-google-profile" }
+      ],
+      "columns": [
+        {
+          "title": "Contact",
+          "items": [
+            { "type": "text", "label": "Barnet, London" },
+            { "type": "text", "label": "Daily 08:00 – 19:00" },
+            { "type": "link", "label": "07594 909 780", "href": "tel:+447594909780" },
+            { "type": "link", "label": "hello@askalexphysiotherapy.com", "href": "mailto:hello@askalexphysiotherapy.com" }
+          ]
+        },
+        {
+          "title": "Explore",
+          "items": [
+            { "type": "link", "label": "Home", "href": "/" },
+            { "type": "link", "label": "About", "href": "/about" },
+            { "type": "link", "label": "Services", "href": "/services" },
+            { "type": "link", "label": "FAQ", "href": "/faq" },
+            { "type": "link", "label": "Contact", "href": "/contact" }
+          ]
+        }
+      ],
+      "bottom": {
+        "copyright": {
+          "org": "Ask Alex Physiotherapy",
+          "year": 2025,
+          "auto": true
+        },
+        "credentials": [
+          { "icon": "shield", "text": "HCPC Registered • Reg. No. PH134533" },
+          { "icon": "check-circle", "text": "Fully insured • CSP member" }
+        ],
+        "legalLinks": [
+          { "label": "Privacy Policy", "href": "/privacy-policy" },
+          { "label": "Terms of Service", "href": "/terms-of-service" }
+        ]
+      }
+    },
+  
+    "floatingCta": {
+      "showOnMobile": true,
+      "href": "/booking",
+      "label": "📅 Book Now"
+    },
+  
+    "legal": {
+      "terms": {
+        "title": "Terms of Service",
+        "slug": "/terms-of-service",
+        "lastUpdated": "2025-06-16",
+        "sections": [
+          { "heading": "Scope of Services", "body": "Ask Alex Physiotherapy provides physiotherapy services including assessment, treatment, and rehabilitation advice. Services are delivered in person (home visits or clinic) and online. Physiotherapy is not a substitute for medical diagnosis or emergency care." },
+          { "heading": "Booking & Cancellations", "list": [ "Appointments may be booked via email, phone, or through our online platform.", "Cancellations with less than 24 hours’ notice may incur a full session fee.", "We may reschedule or cancel sessions due to unforeseen circumstances (e.g., illness or emergencies)." ] },
+          { "heading": "Payment", "body": "Payment is due at the time of service or as agreed in advance. Accepted payment methods will be confirmed upon booking." },
+          { "heading": "Online Consultations", "body": "Online sessions are suitable for assessments, guided rehabilitation, and advice. Clients must ensure a safe environment and disclose relevant health conditions. We are not liable for injuries sustained during unsupervised exercise." },
+          { "heading": "Client Responsibilities", "list": [ "Provide accurate health and contact information.", "Inform us of changes to your condition or medications.", "Follow clinical advice and safety instructions during treatment." ] },
+          { "heading": "Intellectual Property", "body": "All website content (text, graphics, logo, media) is the property of Ask Alex Physiotherapy and may not be reproduced without permission." },
+          { "heading": "Website Use", "body": "You agree not to misuse or interfere with the website, upload malicious code, or infringe upon the rights of others." },
+          { "heading": "Limitation of Liability", "body": "We take reasonable measures to ensure safe and effective treatment; however, we are not responsible for loss, injury, or damages resulting from misuse of advice or failure to disclose health information." },
+          { "heading": "Governing Law", "body": "These terms are governed by the laws of England and Wales. Disputes are subject to the exclusive jurisdiction of the UK courts." },
+          { "heading": "Contact", "body": "For questions about these terms, contact Ask Alex Physiotherapy at hello@askalexphysiotherapy.com or +44 7594 909 780." }
+        ],
+        "meta": {
+          "description": "Terms of Service for Ask Alex Physiotherapy — bookings, cancellations, payments, online sessions, responsibilities, and legal terms (England & Wales).",
+          "ogTitle": "Terms of Service • Ask Alex Physiotherapy"
+        }
+      },
+      "privacy": {
+        "title": "Privacy Policy",
+        "slug": "/privacy-policy",
+        "lastUpdated": "2025-06-16",
+        "summary": "How Ask Alex Physiotherapy collects, uses, and safeguards personal data under UK GDPR.",
+        "sections": [
+          { "heading": "Who We Are", "body": "Ask Alex Physiotherapy provides specialist neurorehabilitation and general physiotherapy services through home visits, in-clinic sessions, and online consultations. Based in Barnet, London." },
+          { "heading": "What Information We Collect", "list": [ "Personal details – name, email, phone, address, emergency contacts.", "Medical information – health conditions, medications, symptoms, GP/consultant details.", "Technical information – IP address, browser data, and basic analytics via Squarespace." ] },
+          { "heading": "How We Use Your Information", "list": [ "To provide physiotherapy services.", "To maintain accurate medical records.", "To communicate regarding appointments or services.", "To comply with legal and regulatory obligations." ] },
+          { "heading": "Lawful Basis for Processing", "list": [ "Consent", "Contractual necessity", "Legal obligation (e.g., healthcare law)", "Legitimate interests" ] },
+          { "heading": "Data Security & Storage", "body": "Data is securely stored using encrypted digital systems accessible only by the treating physiotherapist (Alexander Vikentiou). Information is never shared unless required by law or with explicit consent." },
+          { "heading": "Your Rights Under GDPR", "list": [ "Access your data.", "Request correction or deletion.", "Object to or restrict data use.", "Complain to the ICO if you believe your data is mishandled." ] },
+          { "heading": "Cookies & Analytics", "body": "Cookies and Squarespace analytics help us understand website use. These do not store personal data and can be managed via browser settings." },
+          { "heading": "Third-Party Tools", "body": "We use trusted third-party tools for video consultations, email, or bookings — each compliant with its own data protection policies." },
+          { "heading": "Data Retention", "body": "Medical records are retained for a minimum of 8 years in line with UK healthcare law. Enquiry data may be held for up to 12 months. Analytics data is anonymised." },
+          { "heading": "Contact", "body": "For data enquiries, contact Ask Alex Physiotherapy at hello@askalexphysiotherapy.com or +44 7594 909 780." }
+        ],
+        "meta": {
+          "description": "Ask Alex Physiotherapy Privacy Policy — explains how personal and medical data are handled in compliance with UK GDPR and healthcare standards.",
+          "ogTitle": "Privacy Policy • Ask Alex Physiotherapy"
+        }
+      }
+    },
+
+    "pricing": {
+      "physiotherapy": {
+        "title": "Private physiotherapy sessions",
+        "subtitle": "Home, clinic and online sessions tailored to your goals. Recovery Plans offer the best value for consistent progress.",
+        "items": [
+          {
+            "slug": "initial-appointment",
+            "name": "Initial appointment",
+            "description": "Full assessment, diagnosis, goal setting and first treatment.",
+            "duration": "Up to 60 minutes",
+            "price": "£50",
+            "highlight": "Most people start here",
+            "badge": null
+          },
+          {
+            "slug": "follow-up",
+            "name": "Follow-up session",
+            "description": "Ongoing treatment sessions to build on your progress.",
+            "duration": "Up to 60 minutes",
+            "price": "£50",
+            "highlight": null,
+            "badge": null
+          },
+          {
+            "slug": "recovery-plan-4",
+            "name": "Recovery Plan – 4 sessions",
+            "description": "Ideal for short-term rehab or focused pain management.",
+            "duration": "4 × up to 60 minute sessions",
+            "price": "£185",
+            "highlight": "Best for short-term goals",
+            "badge": "Save £15"
+          },
+          {
+            "slug": "recovery-plan-6",
+            "name": "Recovery Plan – 6 sessions",
+            "description": "Designed for sustainable progress and measurable outcomes.",
+            "duration": "6 × up to 60 minute sessions",
+            "price": "£270",
+            "highlight": "Best value for longer rehab",
+            "badge": "Save £30"
+          }
+        ]
+      },
+      "classes": {
+        "title": "Community exercise & wellbeing classes",
+        "subtitle": "Physiotherapist-led group sessions to support mobility, strength and confidence for older adults and those with neurological or mobility limitations.",
+        "items": [
+          {
+            "slug": "trial-class",
+            "name": "Trial class",
+            "description": "Try a physiotherapist-led group exercise session with no obligation.",
+            "duration": "30–45 minutes",
+            "price": "Free",
+            "highlight": "Great first step",
+            "badge": "Free"
+          },
+          {
+            "slug": "single-class",
+            "name": "Single group class",
+            "description": "One-off physiotherapist-led group session focused on mobility and confidence.",
+            "duration": "Up to 60 minutes",
+            "price": "£60",
+            "highlight": null,
+            "badge": null
+          },
+          {
+            "slug": "four-class-block",
+            "name": "4-class block",
+            "description": "Prepaid block designed to encourage consistent participation and measurable improvement.",
+            "duration": "4 × up to 60 minute sessions",
+            "price": "£215",
+            "highlight": "Most popular for groups",
+            "badge": "Save £30"
+          },
+          {
+            "slug": "private-class",
+            "name": "Private group class",
+            "description": "Bespoke session for up to 10 residents of similar functional ability, designed in collaboration with care staff.",
+            "duration": "Up to 60 minutes",
+            "price": "£70",
+            "highlight": "Tailored for care homes",
+            "badge": null
+          }
+        ]
+      },
+      "notes": [
+        "Travel within Finchley and surrounding areas is included.",
+        "Extended travel (>5 miles) may incur a small surcharge.",
+        "Block bookings are payable in full before the first session and valid for 3 months.",
+        "Cancellations: Minimum 24 hours' notice required to avoid the full session charge.",
+        "Payment options: Bank transfer or card payment (details provided on booking).",
+        "Invoices and receipts are provided digitally for all services."
+      ]
+    }
+  }
+  

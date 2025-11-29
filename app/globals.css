@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	/* Brand Colors */
+	--medical-green: #4caf50;
+	--medical-blue: #007b9e;
+	--soft-aqua: #3ba6a0;
+	--bg-blue: #eaf4fb;
+
+	/* Legacy aliases for backward compatibility */
+	--aa-green: var(--medical-green);
+	--aa-blue: var(--medical-blue);
+	--aa-aqua: var(--soft-aqua);
+	--aa-bg: var(--bg-blue);
+
+	/* Typography Scale (responsive with clamp) */
+	--text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem); /* 12-14px */
+	--text-sm: clamp(0.875rem, 0.8rem + 0.375vw, 1rem); /* 14-16px */
+	--text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem); /* 16-18px */
+	--text-lg: clamp(1.125rem, 1.05rem + 0.375vw, 1.25rem); /* 18-20px */
+	--text-xl: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem); /* 20-24px */
+	--text-2xl: clamp(1.5rem, 1.35rem + 0.75vw, 2rem); /* 24-32px */
+	--text-3xl: clamp(1.875rem, 1.65rem + 1.125vw, 2.5rem); /* 30-40px */
+	--text-4xl: clamp(2.25rem, 1.95rem + 1.5vw, 3rem); /* 36-48px */
+	--text-5xl: clamp(3rem, 2.5rem + 2.5vw, 4rem); /* 48-64px */
+	--h1: clamp(2.75rem, 2.1rem + 2.4vw, 3.75rem);
+	--h2: clamp(2.25rem, 1.85rem + 1.6vw, 3rem);
+	--hero-heading: clamp(3.5rem, 2.8rem + 3.5vw, 5.5rem); /* Largest hero titles - clearly dominant */
+	--lead: clamp(1.125rem, 1.05rem + 0.4vw, 1.375rem);
+
+	/* Spacing Scale (8px modular) */
+	--space-1: 0.5rem; /* 8px */
+	--space-2: 1rem; /* 16px */
+	--space-3: 1.5rem; /* 24px */
+	--space-4: 2rem; /* 32px */
+	--space-5: 2.5rem; /* 40px */
+	--space-6: 3rem; /* 48px */
+	--space-8: 4rem; /* 64px */
+	--space-10: 5rem; /* 80px */
+	--space-12: 6rem; /* 96px */
+	--space-16: 8rem; /* 128px */
+	--space-20: 10rem; /* 160px */
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	background: var(--aa-bg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	* {
+		animation-duration: 0.001ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.001ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+
+/* Focus visibility */
+:where(a, button, input, select, textarea, [role="button"]) {
+	@apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-medical-blue focus-visible:ring-offset-2 focus-visible:ring-offset-white;
+}
+
+/* Prose tweaks */
+.prose {
+	@apply text-slate-700;
+}
+
+.card {
+	@apply rounded-2xl shadow-soft bg-white;
+}
+
