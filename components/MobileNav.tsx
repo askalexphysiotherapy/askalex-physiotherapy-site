@@ -20,9 +20,9 @@ export function MobileNav({ items, cta }: { items: NavItem[]; cta: CTA }) {
 				aria-label="Open menu"
 				aria-expanded={open}
 				onClick={() => setOpen(true)}
-				className="p-2 rounded-lg border border-slate-200 text-slate-700 hover:bg-bg-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-medical-blue focus-visible:ring-offset-2"
+				className="p-1.5 rounded-lg border border-slate-200 text-slate-700 hover:bg-bg-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-medical-blue focus-visible:ring-offset-2"
 			>
-				<Menu className="h-5 w-5" aria-hidden="true" />
+				<Menu className="h-4 w-4" aria-hidden="true" />
 			</button>
 
 			{open && (
@@ -41,9 +41,9 @@ export function MobileNav({ items, cta }: { items: NavItem[]; cta: CTA }) {
 							<button
 								aria-label="Close menu"
 								onClick={() => setOpen(false)}
-								className="p-2 rounded-lg border border-slate-200 text-slate-700 hover:bg-bg-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-medical-blue focus-visible:ring-offset-2"
+								className="p-1.5 rounded-lg border border-slate-200 text-slate-700 hover:bg-bg-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-medical-blue focus-visible:ring-offset-2"
 							>
-								<X className="h-5 w-5" aria-hidden="true" />
+								<X className="h-4 w-4" aria-hidden="true" />
 							</button>
 						</div>
 
