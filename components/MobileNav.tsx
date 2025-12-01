@@ -29,12 +29,13 @@ export function MobileNav({ items, cta }: { items: NavItem[]; cta: CTA }) {
 				<div
 					role="dialog"
 					aria-modal="true"
-					className="fixed inset-0 z-50 bg-black/30"
+					className="fixed inset-0 z-50 bg-black/30 backdrop-blur-sm"
 					onClick={() => setOpen(false)}
 				>
 					<div
 						className="ml-auto h-full w-72 bg-white p-6 shadow-xl"
 						onClick={(e) => e.stopPropagation()}
+						style={{ backgroundColor: 'rgba(255, 255, 255, 1)' }}
 					>
 						<div className="flex items-center justify-between mb-6">
 							<h2 className="text-lg font-semibold text-slate-900">Menu</h2>

@@ -29,20 +29,21 @@ export function Header() {
 		>
 			{header.topbar.show && header.topbar.items.length > 0 && (
 				<div className="border-b border-slate-100 bg-bg-blue">
-					<Container className="flex flex-wrap items-center justify-between gap-3 py-2 text-xs text-slate-700 md:gap-4 md:py-2.5 md:text-sm">
-						<div className="flex flex-wrap items-center gap-2.5 md:gap-3">
+					<Container className="flex flex-wrap items-center justify-between gap-2 py-1.5 text-xs text-slate-700 sm:gap-3 md:gap-4 md:py-2.5 md:text-sm">
+						<div className="flex flex-wrap items-center gap-2 sm:gap-2.5 md:gap-3">
 							{header.topbar.items.map((item, idx) => (
 								<a
 									key={idx}
 									href={item.href}
-									className="flex items-center gap-1.5 rounded transition-colors hover:text-medical-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-medical-blue focus-visible:ring-offset-2"
+									aria-label={item.type === "phone" ? `Call ${item.label}` : `Email ${item.label}`}
+									className="flex items-center gap-1.5 rounded p-1.5 transition-colors hover:text-medical-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-medical-blue focus-visible:ring-offset-2 sm:p-0"
 								>
 									{item.type === "phone" ? (
-										<Phone className="h-3.5 w-3.5 md:h-4 md:w-4" aria-hidden="true" />
+										<Phone className="h-4 w-4 sm:h-3.5 sm:w-3.5 md:h-4 md:w-4" aria-hidden="true" />
 									) : (
-										<Mail className="h-3.5 w-3.5 md:h-4 md:w-4" aria-hidden="true" />
+										<Mail className="h-4 w-4 sm:h-3.5 sm:w-3.5 md:h-4 md:w-4" aria-hidden="true" />
 									)}
-									{item.label}
+									<span className="hidden sm:inline">{item.label}</span>
 								</a>
 							))}
 						</div>
@@ -70,7 +71,7 @@ export function Header() {
 					</Container>
 				</div>
 			)}
-			<Container className="flex h-14 items-center justify-between md:h-16">
+			<Container className="flex h-14 items-center justify-between py-1 md:h-16 md:py-0">
 				<Link
 					href="/"
 					className="flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-medical-blue focus-visible:ring-offset-2 rounded"
