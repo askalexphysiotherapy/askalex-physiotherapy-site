@@ -29,13 +29,12 @@ export function MobileNav({ items, cta }: { items: NavItem[]; cta: CTA }) {
 				<div
 					role="dialog"
 					aria-modal="true"
-					className="fixed inset-0 z-50 bg-black/30 backdrop-blur-sm"
+					className="fixed inset-0 z-[100] bg-bg-blue/95 backdrop-blur-sm"
 					onClick={() => setOpen(false)}
 				>
 					<div
-						className="ml-auto h-full w-72 bg-white p-6 shadow-xl"
+						className="ml-auto h-full w-72 bg-white p-6 shadow-xl overflow-y-auto"
 						onClick={(e) => e.stopPropagation()}
-						style={{ backgroundColor: 'rgba(255, 255, 255, 1)' }}
 					>
 						<div className="flex items-center justify-between mb-6">
 							<h2 className="text-lg font-semibold text-slate-900">Menu</h2>
@@ -56,7 +55,7 @@ export function MobileNav({ items, cta }: { items: NavItem[]; cta: CTA }) {
 										<Link
 											href={item.href}
 											onClick={() => setOpen(false)}
-											className={`block rounded-lg px-3 py-2 text-sm transition-colors ${
+											className={`block rounded-lg px-3 py-3 text-sm transition-colors ${
 												active
 													? "bg-bg-blue font-medium text-medical-blue"
 													: "text-slate-700 hover:bg-bg-blue/50"
@@ -68,7 +67,7 @@ export function MobileNav({ items, cta }: { items: NavItem[]; cta: CTA }) {
 								);
 							})}
 						</ul>
-						<div className="mt-6 pt-6 border-t border-slate-200">
+						<div className="mt-6 pt-6 border-t border-slate-200" onClick={() => setOpen(false)}>
 							<Button
 								href={cta.href}
 								variant="primary"
