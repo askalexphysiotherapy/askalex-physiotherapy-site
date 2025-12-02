@@ -35,12 +35,12 @@ export default function HomePage() {
 								</p>
 							</div>
 							<div className="space-y-2 max-sm:space-y-2 lg:space-y-4">
-								<div className="flex flex-row gap-4">
+								<div className="flex flex-row gap-3 mb-6 max-sm:mb-6 lg:mb-6">
 									<div className="flex-1">
 										<Button 
 											href={home.hero.primaryCta.href} 
 											variant="primary"
-											className="max-sm:py-2.5 max-sm:leading-tight w-full"
+											className="max-sm:py-2.5 w-full"
 										>
 											<span className="whitespace-nowrap">Book Now</span>
 										</Button>
@@ -49,14 +49,14 @@ export default function HomePage() {
 										<Button 
 											href={home.hero.secondaryCta.href} 
 											variant="secondary"
-											className="max-sm:py-2.5 max-sm:leading-tight w-full"
+											className="max-sm:py-2.5 w-full"
 										>
 											Our Services
 										</Button>
 									</div>
 								</div>
 								{home.hero.mission && (
-									<p className="text-base sm:text-lg font-medium text-medical-blue text-center sm:text-left max-sm:mt-1 max-sm:mb-0">
+									<p className="text-base sm:text-lg font-medium text-medical-blue text-center sm:text-left max-sm:mt-0 max-sm:mb-0">
 										{home.hero.mission}
 									</p>
 								)}
