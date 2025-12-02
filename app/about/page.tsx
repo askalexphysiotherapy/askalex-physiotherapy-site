@@ -8,6 +8,7 @@ import { Card } from "@/components/Card";
 import { Reveal } from "@/components/Reveal";
 import { PageHero } from "@/components/PageHero";
 import { Button } from "@/components/Button";
+import { TrustPills } from "@/components/TrustPills";
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
 	"thermometer-sun": ThermometerSun,
@@ -59,12 +60,13 @@ export default function AboutPage() {
 									<p key={idx}>{para}</p>
 								))}
 							</div>
-							<div className="flex flex-wrap gap-3">
+							<div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
 								{about.hero.ctas.map((cta) => (
 									<Button
 										key={cta.href}
 										href={cta.href}
 										variant={cta.variant === "primary" ? "primary" : "secondary"}
+										className="flex-1"
 									>
 										{cta.label}
 									</Button>
@@ -79,16 +81,7 @@ export default function AboutPage() {
 			{about.hero.trustRow.length > 0 && (
 				<Section density="compact" background="tint" container={false}>
 					<Container>
-						<div className="flex flex-wrap justify-center gap-3 md:justify-center">
-							{about.hero.trustRow.map((item, idx) => (
-								<span
-									key={idx}
-									className="rounded-full bg-white/90 px-4 py-2 text-sm font-medium text-medical-blue shadow-sm"
-								>
-									{item}
-								</span>
-							))}
-						</div>
+						<TrustPills pills={about.hero.trustRow} />
 					</Container>
 				</Section>
 			)}
