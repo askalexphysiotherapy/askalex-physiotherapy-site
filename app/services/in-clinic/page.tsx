@@ -17,7 +17,7 @@ export default function InClinicPage() {
 					<SectionHeader
 						title="In-clinic sessions"
 						description="Focused sessions with equipment access and privacy at a rented facility."
-						actions={<CTAButton href="/booking">Book now</CTAButton>}
+						actions={<CTAButton href="/contact">Book now</CTAButton>}
 					/>
 					<div className="prose mt-8 max-w-3xl">
 						<h3>Location</h3>

@@ -17,7 +17,7 @@ export default function OnlinePage() {
 					<SectionHeader
 						title="Online physiotherapy"
 						description="Convenient video sessions for education, self-management strategies, and exercise progressions."
-						actions={<CTAButton href="/booking">Book now</CTAButton>}
+						actions={<CTAButton href="/contact">Book now</CTAButton>}
 					/>
 					<div className="prose mt-8 max-w-3xl">
 						<h3>What you need</h3>

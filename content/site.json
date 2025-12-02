@@ -319,9 +319,8 @@
     },
   
     "contact": {
-      "title": "Take control of your movement and recovery — let’s start with a conversation.",
-      "lead": "New here? Book a free 15-minute consultation. Returning client? Use the form to request a follow-up and I’ll be in touch.",
-      "route": "/booking",
+      "title": "Take control of your movement and recovery — let's start with a conversation.",
+      "lead": "New here? Book a free 15-minute consultation. Returning client? Use the form to request a follow-up and I'll be in touch.",
       "actions": { "submitLabel": "Send" },
       "successRedirect": "/thank-you",
       "altContact": {
@@ -415,7 +414,7 @@
   
     "floatingCta": {
       "showOnMobile": true,
-      "href": "/booking",
+      "href": "/contact",
       "label": "📅 Book Now"
     },
   

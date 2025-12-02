@@ -17,7 +17,7 @@ export default function HomeVisitsPage() {
 					<SectionHeader
 						title="Home visits"
 						description="Convenient physiotherapy in your own space. Ideal for mobility, confidence in daily tasks, and practical rehab."
-						actions={<CTAButton href="/booking">Book now</CTAButton>}
+						actions={<CTAButton href="/contact">Book now</CTAButton>}
 					/>
 					<div className="prose mt-8 max-w-3xl">
 						<h3>Who it’s for</h3>

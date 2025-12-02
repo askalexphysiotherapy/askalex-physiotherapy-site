@@ -12,7 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 		"/services/online",
 		"/about",
 		"/faqs",
-		"/booking",
+		"/contact",
 		"/terms",
 		"/privacy"
 	];
