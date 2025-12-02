@@ -85,15 +85,3 @@ body {
 	scrollbar-width: none;
 }
 
-/* Trust pills animation - pause on hover/focus */
-.group:hover .animate-trust-scroll,
-.group:focus-within .animate-trust-scroll {
-	animation-play-state: paused;
-}
-
-@media (prefers-reduced-motion: reduce) {
-	.animate-trust-scroll {
-		animation: none !important;
-	}
-}
-

@@ -60,13 +60,13 @@ export default function AboutPage() {
 									<p key={idx}>{para}</p>
 								))}
 							</div>
-							<div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
+							<div className="mt-6 flex flex-col gap-3">
 								{about.hero.ctas.map((cta) => (
 									<Button
 										key={cta.href}
 										href={cta.href}
 										variant={cta.variant === "primary" ? "primary" : "secondary"}
-										className="flex-1"
+										className="w-full"
 									>
 										{cta.label}
 									</Button>
