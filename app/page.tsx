@@ -40,7 +40,7 @@ export default function HomePage() {
 										<Button 
 											href={home.hero.primaryCta.href} 
 											variant="primary"
-											className="max-sm:py-2.5 w-full"
+											className="w-full"
 										>
 											<span className="whitespace-nowrap">Book Now</span>
 										</Button>
@@ -49,7 +49,7 @@ export default function HomePage() {
 										<Button 
 											href={home.hero.secondaryCta.href} 
 											variant="secondary"
-											className="max-sm:py-2.5 w-full"
+											className="w-full"
 										>
 											Our Services
 										</Button>
