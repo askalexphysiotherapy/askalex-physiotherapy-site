@@ -41,54 +41,56 @@ export function MobileNav({ items, cta }: { items: NavItem[]; cta: CTA }) {
 				<div
 					role="dialog"
 					aria-modal="true"
-					className="fixed inset-0 top-0 left-0 right-0 bottom-0 z-[100] bg-bg-blue flex flex-col md:hidden"
+					className="fixed inset-0 z-[100] bg-bg-blue/95 backdrop-blur-sm md:hidden"
 					onClick={() => setOpen(false)}
 				>
 					<div
-						className="flex flex-col h-full w-full bg-white overflow-y-auto"
+						className="flex flex-col h-full w-full bg-white"
 						onClick={(e) => e.stopPropagation()}
 					>
-						<div className="flex items-center justify-between p-6 border-b border-slate-200">
-							<h2 className="text-lg font-semibold text-slate-900">Menu</h2>
+						{/* Top bar with Menu title and close button */}
+						<div className="flex items-center justify-between px-6 py-4 border-b border-slate-200">
+							<span className="text-lg font-semibold text-slate-900">Menu</span>
 							<button
+								type="button"
 								aria-label="Close menu"
 								onClick={() => setOpen(false)}
-								className="p-1.5 rounded-lg border border-slate-200 text-slate-700 hover:bg-bg-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-medical-blue focus-visible:ring-offset-2"
+								className="flex h-10 w-10 items-center justify-center rounded-2xl bg-white border border-slate-200 text-slate-700 hover:bg-bg-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-medical-blue focus-visible:ring-offset-2 shadow-sm"
 							>
-								<X className="h-4 w-4" aria-hidden="true" />
+								<X className="h-5 w-5" aria-hidden="true" />
 							</button>
 						</div>
 
-						<div className="flex-1 px-6 py-6">
-							<ul className="space-y-2">
-								{items.map((item) => {
-									const active = pathname === item.href;
-									return (
-										<li key={item.href}>
-											<Link
-												href={item.href}
-												onClick={() => setOpen(false)}
-												className={`block rounded-lg px-4 py-3 text-base transition-colors ${
-													active
-														? "bg-bg-blue font-medium text-medical-blue"
-														: "text-slate-700 hover:bg-bg-blue/50"
-												} focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-medical-blue focus-visible:ring-offset-2`}
-											>
-												{item.label}
-											</Link>
-										</li>
-									);
-								})}
-							</ul>
-							<div className="mt-8 pt-6 border-t border-slate-200" onClick={() => setOpen(false)}>
-								<Button
-									href={cta.href}
-									variant="primary"
-									className="w-full"
-								>
-									{cta.label}
-								</Button>
-							</div>
+						{/* Navigation links */}
+						<nav className="flex-1 px-6 py-4 space-y-3 overflow-y-auto">
+							{items.map((item) => {
+								const active = pathname === item.href;
+								return (
+									<Link
+										key={item.href}
+										href={item.href}
+										onClick={() => setOpen(false)}
+										className={`block rounded-lg px-4 py-3 text-base font-medium transition-colors ${
+											active
+												? "bg-bg-blue text-medical-blue"
+												: "text-slate-700 hover:bg-bg-blue/50"
+										} focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-medical-blue focus-visible:ring-offset-2`}
+									>
+										{item.label}
+									</Link>
+								);
+							})}
+						</nav>
+
+						{/* Book Now button at bottom */}
+						<div className="px-6 pb-6 pt-4 border-t border-slate-200">
+							<Button
+								href={cta.href}
+								variant="primary"
+								className="w-full"
+							>
+								{cta.label}
+							</Button>
 						</div>
 					</div>
 				</div>
