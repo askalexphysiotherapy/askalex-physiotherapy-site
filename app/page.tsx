@@ -23,10 +23,10 @@ export default function HomePage() {
 		<>
 			{/* Hero Section */}
 			<Section density="comfortable" background="tint" id="hero">
-				<div className="grid gap-10 lg:grid-cols-2 lg:items-stretch">
+				<div className="grid gap-6 lg:gap-10 lg:grid-cols-2 lg:items-stretch">
 					<Reveal>
-						<div className="max-w-2xl space-y-6 lg:flex lg:h-full lg:flex-col lg:justify-between">
-							<div className="space-y-5">
+						<div className="max-w-2xl space-y-4 lg:space-y-6 lg:flex lg:h-full lg:flex-col lg:justify-between">
+							<div className="space-y-4 lg:space-y-5">
 								<h1 className="text-3xl sm:text-4xl md:text-[2.5rem] lg:text-[2.75rem] leading-tight font-extrabold tracking-tight text-medical-blue">
 									{home.hero.title}
 								</h1>
@@ -34,17 +34,21 @@ export default function HomePage() {
 									{home.hero.subtitle}
 								</p>
 							</div>
-							<div className="space-y-4">
-								<div className="flex flex-wrap gap-4">
-									<Button href={home.hero.primaryCta.href} variant="primary">
-										Book Now
-									</Button>
-									<Button href={home.hero.secondaryCta.href} variant="secondary">
-										Our Services
-									</Button>
+							<div className="space-y-3 lg:space-y-4">
+								<div className="flex flex-row gap-4">
+									<div className="flex-1">
+										<Button href={home.hero.primaryCta.href} variant="primary">
+											Book Now
+										</Button>
+									</div>
+									<div className="flex-1">
+										<Button href={home.hero.secondaryCta.href} variant="secondary">
+											Our Services
+										</Button>
+									</div>
 								</div>
 								{home.hero.mission && (
-									<p className="text-xl font-medium text-medical-blue">
+									<p className="text-base sm:text-lg font-medium text-medical-blue">
 										{home.hero.mission}
 									</p>
 								)}
@@ -52,7 +56,7 @@ export default function HomePage() {
 						</div>
 					</Reveal>
 					<Reveal delay={0.2}>
-						<div className="relative max-w-xl lg:ml-auto lg:h-full lg:flex lg:items-stretch">
+						<div className="relative max-w-xl mt-4 lg:mt-0 lg:ml-auto lg:h-full lg:flex lg:items-stretch">
 							<div className="relative w-full h-auto lg:h-full">
 								<Image
 									src={home.hero.image.src}
