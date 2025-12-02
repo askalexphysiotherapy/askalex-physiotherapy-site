@@ -27,10 +27,8 @@ export function MobileNav({ items, cta }: { items: NavItem[]; cta: CTA }) {
 
   // Close menu when route changes
   useEffect(() => {
-    if (open) {
-      setOpen(false);
-    }
-  }, [pathname, open]);
+    setOpen(false);
+  }, [pathname]);
 
   return (
     <nav className="md:hidden">
