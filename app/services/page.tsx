@@ -89,18 +89,18 @@ export default function ServicesPage() {
 															</ul>
 														</div>
 													)}
-													<div className="mt-6 flex flex-wrap gap-3">
+													<div className="mt-6 flex items-center justify-between gap-4">
 														<button
 															onClick={() =>
 																setExpandedCard(isExpanded ? null : card.key)
 															}
-															className="text-aa-blue font-medium underline hover:text-aa-aqua focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-aa-blue focus-visible:ring-offset-2 rounded"
+															className="text-aa-blue font-semibold underline-offset-2 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-aa-blue focus-visible:ring-offset-2 rounded"
 														>
 															{isExpanded ? "Show less" : "Learn more"}
 														</button>
 														<Link
 															href={card.cta.href}
-															className="rounded-full bg-aa-blue px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-aa-aqua focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-aa-blue focus-visible:ring-offset-2"
+															className="rounded-full bg-aa-blue px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-aa-aqua focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-aa-blue focus-visible:ring-offset-2 whitespace-nowrap"
 														>
 															{card.cta.label}
 														</Link>
