@@ -27,15 +27,15 @@ export default function HomePage() {
 					<Reveal>
 						<div className="max-w-2xl space-y-4 lg:space-y-6 lg:flex lg:h-full lg:flex-col lg:justify-between">
 							<div className="space-y-4 lg:space-y-5">
-								<h1 className="text-3xl sm:text-4xl md:text-[2.5rem] lg:text-[2.75rem] leading-tight font-extrabold tracking-tight text-medical-blue">
+								<h1 className="text-3xl md:text-4xl lg:text-[2.7rem] leading-tight font-extrabold tracking-tight text-[#007B9E]">
 									{home.hero.title}
 								</h1>
-								<p className="text-[var(--lead)] text-slate-700">
+								<p className="text-sm md:text-base leading-relaxed text-slate-700">
 									{home.hero.subtitle}
 								</p>
 								<p className="mt-3 text-sm leading-relaxed text-slate-700 md:mt-4 md:text-base">
 									Not sure where to start?{" "}
-									<span style={{ color: "#4CAF50", fontWeight: 600 }}>
+									<span className="font-semibold text-[#4CAF50]">
 										Book a free 15-minute consultation
 									</span>{" "}
 									and I'll help you choose the right treatment path for you.
@@ -63,7 +63,7 @@ export default function HomePage() {
 									</div>
 								</div>
 								{home.hero.mission && (
-									<p className="text-base sm:text-lg font-medium text-medical-blue text-center sm:text-left max-sm:mt-0 max-sm:mb-0">
+									<p className="text-sm md:text-base leading-relaxed text-slate-700 text-center sm:text-left max-sm:mt-0 max-sm:mb-0">
 										{home.hero.mission}
 									</p>
 								)}
