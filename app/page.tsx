@@ -63,7 +63,7 @@ export default function HomePage() {
 									</div>
 								</div>
 								{home.hero.mission && (
-									<p className="text-sm md:text-base leading-relaxed text-slate-700 text-center sm:text-left max-sm:mt-0 max-sm:mb-0">
+									<p className="text-base md:text-lg font-semibold leading-relaxed text-[#007B9E] text-center sm:text-left max-sm:mt-0 max-sm:mb-0">
 										{home.hero.mission}
 									</p>
 								)}
