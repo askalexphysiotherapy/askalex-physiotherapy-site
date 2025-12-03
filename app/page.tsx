@@ -33,6 +33,13 @@ export default function HomePage() {
 								<p className="text-[var(--lead)] text-slate-700">
 									{home.hero.subtitle}
 								</p>
+								<p className="mt-3 text-sm leading-relaxed text-slate-700 md:mt-4 md:text-base">
+									Not sure where to start?{" "}
+									<span style={{ color: "#4CAF50", fontWeight: 600 }}>
+										Book a free 15-minute consultation
+									</span>{" "}
+									and I'll help you choose the right treatment path for you.
+								</p>
 							</div>
 							<div className="space-y-2 max-sm:space-y-2 lg:space-y-4">
 								<div className="flex flex-row gap-3 mb-6 max-sm:mb-6 lg:mb-6">
