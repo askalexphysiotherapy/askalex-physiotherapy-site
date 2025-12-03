@@ -321,6 +321,7 @@
     "contact": {
       "title": "Take control of your movement and recovery — let's start with a conversation.",
       "lead": "New here? Book a free 15-minute consultation. Returning client? Use the form to request a follow-up and I'll be in touch.",
+      "route": "/contact",
       "actions": { "submitLabel": "Send" },
       "successRedirect": "/thank-you",
       "altContact": {

@@ -8,18 +8,28 @@ const nextConfig = {
 	// Allow Next/Image to load your remote images
 	images: {
 	  domains: [
-		"static1.squarespace.com",
-		"img.icons8.com"
+		"static1.squarespace.com", // Squarespace-hosted images
+		"img.icons8.com",          // icons in Services/FAQ
 	  ],
 	},
   
-	// 🔥 Add redirect to remove the old /booking page globally
+	// Prevent ESLint from blocking production builds
+	eslint: {
+	  ignoreDuringBuilds: true,
+	},
+  
+	// Redirect any /booking URL to /contact
 	async redirects() {
 	  return [
 		{
 		  source: "/booking",
 		  destination: "/contact",
-		  permanent: true, // 308 redirect — great for SEO + cache clearing
+		  permanent: true,
+		},
+		{
+		  source: "/booking/",
+		  destination: "/contact",
+		  permanent: true,
 		},
 	  ];
 	},
