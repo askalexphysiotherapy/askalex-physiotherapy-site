@@ -8,14 +8,20 @@ const nextConfig = {
 	// Allow Next/Image to load your remote images
 	images: {
 	  domains: [
-		"static1.squarespace.com", // your Squarespace-hosted images
-		"img.icons8.com"           // icons in Services/FAQ
+		"static1.squarespace.com",
+		"img.icons8.com"
 	  ],
-	  // If you prefer stricter matching, you can use remotePatterns instead.
-	  // remotePatterns: [
-	  //   { protocol: "https", hostname: "static1.squarespace.com" },
-	  //   { protocol: "https", hostname: "img.icons8.com" }
-	  // ]
+	},
+  
+	// 🔥 Add redirect to remove the old /booking page globally
+	async redirects() {
+	  return [
+		{
+		  source: "/booking",
+		  destination: "/contact",
+		  permanent: true, // 308 redirect — great for SEO + cache clearing
+		},
+	  ];
 	},
   };
   
