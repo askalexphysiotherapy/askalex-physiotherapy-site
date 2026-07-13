@@ -472,19 +472,19 @@
         "items": [
           {
             "slug": "initial-appointment",
-            "name": "Initial appointment",
+            "name": "Initial home visit consultation",
             "description": "Full assessment, diagnosis, goal setting and first treatment.",
-            "duration": "Up to 60 minutes",
-            "price": "£50",
+            "duration": "Up to 75 minutes",
+            "price": "£75",
             "highlight": "Most people start here",
             "badge": null
           },
           {
             "slug": "follow-up",
-            "name": "Follow-up session",
+            "name": "Follow-up consultation",
             "description": "Ongoing treatment sessions to build on your progress.",
             "duration": "Up to 60 minutes",
-            "price": "£50",
+            "price": "£70",
             "highlight": null,
             "badge": null
           },
@@ -493,18 +493,18 @@
             "name": "Recovery Plan – 4 sessions",
             "description": "Ideal for short-term rehab or focused pain management.",
             "duration": "4 × up to 60 minute sessions",
-            "price": "£185",
+            "price": "£260",
             "highlight": "Best for short-term goals",
-            "badge": "Save £15"
+            "badge": "Save £20"
           },
           {
             "slug": "recovery-plan-6",
             "name": "Recovery Plan – 6 sessions",
             "description": "Designed for sustainable progress and measurable outcomes.",
             "duration": "6 × up to 60 minute sessions",
-            "price": "£270",
+            "price": "£380",
             "highlight": "Best value for longer rehab",
-            "badge": "Save £30"
+            "badge": "Save £40"
           }
         ]
       },
