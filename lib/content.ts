@@ -86,6 +86,7 @@ const ImageSchema = z.object({
 const HomeHeroSchema = z.object({
 	title: z.string(),
 	subtitle: z.string(),
+	description: z.string().optional(),
 	inlineLinks: z.array(
 		z.object({
 			label: z.string(),
@@ -165,6 +166,12 @@ const CredentialSchema = z.object({
 
 const AboutSchema = z.object({
 	hero: AboutHeroSchema,
+	comfortSafety: z
+		.object({
+			heading: z.string(),
+			paragraphs: z.array(z.string())
+		})
+		.optional(),
 	heading: z.string(),
 	subheading: z.string(),
 	values: z.array(ValueSchema),

@@ -86,6 +86,23 @@ export default function AboutPage() {
 				</Section>
 			)}
 
+			{about.comfortSafety && (
+				<Section density="comfortable" background="default">
+					<Reveal>
+						<div className="mx-auto max-w-3xl space-y-5">
+							<h2 className="text-2xl font-semibold tracking-tight text-medical-blue md:text-3xl">
+								{about.comfortSafety.heading}
+							</h2>
+							{about.comfortSafety.paragraphs.map((para, idx) => (
+								<p key={idx} className="text-slate-700 leading-relaxed">
+									{para}
+								</p>
+							))}
+						</div>
+					</Reveal>
+				</Section>
+			)}
+
 			<Section density="comfortable" background="tint">
 				<SectionHeader title={about.heading} description={about.subheading} />
 				<div className="mt-8 grid gap-6 md:grid-cols-3">

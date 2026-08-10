@@ -52,9 +52,9 @@
         "addressCountry": "GB"
       },
       "openingHours": {
-        "days": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "days": ["Monday","Wednesday","Thursday","Saturday"],
         "opens": "08:00",
-        "closes": "19:00"
+        "closes": "18:00"
       },
       "priceRange": "££"
     },
@@ -62,7 +62,8 @@
     "home": {
       "hero": {
         "title": "Expert Physiotherapy in Rehabilitation",
-        "subtitle": "Specialist care designed to support neurological recovery, functional mobility, and overall wellbeing — at home, in clinic, or online.",
+        "subtitle": "Alex is a qualified, private mobile physiotherapist based in North London, he provides professional home visits and creates tailored programmes designed for your individual goals. He specialises in elderly care, neurological, respiratory and musculoskeletal (MSK) physiotherapy.",
+        "description": "Compassion and patient-centred care is at the heart of Alex’s practice. He believes in bringing movement and rehabilitation in a familiar environment, making recovery affordable and more convenient in the comfort of your own home.",
         "inlineLinks": [
           { "label": "Services", "href": "/services" }
         ],
@@ -72,7 +73,7 @@
         "image": {
           "src": "https://static1.squarespace.com/static/6847f68b1080fe0cccc5899d/t/690b5d3c25cd6d08af6e50c7/1762352444939/Canva+Portrait+1024.png",
           "alt": "Physiotherapist Alexander Vikentiou smiling",
-          "overlay": { "name": "Alexander Vikentiou", "title": "Physiotherapist" }
+          "overlay": { "name": "Alexander Vikentiou, BSc, MCSP", "title": "Physiotherapist" }
         }
       },
       "learn": [
@@ -107,14 +108,15 @@
         "heading": "Your Physiotherapist",
         "subheading": "",
         "paragraphs": [
-          "Alex is a qualified physiotherapist with experience across the NHS and private settings in the UK and New Zealand. His work spans acute care, rehabilitation and injury recovery.",
-          "Alex has a focused interest in rehabilitation — specifically around injury recovery, pain management and supporting stroke recovery, Parkinson’s, mobility issues, and post-hospital rehabilitation. He also helps older adults build confidence and independence.",
-          "Alex founded Ask Alex Physiotherapy to deliver expert, personalised care around your life — in your home, at a clinic, or online."
+          "Alex is a mobile physiotherapist and Member of the Chartered Society of Physiotherapy, his company ethos is helping adults improve their mobility, independence and quality of life.",
+          "With experience across the NHS and private sector in the UK and New Zealand, Alex has a focused interest in rehabilitation - specifically around elderly care, stroke recovery, Parkinson’s, management of respiratory conditions, neck and back pain, and general mobility issues.",
+          "Working in rehabilitation strengthened Alex's passion for helping people regain confidence in their movement in everyday life. However, he felt he couldn't provide the level of time and personalised care his patients deserved because of short appointment times and high caseload in the public sector. This has led him to establish Ask Alex Physiotherapy to provide home physiotherapy and deliver tailored care around your life.",
+          "His curiosity for physiotherapy began when Alex himself underwent post-op rehab for a ligament injury before he started his military service in Cyprus. Experiencing physiotherapy first-hand gave Alex a deep appreciation for the impact rehabilitation can have on a person's recovery and confidence. That experience inspired him to pursue a career helping others regain movement and independence."
         ],
         "image": {
           "src": "https://static1.squarespace.com/static/6847f68b1080fe0cccc5899d/t/690b5d3c25cd6d08af6e50c7/1762352444939/Canva+Portrait+1024.png",
           "alt": "Alex, physiotherapist at Ask Alex Physiotherapy",
-          "overlay": { "name": "Alexander Vikentiou", "title": "Physiotherapist" }
+          "overlay": { "name": "Alexander Vikentiou, BSc, MCSP", "title": "Physiotherapist" }
         },
         "ctas": [
           { "label": "Get in touch", "href": "/contact", "variant": "primary" },
@@ -125,6 +127,13 @@
           "Secure online sessions",
           "North London coverage",
           "HCPC Registered • Enhanced DBS"
+        ]
+      },
+      "comfortSafety": {
+        "heading": "Your comfort and safety come first",
+        "paragraphs": [
+          "We understand that welcoming a healthcare professional into your home is a personal experience. Every appointment is conducted with professionalism, respect and clear communication. You are welcome to have a family member or friend present during your appointment.",
+          "Once your appointment has been confirmed, Alex will send an email with the date, time and his HCPC registration number attached to the booking."
         ]
       },
       "heading": "Our Values",
@@ -200,7 +209,7 @@
       ],
       "primaryCtaStrip": {
         "cta": { "label": "Book now", "href": "/contact" },
-        "helper": "Not sure what service you need? Book a free 15-minute phone consultation and I’ll guide you.",
+        "helper": "Not sure what service you need? Book a free 10-minute phone consultation and I’ll guide you.",
         "helperHref": "/contact"
       },
       "compare": {
@@ -320,7 +329,7 @@
   
     "contact": {
       "title": "Take control of your movement and recovery — let's start with a conversation.",
-      "lead": "New here? Book a free 15-minute consultation. Returning client? Use the form to request a follow-up and I'll be in touch.",
+      "lead": "New here? Book a free 10-minute consultation. Returning client? Use the form to request a follow-up and I'll be in touch.",
       "route": "/contact",
       "actions": { "submitLabel": "Send" },
       "successRedirect": "/thank-you",
@@ -380,7 +389,8 @@
           "title": "Contact",
           "items": [
             { "type": "text", "label": "Barnet, London" },
-            { "type": "text", "label": "Daily 08:00 – 19:00" },
+            { "type": "text", "label": "Mon, Wed, Thu 08:00 – 18:00" },
+            { "type": "text", "label": "Saturday 08:00 – 14:00" },
             { "type": "link", "label": "07594 909 780", "href": "tel:+447594909780" },
             { "type": "link", "label": "hello@askalexphysiotherapy.com", "href": "mailto:hello@askalexphysiotherapy.com" }
           ]
