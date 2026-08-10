@@ -32,7 +32,15 @@ const HeaderSchema = z.object({
 	nav: z.array(
 		z.object({
 			label: z.string(),
-			href: z.string()
+			href: z.string(),
+			children: z
+				.array(
+					z.object({
+						label: z.string(),
+						href: z.string()
+					})
+				)
+				.optional()
 		})
 	),
 	cta: z.object({
@@ -207,6 +215,12 @@ const ExpertiseItemSchema = z.object({
 const ServicesSchema = z.object({
 	title: z.string(),
 	subtitle: z.string(),
+	sectionNav: z.array(
+		z.object({
+			label: z.string(),
+			id: z.string()
+		})
+	),
 	cards: z.array(ServiceCardSchema),
 	primaryCtaStrip: z.object({
 		cta: z.object({

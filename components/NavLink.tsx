@@ -2,19 +2,30 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ReactNode } from "react";
+import { cn } from "@/lib/utils";
 
-export function NavLink({ href, children }: { href: string; children: ReactNode }) {
+export function NavLink({
+	href,
+	children,
+	className
+}: {
+	href: string;
+	children: ReactNode;
+	className?: string;
+}) {
 	const pathname = usePathname();
-	const active = pathname === href;
+	const active = pathname === href || (href !== "/" && pathname.startsWith(href));
 	return (
 		<Link
 			href={href}
-			className={`text-sm transition hover:text-aa-blue ${active ? "text-aa-blue font-medium" : "text-slate-700"}`}
+			className={cn(
+				"text-sm transition hover:text-aa-blue",
+				active ? "font-medium text-aa-blue" : "text-slate-700",
+				className
+			)}
 			aria-current={active ? "page" : undefined}
 		>
 			{children}
 		</Link>
 	);
 }
-
-

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Phone, Mail, Instagram, Linkedin, Music2, MapPin } from "lucide-react";
+import { Phone, Mail, Instagram, Linkedin, Music2, MapPin, ChevronDown } from "lucide-react";
 import { site } from "@/lib/content";
 import { MobileNav } from "./MobileNav";
 import { NavLink } from "./NavLink";
@@ -17,7 +17,7 @@ const socialIconMap = {
 };
 
 export function Header() {
-	const { header, brand } = site;
+	const { header, brand, services } = site;
 	const socialLinks =
 		site.social?.filter((social) => socialIconMap[social.platform]) ?? [];
 
@@ -74,7 +74,7 @@ export function Header() {
 			<Container className="flex h-14 items-center justify-between py-1 md:h-16 md:py-0">
 				<Link
 					href="/"
-					className="flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-medical-blue focus-visible:ring-offset-2 rounded"
+					className="flex items-center gap-2 rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-medical-blue focus-visible:ring-offset-2"
 				>
 					<Image
 						src={brand.logo}
@@ -86,11 +86,51 @@ export function Header() {
 					<span className="sr-only">{brand.name}</span>
 				</Link>
 				<nav className="hidden items-center gap-6 md:flex" aria-label="Primary">
-					{header.nav.map((item) => (
-						<NavLink key={item.href} href={item.href}>
-							{item.label}
-						</NavLink>
-					))}
+					{header.nav.map((item) => {
+						const isServices = item.href === "/services";
+						const children = isServices
+							? services.sectionNav.map((section) => ({
+									label: section.label,
+									href: `/services#${section.id}`
+								}))
+							: item.children;
+
+						if (children && children.length > 0) {
+							return (
+								<div key={item.href} className="group relative">
+									<NavLink
+										href={item.href}
+										className="inline-flex items-center gap-1"
+									>
+										{item.label}
+										<ChevronDown
+											className="h-3.5 w-3.5 opacity-70 transition-transform group-hover:rotate-180"
+											aria-hidden="true"
+										/>
+									</NavLink>
+									<div className="invisible absolute left-1/2 top-full z-50 w-56 -translate-x-1/2 pt-2 opacity-0 transition-all duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+										<div className="rounded-xl border border-slate-200 bg-white py-2 shadow-lg">
+											{children.map((child) => (
+												<Link
+													key={child.href}
+													href={child.href}
+													className="block px-4 py-2.5 text-sm text-slate-700 transition-colors hover:bg-bg-blue hover:text-aa-blue focus-visible:bg-bg-blue focus-visible:outline-none"
+												>
+													{child.label}
+												</Link>
+											))}
+										</div>
+									</div>
+								</div>
+							);
+						}
+
+						return (
+							<NavLink key={item.href} href={item.href}>
+								{item.label}
+							</NavLink>
+						);
+					})}
 				</nav>
 				<div className="hidden items-center gap-4 md:flex">
 					<Button href={header.cta.href} variant="primary">
@@ -98,7 +138,11 @@ export function Header() {
 					</Button>
 				</div>
 				<div className="md:hidden">
-					<MobileNav items={header.nav} cta={header.cta} />
+					<MobileNav
+						items={header.nav}
+						cta={header.cta}
+						servicesSections={services.sectionNav}
+					/>
 				</div>
 			</Container>
 		</header>

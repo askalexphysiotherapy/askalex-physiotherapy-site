@@ -158,6 +158,12 @@
     "services": {
       "title": "Services",
       "subtitle": "Clear options. Same standard of care. Choose the setting that suits you — at home or online.",
+      "sectionNav": [
+        { "label": "Home Visits", "id": "home" },
+        { "label": "Online Consultations", "id": "online" },
+        { "label": "Areas of Expertise", "id": "expertise" },
+        { "label": "Pricing", "id": "pricing" }
+      ],
       "cards": [
         {
           "key": "home",

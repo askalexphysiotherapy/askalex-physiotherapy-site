@@ -18,6 +18,7 @@ import { Card } from "@/components/Card";
 import { Reveal } from "@/components/Reveal";
 import { PageHero } from "@/components/PageHero";
 import { PricingSection } from "@/components/PricingSection";
+import { Container } from "@/components/Container";
 
 const expertiseIconMap: Record<string, React.ComponentType<{ className?: string }>> = {
 	brain: Brain,
@@ -28,23 +29,29 @@ const expertiseIconMap: Record<string, React.ComponentType<{ className?: string 
 	elderly: User
 };
 
+function scrollToSection(id: string) {
+	const element = document.getElementById(id);
+	if (element) {
+		element.scrollIntoView({ behavior: "smooth", block: "start" });
+	}
+}
+
 export default function ServicesPage() {
 	const { services } = site;
 	const [expandedCard, setExpandedCard] = useState<string | null>(null);
 
 	useEffect(() => {
-		if (typeof window !== "undefined") {
-			const hash = window.location.hash.slice(1);
-			if (hash && services.cards.some((card) => card.key === hash)) {
-				setExpandedCard(hash);
-				setTimeout(() => {
-					const element = document.getElementById(hash);
-					if (element) {
-						element.scrollIntoView({ behavior: "smooth", block: "start" });
-					}
-				}, 100);
-			}
+		if (typeof window === "undefined") return;
+
+		const hash = window.location.hash.slice(1);
+		if (!hash) return;
+
+		if (services.cards.some((card) => card.key === hash)) {
+			setExpandedCard(hash);
 		}
+
+		const timer = window.setTimeout(() => scrollToSection(hash), 100);
+		return () => window.clearTimeout(timer);
 	}, [services.cards]);
 
 	return (
@@ -56,6 +63,31 @@ export default function ServicesPage() {
 				density="compact"
 			/>
 
+			{/* Section jump links */}
+			<div className="sticky top-14 z-40 border-b border-slate-200 bg-white/95 backdrop-blur md:top-16">
+				<Container>
+					<nav
+						aria-label="Services sections"
+						className="flex gap-2 overflow-x-auto py-3 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+					>
+						{services.sectionNav.map((item) => (
+							<a
+								key={item.id}
+								href={`#${item.id}`}
+								onClick={(event) => {
+									event.preventDefault();
+									history.replaceState(null, "", `#${item.id}`);
+									scrollToSection(item.id);
+								}}
+								className="shrink-0 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 transition-colors hover:border-aa-blue hover:text-aa-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-aa-blue focus-visible:ring-offset-2"
+							>
+								{item.label}
+							</a>
+						))}
+					</nav>
+				</Container>
+			</div>
+
 			{/* Service Cards — side by side */}
 			<Section density="comfortable" background="default">
 				<div className="grid gap-6 md:grid-cols-2 md:gap-8 md:items-stretch">
@@ -63,7 +95,7 @@ export default function ServicesPage() {
 						const isExpanded = expandedCard === card.key;
 						return (
 							<Reveal key={card.key} delay={idx * 0.1} className="h-full">
-								<div id={card.key} className="scroll-mt-20 h-full">
+								<div id={card.key} className="scroll-mt-32 h-full md:scroll-mt-36">
 									<Card className="flex h-full flex-col">
 										<div className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl">
 											<Image
@@ -139,7 +171,7 @@ export default function ServicesPage() {
 			</Section>
 
 			{/* Expertise Grid */}
-			<Section density="comfortable" background="default">
+			<Section density="comfortable" background="default" id="expertise" className="scroll-mt-32 md:scroll-mt-36">
 				<SectionHeader title={services.expertise.heading} />
 				<div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
 					{services.expertise.items.map((item, idx) => {

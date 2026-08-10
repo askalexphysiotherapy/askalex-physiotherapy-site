@@ -72,7 +72,7 @@ export function PricingSection() {
 	const { pricing } = site;
 
 	return (
-		<Section id="pricing" density="compact" background="tint" container={false}>
+		<Section id="pricing" density="compact" background="tint" container={false} className="scroll-mt-32 md:scroll-mt-36">
 			<Container className="space-y-5">
 				<SectionHeader
 					eyebrow="Pricing"
