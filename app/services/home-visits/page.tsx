@@ -39,8 +39,9 @@ export default function HomeVisitsPage() {
 						<p>Finchley/Barnet and nearby North London areas. Travel supplements may apply.</p>
 						<h3>Pricing</h3>
 						<ul>
-							<li>Initial home visit consultation: £80 (up to 75 minutes)</li>
-							<li>Follow-up consultation: £70 (up to 60 minutes)</li>
+							<li>Initial consultation: £90 (75 minutes)</li>
+							<li>Follow-up: £70 (45 minutes) or £80 (60 minutes)</li>
+							<li>Recovery packages: 4 × 45 min for £260, or 4 × 60 min for £295</li>
 							<li>Travel supplement: if outside core area</li>
 						</ul>
 						<p className="text-sm text-slate-600">

@@ -445,96 +445,103 @@
 
     "pricing": {
       "physiotherapy": {
-        "title": "Private physiotherapy sessions",
-        "subtitle": "Home and online sessions tailored to your goals. Recovery Plans offer the best value for consistent progress.",
+        "title": "Private physiotherapy",
+        "subtitle": "Home and online sessions. Recovery packages offer the best value for ongoing rehab.",
         "items": [
           {
             "slug": "initial-appointment",
-            "name": "Initial home visit consultation",
-            "description": "Full assessment, diagnosis, goal setting and first treatment.",
-            "duration": "Up to 75 minutes",
-            "price": "£80",
+            "name": "Initial consultation",
+            "description": "Full assessment, goal setting and first treatment.",
+            "duration": "75 minutes",
+            "price": "£90",
             "highlight": "Most people start here",
             "badge": null
           },
           {
-            "slug": "follow-up",
-            "name": "Follow-up consultation",
-            "description": "Ongoing treatment sessions to build on your progress.",
-            "duration": "Up to 60 minutes",
+            "slug": "follow-up-45",
+            "name": "Follow-up",
+            "description": "Focused treatment to build on your progress.",
+            "duration": "45 minutes",
             "price": "£70",
             "highlight": null,
             "badge": null
           },
           {
-            "slug": "recovery-plan-4",
-            "name": "Recovery Plan – 4 sessions",
-            "description": "Ideal for short-term rehab or focused pain management.",
-            "duration": "4 × up to 60 minute sessions",
+            "slug": "follow-up-60",
+            "name": "Follow-up",
+            "description": "Longer session for more complex goals.",
+            "duration": "60 minutes",
+            "price": "£80",
+            "highlight": null,
+            "badge": null
+          },
+          {
+            "slug": "recovery-plan-4x45",
+            "name": "Recovery package",
+            "description": "Four prepaid sessions — ideal for short-term rehab.",
+            "duration": "4 × 45 minutes",
             "price": "£260",
-            "highlight": "Best for short-term goals",
+            "highlight": "Best for focused goals",
             "badge": "Save £20"
           },
           {
-            "slug": "recovery-plan-6",
-            "name": "Recovery Plan – 6 sessions",
-            "description": "Designed for sustainable progress and measurable outcomes.",
-            "duration": "6 × up to 60 minute sessions",
-            "price": "£380",
-            "highlight": "Best value for longer rehab",
-            "badge": "Save £40"
+            "slug": "recovery-plan-4x60",
+            "name": "Recovery package",
+            "description": "Four prepaid sessions — best value for consistent progress.",
+            "duration": "4 × 60 minutes",
+            "price": "£295",
+            "highlight": "Best value",
+            "badge": "Save £25"
           }
         ]
       },
       "classes": {
-        "title": "Community exercise & wellbeing classes",
-        "subtitle": "Physiotherapist-led group sessions to support mobility, strength and confidence for older adults and those with neurological or mobility limitations.",
+        "title": "Care home community classes",
+        "subtitle": "Physiotherapist-led group sessions for mobility, strength and confidence.",
         "items": [
           {
             "slug": "trial-class",
             "name": "Trial class",
-            "description": "Try a physiotherapist-led group exercise session with no obligation.",
-            "duration": "30–45 minutes",
+            "description": "Try a group session with no obligation.",
+            "duration": "40 minutes",
             "price": "Free",
             "highlight": "Great first step",
             "badge": "Free"
           },
           {
             "slug": "single-class",
-            "name": "Single group class",
-            "description": "One-off physiotherapist-led group session focused on mobility and confidence.",
-            "duration": "Up to 60 minutes",
+            "name": "Single class",
+            "description": "One physiotherapist-led group session.",
+            "duration": "45 minutes",
             "price": "£60",
             "highlight": null,
             "badge": null
           },
           {
             "slug": "four-class-block",
-            "name": "4-class block",
-            "description": "Prepaid block designed to encourage consistent participation and measurable improvement.",
-            "duration": "4 × up to 60 minute sessions",
+            "name": "Class block",
+            "description": "Four prepaid classes to encourage consistent progress.",
+            "duration": "4 × 45 minutes",
             "price": "£215",
-            "highlight": "Most popular for groups",
-            "badge": "Save £30"
+            "highlight": "Most popular",
+            "badge": "Save £25"
           },
           {
             "slug": "private-class",
-            "name": "Private group class",
-            "description": "Bespoke session for up to 10 residents of similar functional ability, designed in collaboration with care staff.",
-            "duration": "Up to 60 minutes",
-            "price": "£70",
+            "name": "Private class",
+            "description": "Designed with care home staff for up to 6 residents of similar functional ability.",
+            "duration": "45 minutes",
+            "price": "On request",
             "highlight": "Tailored for care homes",
             "badge": null
           }
         ]
       },
       "notes": [
-        "Travel within Finchley and surrounding areas is included.",
-        "Extended travel (>5 miles) may incur a small surcharge.",
+        "Travel within Finchley and surrounding areas is included; extended travel (>5 miles) may incur a small surcharge.",
         "Block bookings are payable in full before the first session and valid for 3 months.",
-        "Cancellations: Minimum 24 hours' notice required to avoid the full session charge.",
-        "Payment options: Bank transfer or card payment (details provided on booking).",
-        "Invoices and receipts are provided digitally for all services."
+        "Cancellations: 24 hours’ notice required to avoid the full session charge.",
+        "Payment by bank transfer or card; invoices provided digitally."
       ]
     }
   }

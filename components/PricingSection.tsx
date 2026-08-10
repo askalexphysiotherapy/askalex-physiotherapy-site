@@ -4,140 +4,123 @@ import { site } from "@/lib/content";
 import { Section } from "@/components/Section";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Container } from "@/components/Container";
-import { Card } from "@/components/Card";
+
+type PricingItem = (typeof site.pricing.physiotherapy.items)[number];
+
+function PriceRow({ item }: { item: PricingItem }) {
+	return (
+		<div className="flex items-start justify-between gap-4 border-b border-slate-100 py-3 last:border-b-0 last:pb-0 first:pt-0">
+			<div className="min-w-0 flex-1">
+				<div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+					<p className="text-sm font-semibold text-slate-900">{item.name}</p>
+					{item.badge && (
+						<span className="inline-flex items-center rounded-full bg-medical-green/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-medical-green">
+							{item.badge}
+						</span>
+					)}
+				</div>
+				<p className="mt-0.5 text-xs font-medium text-medical-blue">{item.duration}</p>
+				{item.description && (
+					<p className="mt-1 text-xs leading-relaxed text-slate-600">{item.description}</p>
+				)}
+			</div>
+			<p className="shrink-0 text-sm font-semibold tabular-nums text-slate-900">{item.price}</p>
+		</div>
+	);
+}
+
+function PricingColumn({
+	title,
+	subtitle,
+	singles,
+	packages,
+	packageLabel
+}: {
+	title: string;
+	subtitle: string;
+	singles: PricingItem[];
+	packages: PricingItem[];
+	packageLabel: string;
+}) {
+	return (
+		<div className="rounded-2xl border border-slate-200 bg-white/95 p-5 shadow-sm md:p-6">
+			<div className="mb-4">
+				<h2 className="text-lg font-semibold text-slate-900">{title}</h2>
+				<p className="mt-1 text-sm leading-relaxed text-slate-600">{subtitle}</p>
+			</div>
+
+			<div>
+				{singles.map((item) => (
+					<PriceRow key={item.slug} item={item} />
+				))}
+			</div>
+
+			{packages.length > 0 && (
+				<div className="mt-4 border-t border-slate-200 pt-4">
+					<p className="mb-2 text-[11px] font-semibold uppercase tracking-wide text-slate-500">
+						{packageLabel}
+					</p>
+					{packages.map((item) => (
+						<PriceRow key={item.slug} item={item} />
+					))}
+				</div>
+			)}
+		</div>
+	);
+}
 
 export function PricingSection() {
 	const { pricing } = site;
 
+	const physioSingles = pricing.physiotherapy.items.filter(
+		(item) => !item.slug.startsWith("recovery-")
+	);
+	const physioPackages = pricing.physiotherapy.items.filter((item) =>
+		item.slug.startsWith("recovery-")
+	);
+	const classSingles = pricing.classes.items.filter(
+		(item) => item.slug !== "four-class-block"
+	);
+	const classPackages = pricing.classes.items.filter(
+		(item) => item.slug === "four-class-block"
+	);
+
 	return (
-		<Section id="pricing" className="bg-bg-blue/40" background="default" container={false}>
-			<Container className="space-y-12">
+		<Section id="pricing" density="compact" background="tint" container={false}>
+			<Container className="space-y-6">
 				<SectionHeader
 					eyebrow="Pricing"
 					title="Clear, transparent pricing"
-					description="No hidden fees. You only pay for the time we spend together. Recovery Plans offer the best value for longer-term rehabilitation."
+					description="No hidden fees. Packages save money when you commit to a block of sessions."
 				/>
 
-				{/* Private Physiotherapy */}
-				<div className="space-y-6">
-					<div className="space-y-1">
-						<h2 className="text-lg font-semibold text-slate-900">
-							{pricing.physiotherapy.title}
-						</h2>
-						<p className="max-w-2xl text-sm text-slate-600">
-							{pricing.physiotherapy.subtitle}
-						</p>
-					</div>
-
-					<div className="grid gap-4 md:grid-cols-2">
-						{pricing.physiotherapy.items.map((item) => (
-							<Card
-								key={item.slug}
-								className="flex flex-col justify-between rounded-2xl border border-slate-200 bg-white/90 p-5 shadow-sm"
-							>
-								<div className="space-y-2">
-									<div className="flex items-start justify-between gap-3">
-										<div>
-											<h3 className="text-base font-semibold text-slate-900">
-												{item.name}
-											</h3>
-											{item.duration && (
-												<p className="text-xs font-medium text-medical-blue">
-													{item.duration}
-												</p>
-											)}
-										</div>
-										<div className="text-right">
-											<p className="text-base font-semibold text-slate-900">
-												{item.price}
-											</p>
-											{item.badge && (
-												<span className="mt-1 inline-flex items-center rounded-full bg-medical-green/10 px-2 py-0.5 text-[11px] font-medium text-medical-green">
-													{item.badge}
-												</span>
-											)}
-										</div>
-									</div>
-									{item.description && (
-										<p className="text-sm text-slate-600">
-											{item.description}
-										</p>
-									)}
-								</div>
-								{item.highlight && (
-									<p className="mt-3 text-xs font-medium text-slate-500">
-										{item.highlight}
-									</p>
-								)}
-							</Card>
-						))}
-					</div>
+				<div className="grid gap-5 lg:grid-cols-2 lg:gap-6 lg:items-start">
+					<PricingColumn
+						title={pricing.physiotherapy.title}
+						subtitle={pricing.physiotherapy.subtitle}
+						singles={physioSingles}
+						packages={physioPackages}
+						packageLabel="Recovery packages"
+					/>
+					<PricingColumn
+						title={pricing.classes.title}
+						subtitle={pricing.classes.subtitle}
+						singles={classSingles}
+						packages={classPackages}
+						packageLabel="Class packages"
+					/>
 				</div>
 
-				{/* Community Classes */}
-				<div className="space-y-6">
-					<div className="space-y-1">
-						<h2 className="text-lg font-semibold text-slate-900">
-							{pricing.classes.title}
-						</h2>
-						<p className="max-w-2xl text-sm text-slate-600">
-							{pricing.classes.subtitle}
-						</p>
-					</div>
-
-					<div className="grid gap-4 md:grid-cols-2">
-						{pricing.classes.items.map((item) => (
-							<Card
-								key={item.slug}
-								className="flex flex-col justify-between rounded-2xl border border-slate-200 bg-white/90 p-5 shadow-sm"
-							>
-								<div className="space-y-2">
-									<div className="flex items-start justify-between gap-3">
-										<div>
-											<h3 className="text-base font-semibold text-slate-900">
-												{item.name}
-											</h3>
-											{item.duration && (
-												<p className="text-xs font-medium text-medical-blue">
-													{item.duration}
-												</p>
-											)}
-										</div>
-										<div className="text-right">
-											<p className="text-base font-semibold text-slate-900">
-												{item.price}
-											</p>
-											{item.badge && (
-												<span className="mt-1 inline-flex items-center rounded-full bg-medical-green/10 px-2 py-0.5 text-[11px] font-medium text-medical-green">
-													{item.badge}
-												</span>
-											)}
-										</div>
-									</div>
-									{item.description && (
-										<p className="text-sm text-slate-600">
-											{item.description}
-										</p>
-									)}
-								</div>
-								{item.highlight && (
-									<p className="mt-3 text-xs font-medium text-slate-500">
-										{item.highlight}
-									</p>
-								)}
-							</Card>
-						))}
-					</div>
-				</div>
-
-				{/* Notes */}
-				<div className="mt-4 rounded-2xl border border-slate-200 bg-white p-4 text-xs text-slate-600 md:text-sm">
-					<h3 className="mb-2 text-sm font-semibold text-slate-900">
-						Additional information
-					</h3>
-					<ul className="list-disc space-y-1 pl-4">
+				<div className="rounded-xl border border-slate-200/80 bg-white/80 px-4 py-3 text-xs leading-relaxed text-slate-600 md:text-sm">
+					<p className="mb-1.5 text-xs font-semibold uppercase tracking-wide text-slate-500">
+						Good to know
+					</p>
+					<ul className="grid gap-1 sm:grid-cols-2 sm:gap-x-6">
 						{pricing.notes.map((note, idx) => (
-							<li key={idx}>{note}</li>
+							<li key={idx} className="flex gap-2">
+								<span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-medical-blue" aria-hidden />
+								<span>{note}</span>
+							</li>
 						))}
 					</ul>
 				</div>
@@ -145,4 +128,3 @@ export function PricingSection() {
 		</Section>
 	);
 }
-
