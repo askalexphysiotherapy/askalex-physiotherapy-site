@@ -1,13 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Instagram, Linkedin, Music2, MapPin } from "lucide-react";
+import { Instagram, Linkedin, MapPin } from "lucide-react";
 import { site } from "@/lib/content";
 import { Container } from "./Container";
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
 	instagram: Instagram,
 	linkedin: Linkedin,
-	tiktok: Music2,
 	google: MapPin
 };
 

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Phone, Mail, Instagram, Linkedin, Music2, MapPin, ChevronDown } from "lucide-react";
+import { Phone, Mail, Instagram, Linkedin, MapPin, ChevronDown } from "lucide-react";
 import { site } from "@/lib/content";
 import { MobileNav } from "./MobileNav";
 import { NavLink } from "./NavLink";
@@ -11,7 +11,6 @@ import { Button } from "./Button";
 
 const socialIconMap = {
 	instagram: Instagram,
-	tiktok: Music2,
 	linkedin: Linkedin,
 	google: MapPin
 };
@@ -51,7 +50,8 @@ export function Header() {
 							<div className="flex items-center gap-1.5 md:gap-2">
 								{socialLinks.map((social) => {
 									const Icon = socialIconMap[social.platform as keyof typeof socialIconMap];
-									const href = social.href || `https://${social.platform}.com/placeholder`;
+									const href = social.href;
+									if (!href) return null;
 
 									return (
 										<a
@@ -59,7 +59,11 @@ export function Header() {
 											href={href}
 											target="_blank"
 											rel="noopener noreferrer"
-											aria-label={`Visit our ${social.platform} page`}
+											aria-label={
+												social.platform === "google"
+													? "View our Google Business Profile"
+													: `Visit our ${social.platform} page`
+											}
 											className="rounded-full bg-white/90 p-1 text-medical-blue shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-medical-blue focus-visible:ring-offset-2 md:p-1.5"
 										>
 											<Icon className="h-3.5 w-3.5 md:h-4 md:w-4" aria-hidden="true" />

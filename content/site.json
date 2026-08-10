@@ -35,8 +35,7 @@
     "social": [
       { "platform": "instagram", "href": "https://www.instagram.com/ask_alex_physiotherapy" },
       { "platform": "linkedin", "href": "https://www.linkedin.com/in/alexander-vikentiou-1b88a3398/" },
-      { "platform": "tiktok", "href": "https://www.tiktok.com/askalexphysiotherapy" },
-      { "platform": "google", "href": "https://g.page/r/your-google-profile" }
+      { "platform": "google", "href": "https://www.google.com/maps/search/?api=1&query=Ask%20Alex%20Physiotherapy%20Barnet%20London" }
     ],
   
     "business": {
@@ -355,8 +354,7 @@
       "social": [
         { "platform": "instagram", "label": "Instagram", "href": "https://www.instagram.com/ask_alex_physiotherapy" },
         { "platform": "linkedin", "label": "LinkedIn", "href": "https://www.linkedin.com/in/alexander-vikentiou-1b88a3398/" },
-        { "platform": "tiktok", "label": "TikTok", "href": "https://www.tiktok.com/ask_alex_physiotherapy" },
-        { "platform": "google", "label": "Google Business Profile", "href": "https://g.page/r/your-google-profile" }
+        { "platform": "google", "label": "Google Business Profile", "href": "https://www.google.com/maps/search/?api=1&query=Ask%20Alex%20Physiotherapy%20Barnet%20London" }
       ],
       "columns": [
         {
