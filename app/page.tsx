@@ -140,7 +140,7 @@ export default function HomePage() {
 						</Link>
 					}
 				/>
-				<div className="mt-10 grid gap-6 md:grid-cols-3 md:gap-8">
+				<div className="mt-10 grid gap-6 md:grid-cols-2 md:gap-8">
 					{home.servicesTeaser.cards.map((card, idx) => {
 						const Icon = iconMap[card.icon] || Home;
 						return (

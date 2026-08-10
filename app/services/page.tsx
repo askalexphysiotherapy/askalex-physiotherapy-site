@@ -14,12 +14,9 @@ import {
 import { site } from "@/lib/content";
 import { Section } from "@/components/Section";
 import { SectionHeader } from "@/components/SectionHeader";
-import { Container } from "@/components/Container";
 import { Card } from "@/components/Card";
-import { Table } from "@/components/Table";
 import { Reveal } from "@/components/Reveal";
 import { PageHero } from "@/components/PageHero";
-import { Button } from "@/components/Button";
 import { PricingSection } from "@/components/PricingSection";
 
 const expertiseIconMap: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -35,13 +32,11 @@ export default function ServicesPage() {
 	const { services } = site;
 	const [expandedCard, setExpandedCard] = useState<string | null>(null);
 
-	// Handle deep linking on mount
 	useEffect(() => {
 		if (typeof window !== "undefined") {
 			const hash = window.location.hash.slice(1);
-			if (hash && ["home", "clinic", "online"].includes(hash)) {
+			if (hash && services.cards.some((card) => card.key === hash)) {
 				setExpandedCard(hash);
-				// Scroll to the card after a brief delay
 				setTimeout(() => {
 					const element = document.getElementById(hash);
 					if (element) {
@@ -50,7 +45,7 @@ export default function ServicesPage() {
 				}, 100);
 			}
 		}
-	}, []);
+	}, [services.cards]);
 
 	return (
 		<>
@@ -61,67 +56,68 @@ export default function ServicesPage() {
 				density="compact"
 			/>
 
-			{/* Service Cards */}
+			{/* Service Cards — side by side */}
 			<Section density="comfortable" background="default">
-				<div className="space-y-8 md:space-y-10">
-						{services.cards.map((card, idx) => {
-							const isExpanded = expandedCard === card.key;
-							return (
-								<Reveal key={card.key} delay={idx * 0.1}>
-									<div id={card.key} className="scroll-mt-20">
-										<Card>
-											<div className="grid gap-6 md:grid-cols-2">
-												<div>
-													<h2 className="text-2xl font-semibold text-slate-900">{card.title}</h2>
-													<p className="mt-4 text-slate-700">{card.intro}</p>
-													{isExpanded && (
-														<div className="mt-6">
-															<h3 className="text-sm font-semibold text-slate-900 mb-2">
-																What to expect:
-															</h3>
-															<ul className="space-y-2">
-																{card.details.map((detail, detailIdx) => (
-																	<li key={detailIdx} className="flex items-start gap-2 text-sm text-slate-700">
-																		<span className="text-aa-blue mt-1">•</span>
-																		<span>{detail}</span>
-																	</li>
-																))}
-															</ul>
-														</div>
-													)}
-													<div className="mt-6 flex items-center justify-between gap-4">
-														<button
-															onClick={() =>
-																setExpandedCard(isExpanded ? null : card.key)
-															}
-															className="text-aa-blue font-semibold underline-offset-2 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-aa-blue focus-visible:ring-offset-2 rounded"
-														>
-															{isExpanded ? "Show less" : "Learn more"}
-														</button>
-														<Link
-															href={card.cta.href}
-															className="rounded-full bg-aa-blue px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-aa-aqua focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-aa-blue focus-visible:ring-offset-2 whitespace-nowrap"
-														>
-															{card.cta.label}
-														</Link>
-													</div>
+				<div className="grid gap-6 md:grid-cols-2 md:gap-8 md:items-stretch">
+					{services.cards.map((card, idx) => {
+						const isExpanded = expandedCard === card.key;
+						return (
+							<Reveal key={card.key} delay={idx * 0.1} className="h-full">
+								<div id={card.key} className="scroll-mt-20 h-full">
+									<Card className="flex h-full flex-col">
+										<div className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl">
+											<Image
+												src={card.image.src}
+												alt={card.image.alt}
+												fill
+												className="object-cover shadow-soft"
+												sizes="(max-width: 768px) 100vw, 50vw"
+											/>
+										</div>
+										<div className="mt-6 flex flex-1 flex-col">
+											<h2 className="text-2xl font-semibold text-slate-900">{card.title}</h2>
+											<p className="mt-4 text-slate-700">{card.intro}</p>
+											{isExpanded && (
+												<div className="mt-6">
+													<h3 className="mb-2 text-sm font-semibold text-slate-900">
+														What to expect:
+													</h3>
+													<ul className="space-y-2">
+														{card.details.map((detail, detailIdx) => (
+															<li
+																key={detailIdx}
+																className="flex items-start gap-2 text-sm text-slate-700"
+															>
+																<span className="mt-1 text-aa-blue">•</span>
+																<span>{detail}</span>
+															</li>
+														))}
+													</ul>
 												</div>
-												<div className="relative">
-													<Image
-														src={card.image.src}
-														alt={card.image.alt}
-														width={600}
-														height={400}
-														className="rounded-2xl shadow-soft"
-													/>
-												</div>
+											)}
+											<div className="mt-auto flex items-center justify-between gap-4 pt-6">
+												<button
+													onClick={() =>
+														setExpandedCard(isExpanded ? null : card.key)
+													}
+													className="rounded font-semibold text-aa-blue underline-offset-2 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-aa-blue focus-visible:ring-offset-2"
+												>
+													{isExpanded ? "Show less" : "Learn more"}
+												</button>
+												<Link
+													href={card.cta.href}
+													className="whitespace-nowrap rounded-full bg-aa-blue px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-aa-aqua focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-aa-blue focus-visible:ring-offset-2"
+												>
+													{card.cta.label}
+												</Link>
 											</div>
-										</Card>
-									</div>
-								</Reveal>
-							);
-						})}
-					</div>
+										</div>
+									</Card>
+								</div>
+							</Reveal>
+						);
+					})}
+				</div>
 			</Section>
 
 			{/* CTA Strip */}
@@ -140,27 +136,6 @@ export default function ServicesPage() {
 						</Link>
 					</div>
 				</Card>
-			</Section>
-
-			{/* Comparison Table */}
-			<Section density="comfortable" background="tint">
-				<SectionHeader
-					title="Service Comparison"
-					description={services.compare.intro}
-				/>
-				<div className="mt-8">
-					<Reveal>
-						<Table
-							columns={services.compare.columns}
-							rows={services.compare.rows.map((row) => ({
-								feature: row.feature,
-								home: row.home,
-								clinic: row.clinic,
-								online: row.online
-							}))}
-						/>
-					</Reveal>
-				</div>
 			</Section>
 
 			{/* Expertise Grid */}

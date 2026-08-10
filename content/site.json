@@ -71,7 +71,7 @@
         "secondaryCta": { "label": "Our Services", "href": "/services" },
         "mission": "Your Partner in Movement and Recovery.",
         "image": {
-          "src": "https://static1.squarespace.com/static/6847f68b1080fe0cccc5899d/t/690b5d3c25cd6d08af6e50c7/1762352444939/Canva+Portrait+1024.png",
+          "src": "/images/alex-headshot.png",
           "alt": "Physiotherapist Alexander Vikentiou smiling",
           "overlay": { "name": "Alexander Vikentiou, BSc, MCSP", "title": "Physiotherapist" }
         }
@@ -96,7 +96,6 @@
         "heading": "Our Services",
         "cards": [
           { "title": "Home Visits", "text": "Personalised care at your home — ideal for rehab or mobility needs.", "href": "/services#home", "icon": "house" },
-          { "title": "In-Clinic Sessions", "text": "Hands-on treatment in a professional setting.", "href": "/services#clinic", "icon": "clinic" },
           { "title": "Online Consultations", "text": "Expert guidance from anywhere — perfect for follow-ups.", "href": "/services#online", "icon": "laptop-call" }
         ],
         "cta": { "label": "See full service options", "href": "/services" }
@@ -113,7 +112,7 @@
           "His curiosity for physiotherapy began when Alex himself underwent post-op rehab for a ligament injury. This first hand experience gave Alex a deep appreciation for the impact rehabilitation can have on a person's recovery and confidence, and inspired him to pursue a career helping others regain movement and independence."
         ],
         "image": {
-          "src": "https://static1.squarespace.com/static/6847f68b1080fe0cccc5899d/t/690b5d3c25cd6d08af6e50c7/1762352444939/Canva+Portrait+1024.png",
+          "src": "/images/alex-headshot.png",
           "alt": "Alex, physiotherapist at Ask Alex Physiotherapy",
           "overlay": { "name": "Alexander Vikentiou, BSc, MCSP", "title": "Physiotherapist" }
         },
@@ -158,7 +157,7 @@
   
     "services": {
       "title": "Services",
-      "subtitle": "Clear options. Same standard of care. Choose the setting that suits you — home, clinic, or online.",
+      "subtitle": "Clear options. Same standard of care. Choose the setting that suits you — at home or online.",
       "cards": [
         {
           "key": "home",
@@ -174,21 +173,6 @@
             "alt": "Physiotherapist assisting a patient at home"
           },
           "cta": { "label": "Request visit", "href": "/contact" }
-        },
-        {
-          "key": "clinic",
-          "title": "In-Clinic Appointments",
-          "intro": "Hands-on care in a fully equipped space for manual therapy, exercise progressions and performance goals.",
-          "details": [
-            "Initial 60 mins; follow-ups 45 mins",
-            "Manual therapy + exercise; strength, balance & gait work",
-            "Accessible treatment room; wear comfortable clothing"
-          ],
-          "image": {
-            "src": "https://static1.squarespace.com/static/6847f68b1080fe0cccc5899d/t/690b8354c57d075cf2ff1265/1762362196834/Clinic+Session+Pic.PNG",
-            "alt": "Clinic treatment room with rehab equipment"
-          },
-          "cta": { "label": "Arrange slot", "href": "/contact" }
         },
         {
           "key": "online",
@@ -211,21 +195,6 @@
         "helper": "Not sure what service you need? Book a free 10-minute phone consultation and I’ll guide you.",
         "helperHref": "/contact"
       },
-      "compare": {
-        "intro": "Here’s a quick side-by-side to help you choose the right service for you. Each option delivers the same high standard of care.",
-        "columns": ["Feature", "Home Visit", "Clinic", "Online"],
-        "rows": [
-          { "feature": "Who it’s for", "home": "Mobility limits, early rehab, carer involvement", "clinic": "Hands-on treatment, equipment-based progressions", "online": "Convenience, follow-ups, education & program checks" },
-          { "feature": "What we do", "home": "Assessment + functional practice in your space", "clinic": "Manual therapy + targeted strengthening/testing", "online": "Assessment, coaching, pain/self-management" },
-          { "feature": "Session length", "home": "Initial 60–75m; FU 45–60m", "clinic": "Initial 60m; FU 45m", "online": "45–60m video" },
-          { "feature": "Location", "home": "Your home", "clinic": "Equipped treatment room", "online": "Your chosen space (secure video)" },
-          { "feature": "Hands-on treatment", "home": "Yes (portable kit)", "clinic": "Yes (full clinic)", "online": "No — coaching & exercise only" },
-          { "feature": "Equipment access", "home": "Essential portable kit", "clinic": "Full clinic kit", "online": "Body-weight / home kit" },
-          { "feature": "Extra costs", "home": "Travel band may apply", "clinic": "Room fee included", "online": "—" },
-          { "feature": "Neuro suitability", "home": "✓", "clinic": "✓", "online": "✓ (selected goals)" },
-          { "feature": "Booking", "home": "Request visit", "clinic": "Arrange slot", "online": "Book online" }
-        ]
-      },
       "expertise": {
         "heading": "Our Areas of Expertise",
         "items": [
@@ -238,7 +207,7 @@
         ]
       },
       "seo": {
-        "blurb": "Ask Alex Physiotherapy provides private physiotherapy in London and online with specialist neurological rehabilitation alongside MSK, falls prevention, post-operative recovery and elderly care. Sessions are personalised to your goals using evidence-based practice — delivered at home, in-clinic or remotely."
+        "blurb": "Ask Alex Physiotherapy provides private physiotherapy in London and online with specialist neurological rehabilitation alongside MSK, falls prevention, post-operative recovery and elderly care. Sessions are personalised to your goals using evidence-based practice — delivered at home or remotely."
       }
     },
   
@@ -477,7 +446,7 @@
     "pricing": {
       "physiotherapy": {
         "title": "Private physiotherapy sessions",
-        "subtitle": "Home, clinic and online sessions tailored to your goals. Recovery Plans offer the best value for consistent progress.",
+        "subtitle": "Home and online sessions tailored to your goals. Recovery Plans offer the best value for consistent progress.",
         "items": [
           {
             "slug": "initial-appointment",

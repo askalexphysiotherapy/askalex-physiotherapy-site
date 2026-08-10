@@ -73,7 +73,7 @@ const BusinessSchema = z.object({
 });
 
 const ImageSchema = z.object({
-	src: z.string().url(),
+	src: z.union([z.string().url(), z.string().regex(/^\/.+/)]),
 	alt: z.string(),
 	overlay: z
 		.object({
@@ -198,13 +198,6 @@ const ServiceCardSchema = z.object({
 	})
 });
 
-const CompareRowSchema = z.object({
-	feature: z.string(),
-	home: z.string(),
-	clinic: z.string(),
-	online: z.string()
-});
-
 const ExpertiseItemSchema = z.object({
 	icon: z.string(),
 	title: z.string(),
@@ -222,11 +215,6 @@ const ServicesSchema = z.object({
 		}),
 		helper: z.string(),
 		helperHref: z.string()
-	}),
-	compare: z.object({
-		intro: z.string(),
-		columns: z.array(z.string()),
-		rows: z.array(CompareRowSchema)
 	}),
 	expertise: z.object({
 		heading: z.string(),
