@@ -1,12 +1,13 @@
-import Image from "next/image";
 import Link from "next/link";
 import { ShieldCheck, HelpCircle, Home, Building2, Laptop } from "lucide-react";
 import { site } from "@/lib/content";
+import { portraitCarouselImages } from "@/lib/portraitCarousel";
 import { Section } from "@/components/Section";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Card } from "@/components/Card";
 import { Button } from "@/components/Button";
 import { Reveal } from "@/components/Reveal";
+import { ImageCarousel } from "@/components/ImageCarousel";
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
 	"shield-check": ShieldCheck,
@@ -78,26 +79,14 @@ export default function HomePage() {
 					</Reveal>
 					<Reveal delay={0.2}>
 						<div className="relative max-w-xl max-sm:-mt-2 lg:mt-0 lg:ml-auto lg:h-full lg:flex lg:items-stretch">
-							<div className="relative w-full h-auto lg:h-full">
-								<Image
-									src={home.hero.image.src}
-									alt={home.hero.image.alt}
-									width={600}
-									height={800}
-									className="h-auto w-full rounded-3xl shadow-soft object-cover lg:h-full"
-									priority
-								/>
-								{home.hero.image.overlay && (
-									<div className="absolute left-4 bottom-4 rounded-lg bg-white/85 px-3 py-1 shadow-lg backdrop-blur">
-										<p className="text-sm font-semibold leading-tight text-slate-900">
-											{home.hero.image.overlay.name}
-										</p>
-										<p className="text-xs text-slate-600">
-											{home.hero.image.overlay.title}
-										</p>
-									</div>
-								)}
-							</div>
+							<ImageCarousel
+								images={portraitCarouselImages}
+								intervalMs={5000}
+								overlay={home.hero.image.overlay}
+								ariaLabel="Alex and practice photos"
+								className="w-full lg:h-full"
+								aspectClassName="aspect-[3/4] lg:aspect-auto lg:min-h-[28rem] lg:h-full"
+							/>
 						</div>
 					</Reveal>
 				</div>

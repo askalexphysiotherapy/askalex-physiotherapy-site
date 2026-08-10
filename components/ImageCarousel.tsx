@@ -14,12 +14,18 @@ type ImageCarouselProps = {
 	images: CarouselImage[];
 	intervalMs?: number;
 	className?: string;
+	aspectClassName?: string;
+	overlay?: { name: string; title: string };
+	ariaLabel?: string;
 };
 
 export function ImageCarousel({
 	images,
 	intervalMs = 5000,
-	className
+	className,
+	aspectClassName = "aspect-[3/4]",
+	overlay,
+	ariaLabel = "Photo gallery"
 }: ImageCarouselProps) {
 	const [index, setIndex] = useState(0);
 	const count = images.length;
@@ -55,9 +61,9 @@ export function ImageCarousel({
 			)}
 			role="region"
 			aria-roledescription="carousel"
-			aria-label="Practice photos"
+			aria-label={ariaLabel}
 		>
-			<div className="relative aspect-[4/5] w-full sm:aspect-[16/10]">
+			<div className={cn("relative w-full", aspectClassName)}>
 				{images.map((image, i) => (
 					<div
 						key={image.src}
@@ -72,7 +78,7 @@ export function ImageCarousel({
 							alt={image.alt}
 							fill
 							priority={i === 0}
-							sizes="(max-width: 768px) 100vw, 900px"
+							sizes="(max-width: 1024px) 100vw, 50vw"
 							className="object-cover"
 						/>
 					</div>
@@ -97,7 +103,19 @@ export function ImageCarousel({
 				<ChevronRight className="h-5 w-5" aria-hidden="true" />
 			</button>
 
-			<div className="absolute bottom-3 left-1/2 z-10 flex -translate-x-1/2 gap-1.5">
+			{overlay && (
+				<div className="absolute left-4 bottom-4 z-10 rounded-lg bg-white/85 px-3 py-1 shadow-lg backdrop-blur">
+					<p className="text-sm font-semibold leading-tight text-slate-900">{overlay.name}</p>
+					<p className="text-xs text-slate-600">{overlay.title}</p>
+				</div>
+			)}
+
+			<div
+				className={cn(
+					"absolute bottom-3 z-10 flex gap-1.5",
+					overlay ? "left-1/2 -translate-x-1/2 sm:left-auto sm:right-4 sm:translate-x-0" : "left-1/2 -translate-x-1/2"
+				)}
+			>
 				{images.map((image, i) => (
 					<button
 						key={image.src}

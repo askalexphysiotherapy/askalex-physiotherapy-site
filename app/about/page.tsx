@@ -1,6 +1,6 @@
-import Image from "next/image";
 import { ThermometerSun, Accessibility, ShieldCheck, Award, CheckCircle, HeartPulse } from "lucide-react";
 import { site } from "@/lib/content";
+import { portraitCarouselImages } from "@/lib/portraitCarousel";
 import { Section } from "@/components/Section";
 import { Container } from "@/components/Container";
 import { SectionHeader } from "@/components/SectionHeader";
@@ -9,6 +9,7 @@ import { Reveal } from "@/components/Reveal";
 import { PageHero } from "@/components/PageHero";
 import { Button } from "@/components/Button";
 import { TrustPills } from "@/components/TrustPills";
+import { ImageCarousel } from "@/components/ImageCarousel";
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
 	"thermometer-sun": ThermometerSun,
@@ -33,24 +34,14 @@ export default function AboutPage() {
 				<div className="grid gap-10 md:grid-cols-2 md:items-stretch">
 					<Reveal delay={0.1}>
 						<div className="relative md:order-1 md:h-full md:flex md:items-stretch">
-							<div className="relative w-full h-auto md:h-full">
-								<Image
-									src={about.hero.image.src}
-									alt={about.hero.image.alt}
-									width={600}
-									height={800}
-									className="h-auto w-full rounded-3xl object-cover shadow-soft md:h-full"
-									priority
-								/>
-								{about.hero.image.overlay && (
-									<div className="absolute left-4 bottom-4 rounded-lg bg-white/85 px-3 py-1 shadow-lg backdrop-blur">
-										<p className="text-sm font-semibold leading-tight text-slate-900">
-											{about.hero.image.overlay.name}
-										</p>
-										<p className="text-xs text-slate-600">{about.hero.image.overlay.title}</p>
-									</div>
-								)}
-							</div>
+							<ImageCarousel
+								images={portraitCarouselImages}
+								intervalMs={5000}
+								overlay={about.hero.image.overlay}
+								ariaLabel="Alex and practice photos"
+								className="w-full md:h-full"
+								aspectClassName="aspect-[3/4] md:aspect-auto md:min-h-[28rem] md:h-full"
+							/>
 						</div>
 					</Reveal>
 					<Reveal>
