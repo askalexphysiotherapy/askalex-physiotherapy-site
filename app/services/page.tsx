@@ -16,7 +16,6 @@ import { Section } from "@/components/Section";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Card } from "@/components/Card";
 import { Reveal } from "@/components/Reveal";
-import { PageHero } from "@/components/PageHero";
 import { PricingSection } from "@/components/PricingSection";
 import { Container } from "@/components/Container";
 
@@ -56,19 +55,20 @@ export default function ServicesPage() {
 
 	return (
 		<>
-			<PageHero
-				title={services.title}
-				subtitle={services.subtitle}
-				align="center"
-				density="compact"
-			/>
+			{/* Title + section nav (nav stays sticky under the site header) */}
+			<Section density="compact" background="tint" container={false} className="!pb-0">
+				<Container>
+					<h1 className="text-center text-2xl font-extrabold leading-tight tracking-tight text-medical-blue sm:text-3xl lg:text-4xl">
+						{services.title}
+					</h1>
+				</Container>
+			</Section>
 
-			{/* Section jump links */}
-			<div className="sticky top-14 z-40 border-b border-slate-200 bg-white/95 backdrop-blur md:top-16">
+			<div className="sticky top-[4.75rem] z-40 border-b border-slate-200/70 bg-bg-blue/90 backdrop-blur supports-[backdrop-filter]:bg-bg-blue/80 md:top-[5.75rem]">
 				<Container>
 					<nav
 						aria-label="Services sections"
-						className="flex gap-2 overflow-x-auto py-3 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+						className="flex flex-wrap items-center justify-center gap-2 pb-4 pt-3"
 					>
 						{services.sectionNav.map((item) => (
 							<a
@@ -79,7 +79,7 @@ export default function ServicesPage() {
 									history.replaceState(null, "", `#${item.id}`);
 									scrollToSection(item.id);
 								}}
-								className="shrink-0 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 transition-colors hover:border-aa-blue hover:text-aa-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-aa-blue focus-visible:ring-offset-2"
+								className="rounded-full border border-slate-200/80 bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-sm transition-colors hover:border-aa-blue hover:text-aa-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-aa-blue focus-visible:ring-offset-2"
 							>
 								{item.label}
 							</a>
