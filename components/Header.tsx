@@ -13,12 +13,17 @@ const socialIconMap = {
 	instagram: Instagram,
 	linkedin: Linkedin,
 	google: MapPin
-};
+} as const;
+
+type SocialIconPlatform = keyof typeof socialIconMap;
+
+function hasSocialIcon(platform: string): platform is SocialIconPlatform {
+	return platform in socialIconMap;
+}
 
 export function Header() {
 	const { header, brand, services } = site;
-	const socialLinks =
-		site.social?.filter((social) => socialIconMap[social.platform]) ?? [];
+	const socialLinks = site.social?.filter((social) => hasSocialIcon(social.platform)) ?? [];
 
 	return (
 		<header
@@ -49,7 +54,8 @@ export function Header() {
 						{socialLinks.length > 0 && (
 							<div className="flex items-center gap-1.5 md:gap-2">
 								{socialLinks.map((social) => {
-									const Icon = socialIconMap[social.platform as keyof typeof socialIconMap];
+									if (!hasSocialIcon(social.platform)) return null;
+									const Icon = socialIconMap[social.platform];
 									const href = social.href;
 									if (!href) return null;
 

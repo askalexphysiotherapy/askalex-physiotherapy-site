@@ -18,6 +18,7 @@ import { Card } from "@/components/Card";
 import { Reveal } from "@/components/Reveal";
 import { PricingSection } from "@/components/PricingSection";
 import { Container } from "@/components/Container";
+import { ImageCarousel } from "@/components/ImageCarousel";
 
 const expertiseIconMap: Record<string, React.ComponentType<{ className?: string }>> = {
 	brain: Brain,
@@ -27,6 +28,25 @@ const expertiseIconMap: Record<string, React.ComponentType<{ className?: string 
 	lungs: Wind,
 	elderly: User
 };
+
+const galleryImages = [
+	{
+		src: "/images/carousel/care-home-1.png",
+		alt: "Alex leading a seated ball-toss activity with care home residents"
+	},
+	{
+		src: "/images/carousel/care-home-2.png",
+		alt: "Alex guiding a care home group stretch class"
+	},
+	{
+		src: "/images/carousel/care-home-3.png",
+		alt: "Care home residents using ribbons in a physiotherapist-led exercise class"
+	},
+	{
+		src: "/images/carousel/home-visit-1.png",
+		alt: "Alex speaking with a smiling client during a home physiotherapy visit"
+	}
+];
 
 function scrollToSection(id: string) {
 	const element = document.getElementById(id);
@@ -149,6 +169,19 @@ export default function ServicesPage() {
 							</Reveal>
 						);
 					})}
+				</div>
+			</Section>
+
+			{/* Practice gallery */}
+			<Section density="comfortable" background="tint">
+				<div className="mx-auto max-w-4xl">
+					<SectionHeader
+						title="Care in action"
+						description="Home visits and care home community classes — movement, confidence and connection."
+					/>
+					<div className="mt-6">
+						<ImageCarousel images={galleryImages} intervalMs={5000} />
+					</div>
 				</div>
 			</Section>
 
