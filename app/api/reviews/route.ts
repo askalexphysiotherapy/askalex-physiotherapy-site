@@ -9,6 +9,15 @@ export type GoogleReview = {
 	source: "google" | "fallback";
 };
 
+function reviewsProfileUrl(placeId?: string, apiMapsUrl?: string | null) {
+	const configured = process.env.GOOGLE_BUSINESS_PROFILE_URL?.trim();
+	if (configured) return configured;
+	// Customer-facing reviews list for the Business Profile (web)
+	if (placeId) return `https://search.google.com/local/reviews?placeid=${placeId}`;
+	if (apiMapsUrl) return apiMapsUrl;
+	return site.social.find((s) => s.platform === "google")?.href || null;
+}
+
 export async function GET() {
 	const apiKey = process.env.GOOGLE_PLACES_API_KEY;
 	const placeId = process.env.GOOGLE_PLACE_ID;
@@ -46,30 +55,34 @@ export async function GET() {
 					reviews,
 					rating: data.result.rating ?? null,
 					total: data.result.user_ratings_total ?? reviews.length,
-					profileUrl:
-						data.result.url ||
-						site.social.find((s) => s.platform === "google")?.href ||
-						null,
+					profileUrl: reviewsProfileUrl(placeId, data.result.url ?? null),
 					live: true
 				});
 			}
+
+			return NextResponse.json(
+				{
+					reviews: [],
+					rating: null,
+					total: 0,
+					profileUrl: reviewsProfileUrl(placeId, null),
+					live: false,
+					error: data.status || "places_error"
+				},
+				{ status: 200 }
+			);
 		} catch {
-			// fall through to static testimonials
+			// fall through
 		}
 	}
 
-	const fallback: GoogleReview[] = site.about.testimonials.map((t) => ({
-		author: t.author,
-		rating: 5,
-		text: t.quote,
-		source: "fallback" as const
-	}));
-
+	// No API credentials — do not invent star ratings as “Google reviews”
 	return NextResponse.json({
-		reviews: fallback,
+		reviews: [],
 		rating: null,
-		total: fallback.length,
-		profileUrl: site.social.find((s) => s.platform === "google")?.href || null,
-		live: false
+		total: 0,
+		profileUrl: reviewsProfileUrl(placeId, null),
+		live: false,
+		needsSetup: !(apiKey && placeId)
 	});
 }
