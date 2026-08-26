@@ -13,6 +13,7 @@ type ReviewsResponse = {
 	live: boolean;
 	needsSetup?: boolean;
 	error?: string;
+	errorDetail?: string;
 };
 
 function useVisibleCount() {
@@ -135,8 +136,16 @@ export function ReviewsCarousel({ heading }: { heading: string }) {
 				<p className="mt-4 text-sm leading-relaxed text-slate-600 md:text-base">
 					{data.needsSetup
 						? "Connect Google Places (API key + Place ID) to show live starred reviews from your Google Business Profile here."
-						: "Google reviews could not be loaded right now."}
+						: data.error === "REQUEST_DENIED" || data.error === "PERMISSION_DENIED"
+							? "Google blocked the Places request. In Google Cloud, enable Places API (and Places API New), turn on billing, and use a server key with Application restrictions set to None (HTTP referrer restrictions will not work on Vercel)."
+							: "Google reviews could not be loaded right now."}
 				</p>
+				{data.error && !data.needsSetup ? (
+					<p className="mt-2 font-mono text-xs text-slate-500">
+						{data.error}
+						{data.errorDetail ? ` — ${data.errorDetail}` : ""}
+					</p>
+				) : null}
 				{data.profileUrl && (
 					<p className="mt-4">
 						<a
