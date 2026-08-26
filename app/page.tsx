@@ -8,6 +8,7 @@ import { Card } from "@/components/Card";
 import { Button } from "@/components/Button";
 import { Reveal } from "@/components/Reveal";
 import { ImageCarousel } from "@/components/ImageCarousel";
+import { InlineNavLink } from "@/components/InlineNavLink";
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
 	"shield-check": ShieldCheck,
@@ -22,21 +23,42 @@ export default function HomePage() {
 
 	return (
 		<>
-			{/* Hero Section */}
-			<Section density="comfortable" background="tint" id="hero">
-				<div className="grid gap-4 max-sm:gap-3 lg:gap-10 lg:grid-cols-2 lg:items-stretch">
+			{/* Hero Section — fills remaining viewport on desktop/tablet */}
+			<Section
+				density="comfortable"
+				background="tint"
+				id="hero"
+				className="md:flex md:min-h-[calc(100svh-var(--site-header-height))] md:flex-col md:justify-center"
+			>
+				<div className="grid gap-4 max-sm:gap-3 lg:gap-8 lg:grid-cols-2 lg:items-stretch">
 					<Reveal>
-						<div className="max-w-2xl space-y-4 lg:space-y-6 lg:flex lg:h-full lg:flex-col lg:justify-between">
-							<div className="space-y-4 lg:space-y-5">
+						<div className="max-w-2xl space-y-4 lg:space-y-5 lg:flex lg:h-full lg:flex-col lg:justify-between">
+							<div className="space-y-3 lg:space-y-4">
 								<h1 className="text-3xl md:text-4xl lg:text-[2.7rem] leading-tight font-extrabold tracking-tight text-[#007B9E]">
 									{home.hero.title}
 								</h1>
 								<p className="text-sm md:text-base leading-relaxed text-slate-700">
-									{home.hero.subtitle}
+									Alex is a qualified, private mobile physiotherapist based in North London, he
+									provides professional home visits and creates tailored programmes designed for
+									your individual goals. He specialises in elderly care,{" "}
+									<InlineNavLink href="/services#expertise-neurological">
+										neurological
+									</InlineNavLink>
+									,{" "}
+									<InlineNavLink href="/services#expertise-respiratory">respiratory</InlineNavLink>{" "}
+									and{" "}
+									<InlineNavLink href="/services#expertise-msk">
+										musculoskeletal (MSK)
+									</InlineNavLink>{" "}
+									physiotherapy.
 								</p>
 								{home.hero.description && (
 									<p className="text-sm md:text-base leading-relaxed text-slate-700">
-										{home.hero.description}
+										Compassion and patient-centred care is at the heart of Alex’s practice. He
+										believes in bringing movement and rehabilitation in a familiar environment,
+										making recovery{" "}
+										<InlineNavLink href="/services#pricing">affordable</InlineNavLink> and more
+										convenient in the comfort of your own home.
 									</p>
 								)}
 								<p className="mt-3 text-sm leading-relaxed text-slate-700 md:mt-4 md:text-base">

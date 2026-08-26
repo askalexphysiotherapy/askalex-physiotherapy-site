@@ -15,6 +15,9 @@
 	--aa-aqua: var(--soft-aqua);
 	--aa-bg: var(--bg-blue);
 
+	/* Sticky header (top bar + main nav) after thinning */
+	--site-header-height: 4.75rem;
+
 	/* Typography Scale (responsive with clamp) */
 	--text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem); /* 12-14px */
 	--text-sm: clamp(0.875rem, 0.8rem + 0.375vw, 1rem); /* 14-16px */

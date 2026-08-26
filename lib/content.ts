@@ -180,6 +180,12 @@ const AboutSchema = z.object({
 			paragraphs: z.array(z.string())
 		})
 		.optional(),
+	sectionNav: z.array(
+		z.object({
+			label: z.string(),
+			id: z.string()
+		})
+	),
 	heading: z.string(),
 	subheading: z.string(),
 	values: z.array(ValueSchema),
@@ -207,6 +213,7 @@ const ServiceCardSchema = z.object({
 });
 
 const ExpertiseItemSchema = z.object({
+	id: z.string(),
 	icon: z.string(),
 	title: z.string(),
 	text: z.string()

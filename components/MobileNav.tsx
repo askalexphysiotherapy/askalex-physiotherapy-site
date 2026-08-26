@@ -11,17 +11,73 @@ type NavItem = { label: string; href: string };
 type CTA = { label: string; href: string };
 type SectionItem = { label: string; id: string };
 
+function SectionDropdown({
+	item,
+	sections,
+	pathname,
+	active
+}: {
+	item: NavItem;
+	sections: SectionItem[];
+	pathname: string;
+	active: boolean;
+}) {
+	const [open, setOpen] = useState(false);
+	const base = item.href;
+
+	return (
+		<div className="space-y-1">
+			<button
+				type="button"
+				aria-expanded={open}
+				onClick={() => setOpen((prev) => !prev)}
+				className={`flex w-full items-center justify-between rounded-lg px-4 py-3 text-left text-base font-medium transition-colors ${
+					active || pathname.startsWith(base)
+						? "bg-bg-blue text-medical-blue"
+						: "text-slate-700 hover:bg-bg-blue/50"
+				}`}
+			>
+				<span>{item.label}</span>
+				<ChevronDown
+					className={`h-4 w-4 transition-transform ${open ? "rotate-180" : ""}`}
+					aria-hidden="true"
+				/>
+			</button>
+			{open && (
+				<div className="ml-2 space-y-1 border-l border-slate-200 pl-3">
+					<Link
+						href={item.href}
+						className="block rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-bg-blue/50 hover:text-medical-blue"
+					>
+						Overview
+					</Link>
+					{sections.map((section) => (
+						<Link
+							key={section.id}
+							href={`${base}#${section.id}`}
+							className="block rounded-lg px-3 py-2 text-sm text-slate-600 hover:bg-bg-blue/50 hover:text-medical-blue"
+						>
+							{section.label}
+						</Link>
+					))}
+				</div>
+			)}
+		</div>
+	);
+}
+
 export function MobileNav({
 	items,
 	cta,
-	servicesSections = []
+	servicesSections = [],
+	aboutSections = []
 }: {
 	items: NavItem[];
 	cta: CTA;
 	servicesSections?: SectionItem[];
+	aboutSections?: SectionItem[];
 }) {
 	const [open, setOpen] = useState(false);
-	const [servicesOpen, setServicesOpen] = useState(false);
 	const [mounted, setMounted] = useState(false);
 	const pathname = usePathname();
 
@@ -45,7 +101,6 @@ export function MobileNav({
 
 	useEffect(() => {
 		setOpen(false);
-		setServicesOpen(false);
 	}, [pathname]);
 
 	const overlay = open ? (
@@ -55,13 +110,9 @@ export function MobileNav({
 			className="fixed inset-0 z-[100] overflow-y-auto bg-white md:hidden"
 			onClick={() => setOpen(false)}
 		>
-			<div
-				className="flex h-full w-full flex-col"
-				onClick={(e) => e.stopPropagation()}
-			>
+			<div className="flex h-full w-full flex-col" onClick={(e) => e.stopPropagation()}>
 				<div className="flex items-center justify-between border-b border-slate-200 px-6 py-4">
 					<span className="text-lg font-semibold text-slate-900">Menu</span>
-
 					<button
 						aria-label="Close menu"
 						onClick={() => setOpen(false)}
@@ -74,47 +125,26 @@ export function MobileNav({
 				<nav className="flex-1 space-y-2 px-6 py-4">
 					{items.map((item) => {
 						const active = pathname === item.href;
-						const isServices = item.href === "/services" && servicesSections.length > 0;
-
-						if (isServices) {
+						if (item.href === "/services" && servicesSections.length > 0) {
 							return (
-								<div key={item.href} className="space-y-1">
-									<button
-										type="button"
-										aria-expanded={servicesOpen}
-										onClick={() => setServicesOpen((prev) => !prev)}
-										className={`flex w-full items-center justify-between rounded-lg px-4 py-3 text-left text-base font-medium transition-colors ${
-											active || pathname.startsWith("/services")
-												? "bg-bg-blue text-medical-blue"
-												: "text-slate-700 hover:bg-bg-blue/50"
-										}`}
-									>
-										<span>{item.label}</span>
-										<ChevronDown
-											className={`h-4 w-4 transition-transform ${servicesOpen ? "rotate-180" : ""}`}
-											aria-hidden="true"
-										/>
-									</button>
-									{servicesOpen && (
-										<div className="ml-2 space-y-1 border-l border-slate-200 pl-3">
-											<Link
-												href={item.href}
-												className="block rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-bg-blue/50 hover:text-medical-blue"
-											>
-												All services
-											</Link>
-											{servicesSections.map((section) => (
-												<Link
-													key={section.id}
-													href={`/services#${section.id}`}
-													className="block rounded-lg px-3 py-2 text-sm text-slate-600 hover:bg-bg-blue/50 hover:text-medical-blue"
-												>
-													{section.label}
-												</Link>
-											))}
-										</div>
-									)}
-								</div>
+								<SectionDropdown
+									key={item.href}
+									item={item}
+									sections={servicesSections}
+									pathname={pathname}
+									active={active}
+								/>
+							);
+						}
+						if (item.href === "/about" && aboutSections.length > 0) {
+							return (
+								<SectionDropdown
+									key={item.href}
+									item={item}
+									sections={aboutSections}
+									pathname={pathname}
+									active={active}
+								/>
 							);
 						}
 
@@ -153,7 +183,6 @@ export function MobileNav({
 			>
 				<Menu className="h-4 w-4" aria-hidden="true" />
 			</button>
-
 			{mounted && overlay ? createPortal(overlay, document.body) : null}
 		</nav>
 	);

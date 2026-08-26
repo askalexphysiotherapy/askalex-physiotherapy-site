@@ -22,7 +22,7 @@ function hasSocialIcon(platform: string): platform is SocialIconPlatform {
 }
 
 export function Header() {
-	const { header, brand, services } = site;
+	const { header, brand, services, about } = site;
 	const socialLinks = site.social?.filter((social) => hasSocialIcon(social.platform)) ?? [];
 
 	return (
@@ -33,26 +33,26 @@ export function Header() {
 		>
 			{header.topbar.show && header.topbar.items.length > 0 && (
 				<div className="border-b border-slate-100 bg-bg-blue">
-					<Container className="flex flex-wrap items-center justify-between gap-2 py-1.5 text-xs text-slate-700 sm:gap-3 md:gap-4 md:py-2.5 md:text-sm">
-						<div className="flex flex-wrap items-center gap-2 sm:gap-2.5 md:gap-3">
+					<Container className="flex flex-wrap items-center justify-between gap-2 py-1 text-[11px] text-slate-700 md:gap-3 md:text-xs">
+						<div className="flex flex-wrap items-center gap-2 md:gap-2.5">
 							{header.topbar.items.map((item, idx) => (
 								<a
 									key={idx}
 									href={item.href}
 									aria-label={item.type === "phone" ? `Call ${item.label}` : `Email ${item.label}`}
-									className="flex items-center gap-1.5 rounded p-1.5 transition-colors hover:text-medical-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-medical-blue focus-visible:ring-offset-2 sm:p-0"
+									className="flex items-center gap-1 rounded p-1 transition-colors hover:text-medical-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-medical-blue focus-visible:ring-offset-2 sm:p-0"
 								>
 									{item.type === "phone" ? (
-										<Phone className="h-4 w-4 sm:h-3.5 sm:w-3.5 md:h-4 md:w-4" aria-hidden="true" />
+										<Phone className="h-3.5 w-3.5" aria-hidden="true" />
 									) : (
-										<Mail className="h-4 w-4 sm:h-3.5 sm:w-3.5 md:h-4 md:w-4" aria-hidden="true" />
+										<Mail className="h-3.5 w-3.5" aria-hidden="true" />
 									)}
 									<span className="hidden sm:inline">{item.label}</span>
 								</a>
 							))}
 						</div>
 						{socialLinks.length > 0 && (
-							<div className="flex items-center gap-1.5 md:gap-2">
+							<div className="flex items-center gap-1 md:gap-1.5">
 								{socialLinks.map((social) => {
 									if (!hasSocialIcon(social.platform)) return null;
 									const Icon = socialIconMap[social.platform];
@@ -70,9 +70,9 @@ export function Header() {
 													? "View our Google Business Profile"
 													: `Visit our ${social.platform} page`
 											}
-											className="rounded-full bg-white/90 p-1 text-medical-blue shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-medical-blue focus-visible:ring-offset-2 md:p-1.5"
+											className="rounded-full bg-white/90 p-1 text-medical-blue shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-medical-blue focus-visible:ring-offset-2"
 										>
-											<Icon className="h-3.5 w-3.5 md:h-4 md:w-4" aria-hidden="true" />
+											<Icon className="h-3 w-3 md:h-3.5 md:w-3.5" aria-hidden="true" />
 										</a>
 									);
 								})}
@@ -81,7 +81,7 @@ export function Header() {
 					</Container>
 				</div>
 			)}
-			<Container className="flex h-14 items-center justify-between py-1 md:h-16 md:py-0">
+			<Container className="flex h-11 items-center justify-between md:h-12">
 				<Link
 					href="/"
 					className="flex items-center gap-2 rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-medical-blue focus-visible:ring-offset-2"
@@ -91,27 +91,29 @@ export function Header() {
 						width={140}
 						height={40}
 						alt={brand.name}
-						className="h-8 w-auto md:h-10"
+						className="h-7 w-auto md:h-8"
 					/>
 					<span className="sr-only">{brand.name}</span>
 				</Link>
-				<nav className="hidden items-center gap-6 md:flex" aria-label="Primary">
+				<nav className="hidden items-center gap-5 md:flex" aria-label="Primary">
 					{header.nav.map((item) => {
-						const isServices = item.href === "/services";
-						const children = isServices
-							? services.sectionNav.map((section) => ({
-									label: section.label,
-									href: `/services#${section.id}`
-								}))
-							: item.children;
+						const children =
+							item.href === "/services"
+								? services.sectionNav.map((section) => ({
+										label: section.label,
+										href: `/services#${section.id}`
+									}))
+								: item.href === "/about"
+									? about.sectionNav.map((section) => ({
+											label: section.label,
+											href: `/about#${section.id}`
+										}))
+									: item.children;
 
 						if (children && children.length > 0) {
 							return (
 								<div key={item.href} className="group relative">
-									<NavLink
-										href={item.href}
-										className="inline-flex items-center gap-1"
-									>
+									<NavLink href={item.href} className="inline-flex items-center gap-1">
 										{item.label}
 										<ChevronDown
 											className="h-3.5 w-3.5 opacity-70 transition-transform group-hover:rotate-180"
@@ -143,7 +145,7 @@ export function Header() {
 					})}
 				</nav>
 				<div className="hidden items-center gap-4 md:flex">
-					<Button href={header.cta.href} variant="primary">
+					<Button href={header.cta.href} variant="primary" className="!px-4 !py-2 text-sm">
 						{header.cta.label}
 					</Button>
 				</div>
@@ -152,6 +154,7 @@ export function Header() {
 						items={header.nav}
 						cta={header.cta}
 						servicesSections={services.sectionNav}
+						aboutSections={about.sectionNav}
 					/>
 				</div>
 			</Container>

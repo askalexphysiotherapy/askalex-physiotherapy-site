@@ -6,10 +6,10 @@ import { Container } from "@/components/Container";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Card } from "@/components/Card";
 import { Reveal } from "@/components/Reveal";
-import { PageHero } from "@/components/PageHero";
 import { Button } from "@/components/Button";
 import { TrustPills } from "@/components/TrustPills";
 import { ImageCarousel } from "@/components/ImageCarousel";
+import { ReviewsCarousel } from "@/components/ReviewsCarousel";
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
 	"thermometer-sun": ThermometerSun,
@@ -30,17 +30,27 @@ export default function AboutPage() {
 
 	return (
 		<>
-			<PageHero title={about.hero.heading} subtitle={about.hero.subheading} align="left" density="comfortable">
-				<div className="grid gap-10 md:grid-cols-2 md:items-stretch">
+			<Section
+				density="comfortable"
+				background="tint"
+				id="about-alex"
+				className="scroll-mt-[var(--site-header-height)] md:min-h-[calc(100svh-var(--site-header-height))] md:flex md:flex-col md:justify-center"
+			>
+				<div className="mb-6 md:mb-8">
+					<h1 className="text-2xl font-extrabold leading-tight tracking-tight text-medical-blue sm:text-3xl lg:text-4xl">
+						{about.hero.heading}
+					</h1>
+				</div>
+				<div className="grid gap-8 md:grid-cols-2 md:items-stretch md:gap-10">
 					<Reveal delay={0.1}>
-						<div className="relative md:order-1 md:h-full md:flex md:items-stretch">
+						<div className="relative md:order-1 md:flex md:h-full md:items-stretch">
 							<ImageCarousel
 								images={portraitCarouselImages}
 								intervalMs={5000}
 								overlay={about.hero.image.overlay}
 								ariaLabel="Alex and practice photos"
 								className="w-full md:h-full"
-								aspectClassName="aspect-[3/4] md:aspect-auto md:min-h-[28rem] md:h-full"
+								aspectClassName="aspect-[3/4] md:aspect-auto md:min-h-[24rem] md:h-full"
 							/>
 						</div>
 					</Reveal>
@@ -66,9 +76,8 @@ export default function AboutPage() {
 						</div>
 					</Reveal>
 				</div>
-			</PageHero>
+			</Section>
 
-			{/* Trust Chips Row */}
 			{about.hero.trustRow.length > 0 && (
 				<Section density="compact" background="tint" container={false}>
 					<Container>
@@ -78,14 +87,19 @@ export default function AboutPage() {
 			)}
 
 			{about.comfortSafety && (
-				<Section density="comfortable" background="default">
+				<Section
+					density="comfortable"
+					background="default"
+					id="comfort-safety"
+					className="scroll-mt-[var(--site-header-height)]"
+				>
 					<Reveal>
 						<div className="mx-auto max-w-3xl space-y-5">
 							<h2 className="text-2xl font-semibold tracking-tight text-medical-blue md:text-3xl">
 								{about.comfortSafety.heading}
 							</h2>
 							{about.comfortSafety.paragraphs.map((para, idx) => (
-								<p key={idx} className="text-slate-700 leading-relaxed">
+								<p key={idx} className="leading-relaxed text-slate-700">
 									{para}
 								</p>
 							))}
@@ -94,7 +108,12 @@ export default function AboutPage() {
 				</Section>
 			)}
 
-			<Section density="comfortable" background="tint">
+			<Section
+				density="comfortable"
+				background="tint"
+				id="values"
+				className="scroll-mt-[var(--site-header-height)]"
+			>
 				<SectionHeader title={about.heading} description={about.subheading} />
 				<div className="mt-8 grid gap-6 md:grid-cols-3">
 					{about.values.map((value, idx) => {
@@ -115,27 +134,20 @@ export default function AboutPage() {
 			<Section>
 				<Reveal>
 					<Card className="mx-auto max-w-3xl text-center">
-						<blockquote className="text-xl font-medium text-slate-900 italic">
+						<blockquote className="text-xl font-medium italic text-slate-900">
 							"{about.quote.text}"
 						</blockquote>
 					</Card>
 				</Reveal>
 			</Section>
 
-			<Section density="comfortable" background="tint">
-				<SectionHeader title={about.testimonialsHeading} />
-				<div className="mt-8 grid gap-6 md:grid-cols-3">
-					{about.testimonials.map((testimonial, idx) => (
-						<Reveal key={idx} delay={idx * 0.1}>
-							<Card className="flex h-full min-h-[180px] flex-col justify-between">
-								<blockquote className="text-slate-700">
-									<p>"{testimonial.quote}"</p>
-								</blockquote>
-								<p className="mt-4 text-sm font-medium text-slate-900">— {testimonial.author}</p>
-							</Card>
-						</Reveal>
-					))}
-				</div>
+			<Section
+				density="comfortable"
+				background="tint"
+				id="reviews"
+				className="scroll-mt-[var(--site-header-height)]"
+			>
+				<ReviewsCarousel heading={about.testimonialsHeading} />
 			</Section>
 
 			<Section>

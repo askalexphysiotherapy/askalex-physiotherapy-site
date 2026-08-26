@@ -6,9 +6,9 @@ type SectionDensity = "compact" | "comfortable" | "spacious";
 type SectionBackground = "default" | "tint" | "paper";
 
 const densityMap: Record<SectionDensity, string> = {
-	compact: "py-3 md:py-4", // 12-16px
-	comfortable: "py-6 md:py-8", // 24-32px
-	spacious: "py-12 md:py-16" // 48-64px
+	compact: "py-2.5 md:py-3",
+	comfortable: "py-5 md:py-6 lg:py-7",
+	spacious: "py-10 md:py-12"
 };
 
 const backgroundMap: Record<SectionBackground, string> = {

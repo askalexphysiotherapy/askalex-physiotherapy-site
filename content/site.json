@@ -106,7 +106,7 @@
         "heading": "Your Physiotherapist",
         "subheading": "",
         "paragraphs": [
-          "Alex is a mobile physiotherapist, with experience across the NHS and private sector in the UK and New Zealand. He has a focused interest in rehabilitation - specifically around elderly care, stroke recovery, parkinsons, respiratory conditions, neck and back pain, and general mobility issues.",
+          "Alex is a mobile physiotherapist, with experience across the NHS and private sector in the UK and New Zealand. He is fluent in English and Greek Cypriot, and has a focused interest in rehabilitation - specifically around elderly care, stroke recovery, parkinsons, respiratory conditions, neck and back pain, and general mobility issues.",
           "Working in rehabilitation strengthened Alex's passion for helping people regain confidence in their movement in everyday life. However, he felt he couldn't provide the level of time and care his patients deserved because of short appointment times and a high caseload in the public sector. This led him to establish Ask Alex Physiotherapy to deliver tailored care around your life, and in the comfort of your own home.",
           "His curiosity for physiotherapy began when Alex himself underwent post-op rehab for a ligament injury. This first hand experience gave Alex a deep appreciation for the impact rehabilitation can have on a person's recovery and confidence, and inspired him to pursue a career helping others regain movement and independence."
         ],
@@ -133,6 +133,12 @@
           "Once your appointment has been confirmed, Alex will send an email with the date, time and his HCPC registration number attached to the booking."
         ]
       },
+      "sectionNav": [
+        { "label": "About Alex", "id": "about-alex" },
+        { "label": "Comfort & Safety", "id": "comfort-safety" },
+        { "label": "Our Values", "id": "values" },
+        { "label": "Reviews", "id": "reviews" }
+      ],
       "heading": "Our Values",
       "subheading": "The principles that guide every session — from first call to discharge.",
       "values": [
@@ -203,12 +209,12 @@
       "expertise": {
         "heading": "Our Areas of Expertise",
         "items": [
-          { "icon": "brain", "title": "Neurological Rehab", "text": "Stroke, Parkinson’s, MS — targeted rehab for function, balance and confidence." },
-          { "icon": "walk", "title": "Falls Prevention", "text": "Strength, balance and home-safety strategies to reduce risk." },
-          { "icon": "activity", "title": "Pain & MSK", "text": "Evidence-based care for back/neck pain, arthritis and injuries." },
-          { "icon": "scalpel", "title": "Post-Surgical Rehab", "text": "Safe, structured recovery after surgery to restore strength and function." },
-          { "icon": "lungs", "title": "Pulmonary Rehab", "text": "Breathlessness management and exercise programmes for COPD/asthma." },
-          { "icon": "elderly", "title": "Care of the Elderly", "text": "Compassionate support to maintain independence and quality of life." }
+          { "id": "neurological", "icon": "brain", "title": "Neurological Rehab", "text": "Stroke, Parkinson’s, MS — targeted rehab for function, balance and confidence." },
+          { "id": "falls", "icon": "walk", "title": "Falls Prevention", "text": "Strength, balance and home-safety strategies to reduce risk." },
+          { "id": "msk", "icon": "activity", "title": "Pain & MSK", "text": "Evidence-based care for back/neck pain, arthritis and injuries." },
+          { "id": "post-surgical", "icon": "scalpel", "title": "Post-Surgical Rehab", "text": "Safe, structured recovery after surgery to restore strength and function." },
+          { "id": "respiratory", "icon": "lungs", "title": "Pulmonary Rehab", "text": "Breathlessness management and exercise programmes for COPD/asthma." },
+          { "id": "elderly", "icon": "elderly", "title": "Care of the Elderly", "text": "Compassionate support to maintain independence and quality of life." }
         ]
       },
       "seo": {

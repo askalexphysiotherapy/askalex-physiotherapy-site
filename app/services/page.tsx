@@ -63,7 +63,7 @@ export default function ServicesPage() {
 				</Container>
 			</Section>
 
-			<div className="sticky top-[4.75rem] z-40 border-b border-slate-200/70 bg-bg-blue/90 backdrop-blur supports-[backdrop-filter]:bg-bg-blue/80 md:top-[5.75rem]">
+			<div className="sticky top-[var(--site-header-height)] z-40 border-b border-slate-200/70 bg-bg-blue/90 backdrop-blur supports-[backdrop-filter]:bg-bg-blue/80">
 				<Container>
 					<nav
 						aria-label="Services sections"
@@ -170,18 +170,20 @@ export default function ServicesPage() {
 			</Section>
 
 			{/* Expertise Grid */}
-			<Section density="comfortable" background="default" id="expertise" className="scroll-mt-32 md:scroll-mt-36">
+			<Section density="comfortable" background="default" id="expertise" className="scroll-mt-28 md:scroll-mt-32">
 				<SectionHeader title={services.expertise.heading} />
 				<div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
 					{services.expertise.items.map((item, idx) => {
 						const Icon = expertiseIconMap[item.icon] || Activity;
 						return (
-							<Reveal key={idx} delay={idx * 0.1}>
-								<Card className="h-full">
-									<Icon className="h-8 w-8 text-aa-blue" aria-hidden="true" />
-									<h3 className="mt-4 text-lg font-semibold text-slate-900">{item.title}</h3>
-									<p className="mt-2 text-slate-700">{item.text}</p>
-								</Card>
+							<Reveal key={item.id} delay={idx * 0.1}>
+								<div id={`expertise-${item.id}`} className="scroll-mt-28 md:scroll-mt-32 h-full">
+									<Card className="h-full">
+										<Icon className="h-8 w-8 text-aa-blue" aria-hidden="true" />
+										<h3 className="mt-4 text-lg font-semibold text-slate-900">{item.title}</h3>
+										<p className="mt-2 text-slate-700">{item.text}</p>
+									</Card>
+								</div>
 							</Reveal>
 						);
 					})}

@@ -33,18 +33,24 @@ function FAQJsonLd() {
 	);
 }
 
+function scrollToFaqSection(hash: string) {
+	const id = hash.replace(/^#/, "");
+	const element = document.getElementById(id);
+	if (!element) return;
+	element.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
 export default function FAQPage() {
 	const { faq } = site;
 	const [isVisible, setIsVisible] = useState(true);
 	const [lastScrollY, setLastScrollY] = useState(0);
 	const [isMobile, setIsMobile] = useState(false);
 
-	// Detect mobile on mount and resize
 	useEffect(() => {
 		if (typeof window === "undefined") return;
 
 		const checkMobile = () => {
-			setIsMobile(window.innerWidth < 768); // md breakpoint
+			setIsMobile(window.innerWidth < 768);
 		};
 
 		checkMobile();
@@ -52,23 +58,19 @@ export default function FAQPage() {
 		return () => window.removeEventListener("resize", checkMobile);
 	}, []);
 
-	// Scroll detection - only active on mobile
 	useEffect(() => {
 		if (typeof window === "undefined" || !isMobile) {
-			// On desktop, always visible
 			setIsVisible(true);
 			return;
 		}
 
 		const handleScroll = () => {
 			const currentScrollY = window.scrollY;
-			const scrollThreshold = 100; // Show nav when near top
+			const scrollThreshold = 100;
 
-			// Always show when near top of page
 			if (currentScrollY < scrollThreshold) {
 				setIsVisible(true);
 			} else {
-				// Hide when scrolling down, show when scrolling up
 				setIsVisible(currentScrollY < lastScrollY);
 			}
 
@@ -79,19 +81,22 @@ export default function FAQPage() {
 		return () => window.removeEventListener("scroll", handleScroll);
 	}, [lastScrollY, isMobile]);
 
+	useEffect(() => {
+		if (typeof window === "undefined") return;
+		const hash = window.location.hash;
+		if (!hash) return;
+		const timer = window.setTimeout(() => scrollToFaqSection(hash), 80);
+		return () => window.clearTimeout(timer);
+	}, []);
+
 	return (
 		<>
 			<FAQJsonLd />
-			<PageHero
-				title={faq.title}
-				subtitle={faq.intro}
-				align="center"
-				density="compact"
-			/>
+			<PageHero title={faq.title} subtitle={faq.intro} align="center" density="compact" />
 
-			{/* Jump Navigation */}
+			{/* Jump Navigation — sticky under thinned site header */}
 			<section
-				className={`bg-white py-1.5 md:py-4 border-b border-slate-200 z-40 transition-transform duration-200 ease-out md:sticky md:top-16 ${
+				className={`z-40 border-b border-slate-200 bg-white py-1.5 transition-transform duration-200 ease-out md:sticky md:top-[var(--site-header-height)] md:py-2.5 ${
 					isVisible ? "translate-y-0" : "-translate-y-full md:translate-y-0"
 				}`}
 			>
@@ -102,6 +107,11 @@ export default function FAQPage() {
 								key={idx}
 								href={item.href}
 								className="px-2.5 py-1 text-xs md:px-4 md:py-2 md:text-sm"
+								onClick={(event) => {
+									event.preventDefault();
+									history.replaceState(null, "", item.href);
+									scrollToFaqSection(item.href);
+								}}
 							>
 								{item.label}
 							</Chip>
@@ -110,44 +120,43 @@ export default function FAQPage() {
 				</Container>
 			</section>
 
-			{/* FAQ Groups */}
 			<Section density="comfortable" background="default">
-					<div className="space-y-8">
-						{faq.groups.map((group, groupIdx) => (
-							<Reveal key={group.id} delay={groupIdx * 0.1}>
-								<div id={group.id} className="scroll-mt-24">
-									<h2 className="mb-6 text-2xl font-semibold text-slate-900">{group.title}</h2>
-									<div className="space-y-4">
-										{group.items.map((item, itemIdx) => (
-											<Accordion
-												key={itemIdx}
-												question={item.q}
-												answer={item.a}
-												links={item.links}
-											/>
-										))}
-									</div>
+				<div className="space-y-8">
+					{faq.groups.map((group, groupIdx) => (
+						<Reveal key={group.id} delay={groupIdx * 0.1}>
+							{/* header + sticky FAQ chips ≈ 4.75rem + ~3rem */}
+							<div id={group.id} className="scroll-mt-[7.5rem] md:scroll-mt-[8rem]">
+								<h2 className="mb-6 text-2xl font-semibold text-slate-900">{group.title}</h2>
+								<div className="space-y-4">
+									{group.items.map((item, itemIdx) => (
+										<Accordion
+											key={itemIdx}
+											question={item.q}
+											answer={item.a}
+											links={item.links}
+										/>
+									))}
 								</div>
-							</Reveal>
-						))}
-					</div>
+							</div>
+						</Reveal>
+					))}
+				</div>
 			</Section>
 
-			{/* CTA Section */}
 			<Section density="comfortable" background="tint">
-					<Reveal>
-						<div className="text-center">
-							<p className="text-lg text-slate-700">{faq.cta.label}</p>
-							<div className="mt-6">
-								<Link
-									href={faq.cta.href}
-									className="rounded-full bg-aa-blue px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-aa-aqua focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-aa-blue focus-visible:ring-offset-2"
-								>
-									Contact us
-								</Link>
-							</div>
+				<Reveal>
+					<div className="text-center">
+						<p className="text-lg text-slate-700">{faq.cta.label}</p>
+						<div className="mt-6">
+							<Link
+								href={faq.cta.href}
+								className="rounded-full bg-aa-blue px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-aa-aqua focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-aa-blue focus-visible:ring-offset-2"
+							>
+								Contact us
+							</Link>
 						</div>
-					</Reveal>
+					</div>
+				</Reveal>
 			</Section>
 		</>
 	);
