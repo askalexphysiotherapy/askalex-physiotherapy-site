@@ -30,10 +30,12 @@ export default function InClinicPage() {
 						<h3>Accessibility</h3>
 						<p>Please advise of access needs. We aim to ensure suitable arrangements.</p>
 						<h3>Pricing</h3>
-						<ul>
-							<li>Initial assessment: from £85</li>
-							<li>Follow-up sessions: from £70</li>
-						</ul>
+						<p>
+							When an in-clinic session is arranged, fees and durations match the home visit rates
+							unless otherwise agreed: initial £90 (75 minutes); follow-up £80 (60 minutes). See{" "}
+							<a href="/services#pricing">Services pricing</a> for the full list, including online
+							consultations.
+						</p>
 					</div>
 				</Container>
 			</Section>

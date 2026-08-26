@@ -40,8 +40,8 @@ export default function HomeVisitsPage() {
 						<h3>Pricing</h3>
 						<ul>
 							<li>Initial consultation: £90 (75 minutes)</li>
-							<li>Follow-up: £70 (45 minutes) or £80 (60 minutes)</li>
-							<li>Recovery packages: 4 × 45 min for £260, or 4 × 60 min for £295</li>
+							<li>Follow-up: £80 (60 minutes)</li>
+							<li>Recovery package: 4 × 60 minutes for £295</li>
 							<li>Travel supplement: if outside core area</li>
 						</ul>
 						<p className="text-sm text-slate-600">

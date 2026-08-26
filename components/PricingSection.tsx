@@ -5,7 +5,7 @@ import { Section } from "@/components/Section";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Container } from "@/components/Container";
 
-type PricingItem = (typeof site.pricing.physiotherapy.items)[number];
+type PricingItem = (typeof site.pricing.homeVisits.items)[number];
 
 const columns = ["Appointment type", "Duration", "Cost"] as const;
 
@@ -77,14 +77,19 @@ export function PricingSection() {
 				<SectionHeader
 					eyebrow="Pricing"
 					title="Clear, transparent pricing"
-					description="Simple fees for home visits, online sessions, and care home classes."
+					description="Separate fees for home visits, online consultations, and care home classes."
 				/>
 
 				<div className="space-y-5">
 					<PricingTable
-						title={pricing.physiotherapy.title}
-						subtitle={pricing.physiotherapy.subtitle}
-						items={pricing.physiotherapy.items}
+						title={pricing.homeVisits.title}
+						subtitle={pricing.homeVisits.subtitle}
+						items={pricing.homeVisits.items}
+					/>
+					<PricingTable
+						title={pricing.online.title}
+						subtitle={pricing.online.subtitle}
+						items={pricing.online.items}
 					/>
 					<PricingTable
 						title={pricing.classes.title}

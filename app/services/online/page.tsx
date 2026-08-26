@@ -33,9 +33,8 @@ export default function OnlinePage() {
 						</p>
 						<h3>Pricing</h3>
 						<ul>
-							<li>Initial consultation: £90 (75 minutes)</li>
-							<li>Follow-up: £70 (45 minutes) or £80 (60 minutes)</li>
-							<li>Recovery packages: 4 × 45 min for £260, or 4 × 60 min for £295</li>
+							<li>Initial consultation: £50 (60 minutes)</li>
+							<li>Follow-up: £40 (45 minutes)</li>
 						</ul>
 					</div>
 				</Container>

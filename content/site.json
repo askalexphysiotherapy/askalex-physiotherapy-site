@@ -95,7 +95,7 @@
         "heading": "Our Services",
         "cards": [
           { "title": "Home Visits", "text": "Personalised care at your home — ideal for rehab or mobility needs.", "href": "/services#home", "icon": "house" },
-          { "title": "Online Consultations", "text": "Expert guidance from anywhere — perfect for follow-ups.", "href": "/services#online", "icon": "laptop-call" }
+          { "title": "Online Consultations", "text": "Expert guidance from anywhere — initial and follow-up video sessions.", "href": "/services#online", "icon": "laptop-call" }
         ],
         "cta": { "label": "See full service options", "href": "/services" }
       }
@@ -175,7 +175,7 @@
           "title": "Home Visits",
           "intro": "Personalised physiotherapy at your home across North London. Ideal when travel is difficult or after surgery.",
           "details": [
-            "Initial 60–75 mins; follow-ups 45–60 mins",
+            "Initial 75 mins; follow-ups 60 mins",
             "Full assessment and tailored rehab plan",
             "Essential equipment provided; infection-control standards"
           ],
@@ -190,7 +190,7 @@
           "title": "Online Consultations",
           "intro": "Convenient, effective sessions for assessment, pain management and guided rehab from your own space.",
           "details": [
-            "45–60 mins via secure video",
+            "Initial 60 mins; follow-ups 45 mins via secure video",
             "Clear exercise demos & self-management strategies",
             "Great for progress check-ins and follow-ups"
           ],
@@ -259,7 +259,7 @@
               "a": "Tap any “Book Now” button or use the contact form. You'll get a free 10–15 minute intro call, then a Stripe payment link to confirm your booking, along with a consent form and appointment details.",
               "links": [{ "label": "Contact", "href": "/contact" }]
             },
-            { "q": "How long are sessions?", "a": "Home visits: Initial 60–75 mins; follow-ups 45–60 mins. In-clinic: Initial 60 mins; follow-ups 45–60 mins. Online: 45–60 mins via secure video." },
+            { "q": "How long are sessions?", "a": "Home visits: initial 75 mins; follow-ups 60 mins. Online: initial 60 mins; follow-ups 45 mins via secure video." },
             { "q": "What’s your cancellation policy?", "a": "Please give 24 hours’ notice to reschedule or cancel. Charges may apply to late cancellations or missed appointments." }
           ]
         },
@@ -298,7 +298,7 @@
         { "q": "What conditions do you treat?", "a": "Neurological physiotherapy (stroke, Parkinson’s, MS, balance and mobility issues) plus MSK pain, falls prevention, post-surgical rehab and elderly care." },
         { "q": "Where do you cover?", "a": "Home visits across North London including Barnet, Finchley, Enfield, Hampstead and nearby. Contact to confirm availability." },
         { "q": "How do I book?", "a": "Use the contact form or a Book Now button. You’ll get a free 10–15 minute intro call, then a Stripe link, consent form and appointment details." },
-        { "q": "How long are sessions?", "a": "Home visits: Initial 60–75 minutes; follow-ups 45–60. In-clinic: Initial 60; follow-ups 45–60. Online: 45–60 via secure video." },
+        { "q": "How long are sessions?", "a": "Home visits: initial 75 minutes; follow-ups 60 minutes. Online: initial 60 minutes; follow-ups 45 minutes via secure video." },
         { "q": "What’s your cancellation policy?", "a": "Please give 24 hours’ notice to reschedule or cancel. Late cancellations or missed appointments may be charged in full." },
         { "q": "What should I prepare for a home visit?", "a": "Clear a safe space, wear comfortable clothing, have recent clinic letters or medication lists available. Equipment is provided and infection-control standards are followed." },
         { "q": "How do I pay?", "a": "Secure card payment via Stripe with automatic receipts and invoices." },
@@ -454,12 +454,12 @@
     },
 
     "pricing": {
-      "physiotherapy": {
-        "title": "Private physiotherapy",
-        "subtitle": "Home and online sessions. Recovery packages offer the best value for ongoing rehab.",
+      "homeVisits": {
+        "title": "Home visits",
+        "subtitle": "Physiotherapy at your home. Initial assessments are 75 minutes; follow-ups are 60 minutes.",
         "items": [
           {
-            "slug": "initial-appointment",
+            "slug": "home-initial",
             "name": "Initial consultation",
             "description": "Full assessment, goal setting and first treatment.",
             "duration": "75 minutes",
@@ -468,40 +468,46 @@
             "badge": null
           },
           {
-            "slug": "follow-up-45",
+            "slug": "home-follow-up-60",
             "name": "Follow-up",
             "description": "Focused treatment to build on your progress.",
-            "duration": "45 minutes",
-            "price": "£70",
-            "highlight": null,
-            "badge": null
-          },
-          {
-            "slug": "follow-up-60",
-            "name": "Follow-up",
-            "description": "Longer session for more complex goals.",
             "duration": "60 minutes",
             "price": "£80",
             "highlight": null,
             "badge": null
           },
           {
-            "slug": "recovery-plan-4x45",
+            "slug": "home-recovery-plan-4x60",
             "name": "Recovery package",
-            "description": "Four prepaid sessions — ideal for short-term rehab.",
-            "duration": "4 × 45 minutes",
-            "price": "£260",
-            "highlight": "Best for focused goals",
-            "badge": "Save £20"
-          },
-          {
-            "slug": "recovery-plan-4x60",
-            "name": "Recovery package",
-            "description": "Four prepaid sessions — best value for consistent progress.",
+            "description": "Four prepaid home follow-up sessions — best value for consistent progress.",
             "duration": "4 × 60 minutes",
             "price": "£295",
             "highlight": "Best value",
             "badge": "Save £25"
+          }
+        ]
+      },
+      "online": {
+        "title": "Online consultations",
+        "subtitle": "Secure video sessions. Initial consultations are 60 minutes; follow-ups are 45 minutes.",
+        "items": [
+          {
+            "slug": "online-initial",
+            "name": "Initial consultation",
+            "description": "Full assessment, goal setting and guided first session.",
+            "duration": "60 minutes",
+            "price": "£50",
+            "highlight": null,
+            "badge": null
+          },
+          {
+            "slug": "online-follow-up-45",
+            "name": "Follow-up",
+            "description": "Progress check-in, exercise updates and self-management support.",
+            "duration": "45 minutes",
+            "price": "£40",
+            "highlight": null,
+            "badge": null
           }
         ]
       },

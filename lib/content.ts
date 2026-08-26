@@ -432,7 +432,8 @@ const PricingCategorySchema = z.object({
 });
 
 const PricingSchema = z.object({
-	physiotherapy: PricingCategorySchema,
+	homeVisits: PricingCategorySchema,
+	online: PricingCategorySchema,
 	classes: PricingCategorySchema,
 	notes: z.array(z.string())
 });
