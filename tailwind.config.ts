@@ -11,24 +11,25 @@ const config: Config = {
 		container: {
 			center: true,
 			padding: {
-				DEFAULT: "1rem",
-				sm: "1rem",
-				md: "1.5rem",
-				lg: "2rem",
-				xl: "2rem",
-				"2xl": "2rem"
+				DEFAULT: "var(--page-gutter)",
+				sm: "var(--page-gutter)",
+				md: "var(--page-gutter)",
+				lg: "var(--page-gutter)",
+				xl: "var(--page-gutter)",
+				"2xl": "var(--page-gutter)"
 			},
 			screens: {
 				sm: "640px",
 				md: "768px",
 				lg: "1024px",
-				xl: "1152px", // Max content width
+				xl: "1280px",
 				"2xl": "1440px"
 			}
 		},
 		extend: {
 			maxWidth: {
-				content: "1152px"
+				// Tracks ~92% of viewport on desktop; capped for ultrawides
+				content: "var(--content-width)"
 			},
 			fontSize: {
 				xs: ["var(--text-xs)", { lineHeight: "1.5" }],

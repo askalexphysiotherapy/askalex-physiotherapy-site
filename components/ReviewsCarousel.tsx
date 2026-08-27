@@ -116,7 +116,7 @@ export function ReviewsCarousel({ heading }: { heading: string }) {
 
 	if (!data) {
 		return (
-			<div className="mx-auto max-w-6xl animate-pulse">
+			<div className="mx-auto max-w-content animate-pulse">
 				<div className="mx-auto h-4 w-48 rounded bg-slate-200" />
 				<div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
 					{Array.from({ length: 3 }).map((_, i) => (
@@ -167,7 +167,7 @@ export function ReviewsCarousel({ heading }: { heading: string }) {
 	const canCycle = count > windowSize;
 
 	return (
-		<div className="mx-auto max-w-6xl">
+		<div className="mx-auto max-w-content">
 			<div className="mb-6 text-center">
 				<h2 className="text-2xl font-semibold tracking-tight text-slate-900 md:text-3xl">
 					{heading}

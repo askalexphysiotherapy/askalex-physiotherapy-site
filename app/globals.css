@@ -18,6 +18,18 @@
 	/* Sticky header (top bar + main nav) after thinning */
 	--site-header-height: 4.75rem;
 
+	/*
+	 * Fluid layout: content tracks ~92% of the viewport on desktop,
+	 * capped so ultrawides stay readable. Mobile keeps normal padding.
+	 */
+	--content-width: min(92vw, 90rem); /* ~1440px max */
+	--page-gutter: clamp(1rem, 4vw, 3rem);
+
+	/* Section vertical rhythm — fixed on small screens, viewport-aware from md up */
+	--section-py-compact: 0.625rem;
+	--section-py-comfortable: 1.25rem;
+	--section-py-spacious: 2.5rem;
+
 	/* Typography Scale (responsive with clamp) */
 	--text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem); /* 12-14px */
 	--text-sm: clamp(0.875rem, 0.8rem + 0.375vw, 1rem); /* 14-16px */
@@ -45,6 +57,14 @@
 	--space-12: 6rem; /* 96px */
 	--space-16: 8rem; /* 128px */
 	--space-20: 10rem; /* 160px */
+}
+
+@media (min-width: 768px) {
+	:root {
+		--section-py-compact: clamp(0.75rem, 1.5vh, 1.25rem);
+		--section-py-comfortable: clamp(1.5rem, 3vh, 2.75rem);
+		--section-py-spacious: clamp(2.5rem, 5vh, 4rem);
+	}
 }
 
 html {
