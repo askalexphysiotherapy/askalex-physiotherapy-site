@@ -7,14 +7,16 @@ const inlineLinkClass =
 export function InlineNavLink({
 	href,
 	children,
-	className
+	className,
+	onClick
 }: {
 	href: string;
 	children: React.ReactNode;
 	className?: string;
+	onClick?: React.MouseEventHandler<HTMLAnchorElement>;
 }) {
 	return (
-		<Link href={href} className={cn(inlineLinkClass, className)}>
+		<Link href={href} onClick={onClick} className={cn(inlineLinkClass, className)}>
 			{children}
 		</Link>
 	);

@@ -2,7 +2,6 @@ import { ThermometerSun, Accessibility, ShieldCheck, Award, CheckCircle, HeartPu
 import { site } from "@/lib/content";
 import { portraitCarouselImages } from "@/lib/portraitCarousel";
 import { Section } from "@/components/Section";
-import { Container } from "@/components/Container";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Card } from "@/components/Card";
 import { Reveal } from "@/components/Reveal";
@@ -31,37 +30,40 @@ export default function AboutPage() {
 	return (
 		<>
 			<Section
-				density="comfortable"
+				density="hero"
 				background="tint"
 				id="about-alex"
-				className="scroll-mt-[var(--site-header-height)] md:min-h-[calc(100svh-var(--site-header-height))] md:flex md:flex-col md:justify-center"
+				className="scroll-mt-[var(--site-header-height)] !pb-0 md:min-h-[calc(100svh-var(--site-header-height))] md:flex md:flex-col md:justify-center"
 			>
-				<div className="mb-6 md:mb-8">
-					<h1 className="text-2xl font-extrabold leading-tight tracking-tight text-medical-blue sm:text-3xl lg:text-4xl">
+				<div className="mb-3 md:mb-4">
+					<h1 className="text-xl font-extrabold leading-tight tracking-tight text-medical-blue sm:text-2xl lg:text-[1.75rem]">
 						{about.hero.heading}
 					</h1>
 				</div>
-				<div className="grid gap-8 md:grid-cols-2 md:items-stretch md:gap-10">
+				<div className="grid gap-6 md:grid-cols-2 md:items-stretch md:gap-8">
 					<Reveal delay={0.1}>
-						<div className="relative md:order-1 md:flex md:h-full md:items-stretch">
+						<div className="relative md:order-1">
 							<ImageCarousel
 								images={portraitCarouselImages}
 								intervalMs={5000}
 								overlay={about.hero.image.overlay}
 								ariaLabel="Alex and practice photos"
-								className="w-full md:h-full"
-								aspectClassName="aspect-[3/4] md:aspect-auto md:min-h-[24rem] md:h-full"
+								className="w-full"
+								aspectClassName="aspect-[3/4] md:aspect-[4/5] md:max-h-[34rem]"
+								objectPositionClassName="object-[center_12%]"
 							/>
 						</div>
 					</Reveal>
 					<Reveal>
-						<div className="space-y-6 text-slate-700 md:order-2 md:flex md:h-full md:flex-col md:justify-between">
-							<div className="space-y-5">
+						<div className="space-y-5 text-slate-700 md:order-2 md:flex md:h-full md:flex-col md:justify-between">
+							<div className="space-y-4">
 								{about.hero.paragraphs.map((para, idx) => (
-									<p key={idx}>{para}</p>
+									<p key={idx} className="text-sm leading-relaxed md:text-base">
+										{para}
+									</p>
 								))}
 							</div>
-							<div className="mt-6 flex flex-col gap-3">
+							<div className="flex flex-col gap-3">
 								{about.hero.ctas.map((cta) => (
 									<Button
 										key={cta.href}
@@ -76,15 +78,13 @@ export default function AboutPage() {
 						</div>
 					</Reveal>
 				</div>
-			</Section>
 
-			{about.hero.trustRow.length > 0 && (
-				<Section density="compact" background="tint" container={false}>
-					<Container>
+				{about.hero.trustRow.length > 0 && (
+					<div className="mt-4 border-t border-slate-200/70 pt-3 md:mt-5">
 						<TrustPills pills={about.hero.trustRow} />
-					</Container>
-				</Section>
-			)}
+					</div>
+				)}
+			</Section>
 
 			{about.comfortSafety && (
 				<Section
@@ -115,30 +115,20 @@ export default function AboutPage() {
 				className="scroll-mt-[var(--site-header-height)]"
 			>
 				<SectionHeader title={about.heading} description={about.subheading} />
-				<div className="mt-8 grid gap-6 md:grid-cols-3">
+				<div className="mt-6 grid gap-4 sm:grid-cols-2">
 					{about.values.map((value, idx) => {
 						const Icon = iconMap[value.icon] || ShieldCheck;
 						return (
 							<Reveal key={idx} delay={idx * 0.1}>
-								<Card className="h-full">
-									<Icon className="h-8 w-8 text-medical-blue" aria-hidden="true" />
-									<h3 className="mt-4 text-lg font-semibold text-slate-900">{value.title}</h3>
-									<p className="mt-2 text-slate-700">{value.text}</p>
+								<Card className="h-full p-4 md:p-5">
+									<Icon className="h-7 w-7 text-medical-blue" aria-hidden="true" />
+									<h3 className="mt-3 text-base font-semibold text-slate-900">{value.title}</h3>
+									<p className="mt-2 text-sm leading-relaxed text-slate-700">{value.text}</p>
 								</Card>
 							</Reveal>
 						);
 					})}
 				</div>
-			</Section>
-
-			<Section>
-				<Reveal>
-					<Card className="mx-auto max-w-3xl text-center">
-						<blockquote className="text-xl font-medium italic text-slate-900">
-							"{about.quote.text}"
-						</blockquote>
-					</Card>
-				</Reveal>
 			</Section>
 
 			<Section
@@ -150,7 +140,7 @@ export default function AboutPage() {
 				<ReviewsCarousel heading={about.testimonialsHeading} />
 			</Section>
 
-			<Section>
+			<Section density="compact">
 				<div className="flex flex-wrap items-center justify-center gap-6">
 					{about.credentials.map((cred, idx) => {
 						const Icon = iconMap[cred.icon] || Award;

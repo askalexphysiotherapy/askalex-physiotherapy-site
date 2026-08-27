@@ -26,9 +26,10 @@
 	--page-gutter: clamp(1rem, 4vw, 3rem);
 
 	/* Section vertical rhythm — fixed on small screens, viewport-aware from md up */
-	--section-py-compact: 0.625rem;
-	--section-py-comfortable: 1.25rem;
-	--section-py-spacious: 2.5rem;
+	--section-py-hero: clamp(0.375rem, 1vh, 0.75rem);
+	--section-py-compact: 0.5rem;
+	--section-py-comfortable: 1rem;
+	--section-py-spacious: 2rem;
 
 	/* Typography Scale (responsive with clamp) */
 	--text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem); /* 12-14px */
@@ -61,9 +62,10 @@
 
 @media (min-width: 768px) {
 	:root {
-		--section-py-compact: clamp(0.75rem, 1.5vh, 1.25rem);
-		--section-py-comfortable: clamp(1.5rem, 3vh, 2.75rem);
-		--section-py-spacious: clamp(2.5rem, 5vh, 4rem);
+		--section-py-hero: clamp(0.5rem, 1.25vh, 1rem);
+		--section-py-compact: clamp(0.5rem, 1vh, 0.875rem);
+		--section-py-comfortable: clamp(1rem, 2vh, 1.75rem);
+		--section-py-spacious: clamp(2rem, 4vh, 3rem);
 	}
 }
 

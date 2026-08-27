@@ -216,7 +216,8 @@ const ExpertiseItemSchema = z.object({
 	id: z.string(),
 	icon: z.string(),
 	title: z.string(),
-	text: z.string()
+	text: z.string(),
+	detail: z.string()
 });
 
 const ServicesSchema = z.object({

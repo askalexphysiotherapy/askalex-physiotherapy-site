@@ -15,6 +15,7 @@ type ImageCarouselProps = {
 	intervalMs?: number;
 	className?: string;
 	aspectClassName?: string;
+	objectPositionClassName?: string;
 	overlay?: { name: string; title: string };
 	ariaLabel?: string;
 };
@@ -24,6 +25,7 @@ export function ImageCarousel({
 	intervalMs = 5000,
 	className,
 	aspectClassName = "aspect-[3/4]",
+	objectPositionClassName = "object-[center_20%]",
 	overlay,
 	ariaLabel = "Photo gallery"
 }: ImageCarouselProps) {
@@ -79,7 +81,7 @@ export function ImageCarousel({
 							fill
 							priority={i === 0}
 							sizes="(max-width: 1024px) 100vw, 50vw"
-							className="object-cover"
+							className={cn("object-cover", objectPositionClassName)}
 						/>
 					</div>
 				))}

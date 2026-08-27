@@ -2,10 +2,11 @@ import { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 import { Container } from "./Container";
 
-type SectionDensity = "compact" | "comfortable" | "spacious";
+type SectionDensity = "hero" | "compact" | "comfortable" | "spacious";
 type SectionBackground = "default" | "tint" | "paper";
 
 const densityMap: Record<SectionDensity, string> = {
+	hero: "py-[var(--section-py-hero)]",
 	compact: "py-[var(--section-py-compact)]",
 	comfortable: "py-[var(--section-py-comfortable)]",
 	spacious: "py-[var(--section-py-spacious)]"

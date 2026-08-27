@@ -27,8 +27,6 @@ export default function ContactPage() {
 	const bookingTypeOptions = [
 		"Initial – Home Visit",
 		"Follow-up – Home Visit",
-		"Initial – In-Clinic",
-		"Follow-up – In-Clinic",
 		"Initial – Online",
 		"Follow-up – Online"
 	];
@@ -194,22 +192,22 @@ export default function ContactPage() {
 				title={contact.title}
 				subtitle={contact.lead}
 				align="center"
-				density="comfortable"
+				density="hero"
 			/>
 
 			{/* Contact Form */}
-			<Section density="comfortable" background="default">
+			<Section density="compact" background="default">
 				<Reveal>
-					<Card className="max-w-3xl mx-auto">
-						<form onSubmit={handleSubmit} className="space-y-6">
+					<Card className="mx-auto max-w-5xl p-4 md:p-6">
+						<form onSubmit={handleSubmit} className="space-y-4">
 							{/* Client Type Selection */}
 							<div>
-								<fieldset className="space-y-3">
-									<legend className="text-sm font-semibold text-slate-900 mb-2">
+								<fieldset className="space-y-2">
+									<legend className="mb-1.5 text-sm font-semibold text-slate-900">
 										I am a:
 									</legend>
-									<div className="flex flex-col gap-3 sm:flex-row">
-										<label className="flex items-center gap-2 cursor-pointer rounded-lg border-2 border-slate-200 p-4 transition-all hover:border-medical-blue hover:bg-bg-blue/50 has-[:checked]:border-medical-blue has-[:checked]:bg-bg-blue">
+									<div className="grid gap-2 sm:grid-cols-2">
+										<label className="flex cursor-pointer items-center gap-2 rounded-lg border-2 border-slate-200 p-3 transition-all hover:border-medical-blue hover:bg-bg-blue/50 has-[:checked]:border-medical-blue has-[:checked]:bg-bg-blue">
 											<input
 												type="radio"
 												name="client_type"
@@ -222,7 +220,7 @@ export default function ContactPage() {
 												New client (request a free consultation)
 											</span>
 										</label>
-										<label className="flex items-center gap-2 cursor-pointer rounded-lg border-2 border-slate-200 p-4 transition-all hover:border-medical-blue hover:bg-bg-blue/50 has-[:checked]:border-medical-blue has-[:checked]:bg-bg-blue">
+										<label className="flex cursor-pointer items-center gap-2 rounded-lg border-2 border-slate-200 p-3 transition-all hover:border-medical-blue hover:bg-bg-blue/50 has-[:checked]:border-medical-blue has-[:checked]:bg-bg-blue">
 											<input
 												type="radio"
 												name="client_type"
@@ -241,7 +239,7 @@ export default function ContactPage() {
 
 							{/* Form fields based on client type */}
 							{clientType === "new" ? (
-								<>
+								<div className="grid gap-3 lg:grid-cols-2">
 									{/* New Client Fields */}
 									<div>
 										<label htmlFor="first_name" className="block text-sm font-medium text-slate-900">
@@ -255,7 +253,7 @@ export default function ContactPage() {
 											autoComplete="given-name"
 											value={formData.first_name || ""}
 											onChange={(e) => setFormData((prev) => ({ ...prev, first_name: e.target.value }))}
-											className="mt-1 w-full rounded-lg border border-slate-300 px-4 py-2 text-slate-900 focus:border-medical-blue focus:outline-none focus:ring-2 focus:ring-medical-blue focus:ring-offset-2"
+											className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-1.5 text-sm text-slate-900 focus:border-medical-blue focus:outline-none focus:ring-2 focus:ring-medical-blue focus:ring-offset-2"
 										/>
 										{errors.first_name && <p className="mt-1 text-sm text-red-600">{errors.first_name}</p>}
 									</div>
@@ -272,7 +270,7 @@ export default function ContactPage() {
 											autoComplete="family-name"
 											value={formData.last_name || ""}
 											onChange={(e) => setFormData((prev) => ({ ...prev, last_name: e.target.value }))}
-											className="mt-1 w-full rounded-lg border border-slate-300 px-4 py-2 text-slate-900 focus:border-medical-blue focus:outline-none focus:ring-2 focus:ring-medical-blue focus:ring-offset-2"
+											className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-1.5 text-sm text-slate-900 focus:border-medical-blue focus:outline-none focus:ring-2 focus:ring-medical-blue focus:ring-offset-2"
 										/>
 										{errors.last_name && <p className="mt-1 text-sm text-red-600">{errors.last_name}</p>}
 									</div>
@@ -288,7 +286,7 @@ export default function ContactPage() {
 											autoComplete="email"
 											value={formData.email || ""}
 											onChange={(e) => setFormData((prev) => ({ ...prev, email: e.target.value }))}
-											className="mt-1 w-full rounded-lg border border-slate-300 px-4 py-2 text-slate-900 focus:border-medical-blue focus:outline-none focus:ring-2 focus:ring-medical-blue focus:ring-offset-2"
+											className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-1.5 text-sm text-slate-900 focus:border-medical-blue focus:outline-none focus:ring-2 focus:ring-medical-blue focus:ring-offset-2"
 										/>
 										{errors.email && <p className="mt-1 text-sm text-red-600">{errors.email}</p>}
 									</div>
@@ -304,12 +302,14 @@ export default function ContactPage() {
 											autoComplete="tel"
 											value={formData.phone || ""}
 											onChange={(e) => setFormData((prev) => ({ ...prev, phone: e.target.value }))}
-											className="mt-1 w-full rounded-lg border border-slate-300 px-4 py-2 text-slate-900 focus:border-medical-blue focus:outline-none focus:ring-2 focus:ring-medical-blue focus:ring-offset-2"
+											className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-1.5 text-sm text-slate-900 focus:border-medical-blue focus:outline-none focus:ring-2 focus:ring-medical-blue focus:ring-offset-2"
 										/>
 										{errors.phone && <p className="mt-1 text-sm text-red-600">{errors.phone}</p>}
 									</div>
 
-									{errors.contact && <p className="text-sm text-red-600">{errors.contact}</p>}
+									{errors.contact && (
+										<p className="text-sm text-red-600 lg:col-span-2">{errors.contact}</p>
+									)}
 
 									<div>
 										<label htmlFor="preferred_day" className="block text-sm font-medium text-slate-900">
@@ -321,7 +321,7 @@ export default function ContactPage() {
 											required
 											value={formData.preferred_day || ""}
 											onChange={(e) => setFormData((prev) => ({ ...prev, preferred_day: e.target.value }))}
-											className="mt-1 w-full rounded-lg border border-slate-300 px-4 py-2 text-slate-900 focus:border-medical-blue focus:outline-none focus:ring-2 focus:ring-medical-blue focus:ring-offset-2"
+											className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-1.5 text-sm text-slate-900 focus:border-medical-blue focus:outline-none focus:ring-2 focus:ring-medical-blue focus:ring-offset-2"
 										>
 											<option value="">Select a day</option>
 											{dayOptions.map((day) => (
@@ -343,7 +343,7 @@ export default function ContactPage() {
 											required
 											value={formData.preferred_time_window || ""}
 											onChange={(e) => setFormData((prev) => ({ ...prev, preferred_time_window: e.target.value }))}
-											className="mt-1 w-full rounded-lg border border-slate-300 px-4 py-2 text-slate-900 focus:border-medical-blue focus:outline-none focus:ring-2 focus:ring-medical-blue focus:ring-offset-2"
+											className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-1.5 text-sm text-slate-900 focus:border-medical-blue focus:outline-none focus:ring-2 focus:ring-medical-blue focus:ring-offset-2"
 										>
 											<option value="">Select a time window</option>
 											{timeWindowOptions.map((time) => (
@@ -355,7 +355,7 @@ export default function ContactPage() {
 										{errors.preferred_time_window && <p className="mt-1 text-sm text-red-600">{errors.preferred_time_window}</p>}
 									</div>
 
-									<div>
+									<div className="lg:col-span-2">
 										<label htmlFor="description" className="block text-sm font-medium text-slate-900">
 											Brief description of your concern
 										</label>
@@ -365,15 +365,15 @@ export default function ContactPage() {
 											placeholder="Please describe your problem or concern..."
 											value={formData.description || ""}
 											onChange={(e) => setFormData((prev) => ({ ...prev, description: e.target.value }))}
-											className="mt-1 w-full rounded-lg border border-slate-300 px-4 py-2 text-slate-900 focus:border-medical-blue focus:outline-none focus:ring-2 focus:ring-medical-blue focus:ring-offset-2"
-											rows={4}
+											className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-1.5 text-sm text-slate-900 focus:border-medical-blue focus:outline-none focus:ring-2 focus:ring-medical-blue focus:ring-offset-2"
+											rows={3}
 										/>
 									</div>
-								</>
+								</div>
 							) : (
-								<>
+								<div className="grid gap-3 lg:grid-cols-2">
 									{/* Returning Client Fields */}
-									<div>
+									<div className="lg:col-span-2">
 										<label htmlFor="booking_type" className="block text-sm font-medium text-slate-900">
 											Booking type <span className="text-medical-blue ml-1">*</span>
 										</label>
@@ -383,7 +383,7 @@ export default function ContactPage() {
 											required
 											value={formData.booking_type || ""}
 											onChange={(e) => handleBookingTypeChange(e.target.value)}
-											className="mt-1 w-full rounded-lg border border-slate-300 px-4 py-2 text-slate-900 focus:border-medical-blue focus:outline-none focus:ring-2 focus:ring-medical-blue focus:ring-offset-2"
+											className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-1.5 text-sm text-slate-900 focus:border-medical-blue focus:outline-none focus:ring-2 focus:ring-medical-blue focus:ring-offset-2"
 										>
 											<option value="">Select booking type</option>
 											{bookingTypeOptions.map((option) => (
@@ -408,7 +408,7 @@ export default function ContactPage() {
 												placeholder="e.g. N3 1AB"
 												value={formData.postcode || ""}
 												onChange={(e) => setFormData((prev) => ({ ...prev, postcode: e.target.value }))}
-												className="mt-1 w-full rounded-lg border border-slate-300 px-4 py-2 text-slate-900 focus:border-medical-blue focus:outline-none focus:ring-2 focus:ring-medical-blue focus:ring-offset-2"
+												className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-1.5 text-sm text-slate-900 focus:border-medical-blue focus:outline-none focus:ring-2 focus:ring-medical-blue focus:ring-offset-2"
 											/>
 											{errors.postcode && <p className="mt-1 text-sm text-red-600">{errors.postcode}</p>}
 										</div>
@@ -424,7 +424,7 @@ export default function ContactPage() {
 											required
 											value={formData.preferred_day || ""}
 											onChange={(e) => setFormData((prev) => ({ ...prev, preferred_day: e.target.value }))}
-											className="mt-1 w-full rounded-lg border border-slate-300 px-4 py-2 text-slate-900 focus:border-medical-blue focus:outline-none focus:ring-2 focus:ring-medical-blue focus:ring-offset-2"
+											className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-1.5 text-sm text-slate-900 focus:border-medical-blue focus:outline-none focus:ring-2 focus:ring-medical-blue focus:ring-offset-2"
 										>
 											<option value="">Select a day</option>
 											{dayOptions.map((day) => (
@@ -446,7 +446,7 @@ export default function ContactPage() {
 											required
 											value={formData.preferred_time_window || ""}
 											onChange={(e) => setFormData((prev) => ({ ...prev, preferred_time_window: e.target.value }))}
-											className="mt-1 w-full rounded-lg border border-slate-300 px-4 py-2 text-slate-900 focus:border-medical-blue focus:outline-none focus:ring-2 focus:ring-medical-blue focus:ring-offset-2"
+											className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-1.5 text-sm text-slate-900 focus:border-medical-blue focus:outline-none focus:ring-2 focus:ring-medical-blue focus:ring-offset-2"
 										>
 											<option value="">Select a time window</option>
 											{timeWindowOptions.map((time) => (
@@ -470,7 +470,7 @@ export default function ContactPage() {
 											autoComplete="given-name"
 											value={formData.first_name || ""}
 											onChange={(e) => setFormData((prev) => ({ ...prev, first_name: e.target.value }))}
-											className="mt-1 w-full rounded-lg border border-slate-300 px-4 py-2 text-slate-900 focus:border-medical-blue focus:outline-none focus:ring-2 focus:ring-medical-blue focus:ring-offset-2"
+											className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-1.5 text-sm text-slate-900 focus:border-medical-blue focus:outline-none focus:ring-2 focus:ring-medical-blue focus:ring-offset-2"
 										/>
 										{errors.first_name && <p className="mt-1 text-sm text-red-600">{errors.first_name}</p>}
 									</div>
@@ -487,7 +487,7 @@ export default function ContactPage() {
 											autoComplete="family-name"
 											value={formData.last_name || ""}
 											onChange={(e) => setFormData((prev) => ({ ...prev, last_name: e.target.value }))}
-											className="mt-1 w-full rounded-lg border border-slate-300 px-4 py-2 text-slate-900 focus:border-medical-blue focus:outline-none focus:ring-2 focus:ring-medical-blue focus:ring-offset-2"
+											className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-1.5 text-sm text-slate-900 focus:border-medical-blue focus:outline-none focus:ring-2 focus:ring-medical-blue focus:ring-offset-2"
 										/>
 										{errors.last_name && <p className="mt-1 text-sm text-red-600">{errors.last_name}</p>}
 									</div>
@@ -504,7 +504,7 @@ export default function ContactPage() {
 											autoComplete="email"
 											value={formData.email || ""}
 											onChange={(e) => setFormData((prev) => ({ ...prev, email: e.target.value }))}
-											className="mt-1 w-full rounded-lg border border-slate-300 px-4 py-2 text-slate-900 focus:border-medical-blue focus:outline-none focus:ring-2 focus:ring-medical-blue focus:ring-offset-2"
+											className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-1.5 text-sm text-slate-900 focus:border-medical-blue focus:outline-none focus:ring-2 focus:ring-medical-blue focus:ring-offset-2"
 										/>
 										{errors.email && <p className="mt-1 text-sm text-red-600">{errors.email}</p>}
 									</div>
@@ -520,11 +520,11 @@ export default function ContactPage() {
 											autoComplete="tel"
 											value={formData.phone || ""}
 											onChange={(e) => setFormData((prev) => ({ ...prev, phone: e.target.value }))}
-											className="mt-1 w-full rounded-lg border border-slate-300 px-4 py-2 text-slate-900 focus:border-medical-blue focus:outline-none focus:ring-2 focus:ring-medical-blue focus:ring-offset-2"
+											className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-1.5 text-sm text-slate-900 focus:border-medical-blue focus:outline-none focus:ring-2 focus:ring-medical-blue focus:ring-offset-2"
 										/>
 									</div>
 
-									<div>
+									<div className="lg:col-span-2">
 										<label htmlFor="description" className="block text-sm font-medium text-slate-900">
 											Description
 										</label>
@@ -534,11 +534,11 @@ export default function ContactPage() {
 											placeholder="Describe your condition/problem, or make specific date/time requests for appointments..."
 											value={formData.description || ""}
 											onChange={(e) => setFormData((prev) => ({ ...prev, description: e.target.value }))}
-											className="mt-1 w-full rounded-lg border border-slate-300 px-4 py-2 text-slate-900 focus:border-medical-blue focus:outline-none focus:ring-2 focus:ring-medical-blue focus:ring-offset-2"
-											rows={4}
+											className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-1.5 text-sm text-slate-900 focus:border-medical-blue focus:outline-none focus:ring-2 focus:ring-medical-blue focus:ring-offset-2"
+											rows={3}
 										/>
 									</div>
-								</>
+								</div>
 							)}
 
 									{/* Consent Checkbox */}

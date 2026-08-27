@@ -25,7 +25,7 @@ export default function HomePage() {
 		<>
 			{/* Hero Section — fills remaining viewport on desktop/tablet */}
 			<Section
-				density="comfortable"
+				density="hero"
 				background="tint"
 				id="hero"
 				className="md:flex md:min-h-[calc(100svh-var(--site-header-height))] md:flex-col md:justify-center"
@@ -54,7 +54,7 @@ export default function HomePage() {
 								</p>
 								{home.hero.description && (
 									<p className="text-sm md:text-base leading-relaxed text-slate-700">
-										Compassion and patient-centred care is at the heart of Alex’s practice. He
+										Compassion and patient-centred care is at the heart of Alex's practice. He
 										believes in bringing movement and rehabilitation in a familiar environment,
 										making recovery{" "}
 										<InlineNavLink href="/services#pricing">affordable</InlineNavLink> and more
@@ -66,7 +66,7 @@ export default function HomePage() {
 									<span className="font-semibold text-[#4CAF50]">
 										Book a free 10-minute consultation
 									</span>{" "}
-									with Alex and he’ll help you choose the right treatment path for you - with no
+									with Alex and he'll help you choose the right treatment path for you - with no
 									obligation to book.
 								</p>
 							</div>
@@ -100,14 +100,15 @@ export default function HomePage() {
 						</div>
 					</Reveal>
 					<Reveal delay={0.2}>
-						<div className="relative max-w-xl max-sm:-mt-2 lg:mt-0 lg:ml-auto lg:h-full lg:flex lg:items-stretch">
+						<div className="relative max-w-xl max-sm:-mt-2 lg:mt-0 lg:ml-auto">
 							<ImageCarousel
 								images={portraitCarouselImages}
 								intervalMs={5000}
 								overlay={home.hero.image.overlay}
 								ariaLabel="Alex and practice photos"
-								className="w-full lg:h-full"
-								aspectClassName="aspect-[3/4] lg:aspect-auto lg:min-h-[28rem] lg:h-full"
+								className="w-full"
+								aspectClassName="aspect-[3/4] lg:aspect-[4/5] lg:max-h-[34rem]"
+								objectPositionClassName="object-[center_12%]"
 							/>
 						</div>
 					</Reveal>

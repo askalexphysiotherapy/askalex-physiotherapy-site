@@ -142,9 +142,26 @@
       "heading": "Our Values",
       "subheading": "The principles that guide every session — from first call to discharge.",
       "values": [
-        { "icon": "thermometer-sun", "title": "Expertise", "text": "Specialised rehabilitation and neurological care." },
-        { "icon": "accessibility", "title": "Accessibility", "text": "Home visits, online sessions, and flexible scheduling." },
-        { "icon": "shield-check", "title": "Trust", "text": "HCPC registered, insured, and transparent communication." }
+        {
+          "icon": "shield-check",
+          "title": "Trust",
+          "text": "Alex is a HCPC-registered physiotherapist and a member of the Chartered Society of Physiotherapy (CSP), with professional insurance. He believes in honest, transparent communication and takes the time to ensure clients feel informed and comfortable throughout their physiotherapy journey."
+        },
+        {
+          "icon": "award",
+          "title": "Professionalism",
+          "text": "Alex is committed to delivering high-quality physiotherapy, drawing on his clinical experience and specialist interests in neurological, respiratory and musculoskeletal (MSK) rehabilitation. He maintains a professional, thorough and personalised approach to every patient’s care."
+        },
+        {
+          "icon": "accessibility",
+          "title": "Accessibility",
+          "text": "Ask Alex Physiotherapy was established to make quality physiotherapy more accessible to people who require flexible scheduling or have difficulty travelling to a clinic. With home visits, online physiotherapy sessions and a schedule that accommodates you, Alex works around your needs to make physiotherapy as convenient as possible."
+        },
+        {
+          "icon": "heart-pulse",
+          "title": "Compassion",
+          "text": "Compassionate, patient-centred care is at the heart of Alex’s practice. He takes the time to listen, understand each individual’s needs and create a supportive environment where patients feel comfortable, respected and confident in their care."
+        }
       ],
       "quote": { "text": "My goal is to help every client move better, feel stronger, and regain confidence — wherever they are in their journey." },
       "testimonialsHeading": "What Clients Say",
@@ -209,12 +226,48 @@
       "expertise": {
         "heading": "Our Areas of Expertise",
         "items": [
-          { "id": "neurological", "icon": "brain", "title": "Neurological Rehab", "text": "Stroke, Parkinson’s, MS — targeted rehab for function, balance and confidence." },
-          { "id": "falls", "icon": "walk", "title": "Falls Prevention", "text": "Strength, balance and home-safety strategies to reduce risk." },
-          { "id": "msk", "icon": "activity", "title": "Pain & MSK", "text": "Evidence-based care for back/neck pain, arthritis and injuries." },
-          { "id": "post-surgical", "icon": "scalpel", "title": "Post-Surgical Rehab", "text": "Safe, structured recovery after surgery to restore strength and function." },
-          { "id": "respiratory", "icon": "lungs", "title": "Pulmonary Rehab", "text": "Breathlessness management and exercise programmes for COPD/asthma." },
-          { "id": "elderly", "icon": "elderly", "title": "Care of the Elderly", "text": "Compassionate support to maintain independence and quality of life." }
+          {
+            "id": "neurological",
+            "icon": "brain",
+            "title": "Neurological Rehabilitation",
+            "text": "Stroke, Parkinson’s and other neurological conditions.",
+            "detail": "Neurological rehabilitation can support people following a stroke, as well as those living with conditions such as Parkinson’s disease and other neurological conditions. Treatment may focus on improving limb strength and movement, mobility and independence, while also using your home environment to help you safely practise and maintain your progress.\n\nEach assessment looks at how your condition is affecting you and identifies your specific functional limitations. Alex will work with you to understand your goals and what is most important to you, before creating a tailored rehabilitation plan."
+          },
+          {
+            "id": "falls",
+            "icon": "walk",
+            "title": "Falls Prevention",
+            "text": "Balance, strength and home-safety strategies.",
+            "detail": "Alex provides falls prevention physiotherapy to identify factors that may be increasing your risk of falling and help you feel safer and more confident on your feet.\n\nA detailed assessment will look at your balance, strength, mobility and walking, as well as potential environmental risks within your home, such as trip hazards.\n\nAlex will then provide a personalised programme of balance and strengthening exercises designed to improve stability, reduce your risk of falls and support your independence. You will also receive advice and education on what to do if you do experience a fall."
+          },
+          {
+            "id": "msk",
+            "icon": "activity",
+            "title": "Pain & Musculoskeletal Physiotherapy",
+            "text": "Assessment and treatment for pain, injury and MSK conditions.",
+            "detail": "Your initial assessment will explore your symptoms, the area of pain or injury, your movement and strength, and any factors that may be contributing to your problem. This allows Alex to develop a clear understanding of your condition and create a treatment plan tailored to you.\n\nTreatment may include hands-on physiotherapy, pain management techniques and personalised rehabilitation exercises to help reduce pain, improve mobility and restore strength and function."
+          },
+          {
+            "id": "post-surgical",
+            "icon": "scalpel",
+            "title": "Post-Operative Rehabilitation",
+            "text": "Structured recovery after surgery.",
+            "detail": "Alex will begin by reviewing your operation, medical history and any relevant post-operative advice before completing a detailed physical assessment.\n\nFrom this, he will develop a structured and progressive rehabilitation programme designed around your individual needs and stage of recovery. Treatment will focus on safely restoring movement, strength and stability while helping you return to the activities that are important to you."
+          },
+          {
+            "id": "respiratory",
+            "icon": "lungs",
+            "title": "Pulmonary Rehabilitation",
+            "text": "Breathlessness management and guided exercise.",
+            "detail": "Your assessment will include a detailed review of your respiratory and medical history, alongside physical assessments to understand your current exercise capacity, mobility and exercise tolerance.\n\nAlex will then develop a guided rehabilitation programme to safely improve fitness, strength and exercise tolerance. He can also provide education and practical strategies to help you manage symptoms such as breathlessness, understand your condition and support your overall respiratory health.\n\nPulmonary rehabilitation may be suitable for people living with long-term respiratory and lung conditions including COPD, pulmonary fibrosis, bronchiectasis and lung cancer."
+          },
+          {
+            "id": "elderly",
+            "icon": "elderly",
+            "title": "Elderly Mobility & Independence",
+            "text": "Strength, balance and confidence for older adults.",
+            "detail": "Alex provides physiotherapy for older adults, with treatment tailored to your individual abilities, goals and lifestyle.\n\nThis may include personalised strength, balance and mobility exercises to help maintain physical function, improve confidence when moving around and reduce the risk of falls and injuries.\n\nFor people who are experiencing reduced mobility, Alex can also assess how everyday activities and the home environment may be affecting independence, and provide practical strategies to help you remain active and confident in your own home."
+          }
         ]
       },
       "seo": {
@@ -223,13 +276,14 @@
     },
   
     "faq": {
-      "title": "Frequently Asked Questions",
-      "intro": "Quick answers about care at home, in-clinic, and online. If you can’t find your answer, send a message and Alex will help.",
+      "title": "FAQ",
+      "intro": "Quick answers about home visits and online care.",
       "nav": [
         { "label": "General", "href": "#faq-general" },
-        { "label": "Appointments & Booking", "href": "#faq-booking" },
+        { "label": "Booking", "href": "#faq-booking" },
+        { "label": "After booking", "href": "#faq-after-booking" },
         { "label": "Home Visits", "href": "#faq-home" },
-        { "label": "In-Clinic & Online", "href": "#faq-clinic" },
+        { "label": "Online", "href": "#faq-online" },
         { "label": "Pricing & Admin", "href": "#faq-pricing" }
       ],
       "groups": [
@@ -264,6 +318,24 @@
           ]
         },
         {
+          "id": "faq-after-booking",
+          "title": "After booking",
+          "items": [
+            {
+              "q": "What happens after booking?",
+              "a": "Once your appointment has been booked, you will receive a confirmation email with the date and time of your appointment.\n\nYou may also be asked details of your living environment for service-providing purposes, such as if there is parking available or stairs leading to your home.\n\nThese questions help Alex understand the environment and logistics of bringing physiotherapy equipment to your appointment."
+            },
+            {
+              "q": "What will my first appointment look like?",
+              "a": "Your initial home-visit consultation will last approximately 75 minutes and is designed to give Alex a clear understanding of your condition, your lifestyle and what you would like to achieve from physiotherapy.\n\n1. Understanding your history — Alex will discuss your medical history and the history of your current problem, including when it started, how it affects you and any previous treatment you may have received.\n\n2. Understanding your lifestyle — He will ask about your day-to-day activities, exercise tolerance, work, hobbies and other lifestyle factors.\n\n3. Assessment — Alex will discuss what has brought you to physiotherapy and what you would like help with, then carry out a physical assessment. This may include tests of your movement, range of motion, strength, balance and other relevant assessments.\n\n4. Discussing your goals — Once the assessment is complete, Alex will talk through his findings with you and discuss your expectations and goals for physiotherapy.\n\n5. Your personalised plan — Finally, Alex will create a tailored treatment and rehabilitation plan based on your assessment, lifestyle and goals. He will explain the next steps clearly and ensure you feel confident about your treatment journey."
+            },
+            {
+              "q": "What equipment does Alex bring?",
+              "a": "Equipment depends on your individual needs. Alex may bring:\n\n• Therapy table\n• Resistance bands\n• Physical testing tools\n• Blood pressure machine\n• Pulse oximeter\n• Electrotherapy machine\n• Medical-grade cleaning products for infection control"
+            }
+          ]
+        },
+        {
           "id": "faq-home",
           "title": "Home Visits",
           "items": [
@@ -272,14 +344,9 @@
           ]
         },
         {
-          "id": "faq-clinic",
-          "title": "In-Clinic & Online",
+          "id": "faq-online",
+          "title": "Online",
           "items": [
-            {
-              "q": "Where is the clinic?",
-              "a": "I organise an accessible treatment room in North London — full address and access info are provided when you book. If you prefer not to travel, you can book home or online sessions.",
-              "links": [{ "label": "Services", "href": "/services" }]
-            },
             { "q": "What do I need for online sessions?", "a": "A device with camera and a stable internet connection. I’ll send a secure video link. Try to position the camera so I can see you moving clearly." }
           ]
         },
@@ -289,7 +356,7 @@
           "items": [
             { "q": "How do I pay?", "a": "Secure card payment via Stripe or a bank transfer. You’ll receive a receipt and invoice automatically." },
             { "q": "Do you accept private medical insurance?", "a": "I’m a private practice and can provide invoices/receipts for you to claim back if your insurer allows self-pay reimbursement. Please check your policy." },
-            { "q": "Is my data secure?", "a": "Yes. Records are stored in a GDPR-compliant system (WriteUpp) with appropriate access controls. I only keep information necessary for your care." }
+            { "q": "Is my data secure?", "a": "Yes. Records are stored in a GDPR-compliant system (Cliniko) with appropriate access controls. I only keep information necessary for your care." }
           ]
         }
       ],
@@ -302,13 +369,15 @@
         { "q": "What’s your cancellation policy?", "a": "Please give 24 hours’ notice to reschedule or cancel. Late cancellations or missed appointments may be charged in full." },
         { "q": "What should I prepare for a home visit?", "a": "Clear a safe space, wear comfortable clothing, have recent clinic letters or medication lists available. Equipment is provided and infection-control standards are followed." },
         { "q": "How do I pay?", "a": "Secure card payment via Stripe with automatic receipts and invoices." },
-        { "q": "Is my data secure?", "a": "Yes. Records are stored in a GDPR-compliant system (WriteUpp) with appropriate access controls." }
+        { "q": "Is my data secure?", "a": "Yes. Records are stored in a GDPR-compliant system (Cliniko) with appropriate access controls." },
+        { "q": "What happens after booking?", "a": "You will receive a confirmation email with your appointment date and time. Alex may also ask about your home environment (parking, stairs) to plan equipment and logistics." },
+        { "q": "What will my first appointment look like?", "a": "Your initial home visit lasts around 75 minutes and includes history, lifestyle discussion, physical assessment, goal setting and a personalised treatment plan." }
       ]
     },
   
     "contact": {
-      "title": "Take control of your movement and recovery — let's start with a conversation.",
-      "lead": "New here? Book a free 10-minute consultation. Returning client? Use the form to request a follow-up and I'll be in touch.",
+      "title": "Book an appointment",
+      "lead": "New client? Request a free 10-minute consultation. Returning client? Book your next session below.",
       "route": "/contact",
       "actions": { "submitLabel": "Send" },
       "successRedirect": "/thank-you",
@@ -339,7 +408,7 @@
         { "type": "text", "name": "last_name", "label": "Last name", "required": true, "autocomplete": "family-name" },
         { "type": "email", "name": "email", "label": "Email", "required": true, "autocomplete": "email" },
         { "type": "tel", "name": "phone", "label": "Phone", "required": false, "placeholder": "07… or landline", "pattern": "^\\+?\\d[\\d\\s()-]{7,}$", "autocomplete": "tel" },
-        { "type": "select", "name": "appointment_type", "label": "What type of appointment?", "required": true, "options": ["Home Visit", "In-Clinic", "Online", "Not sure"] },
+        { "type": "select", "name": "appointment_type", "label": "What type of appointment?", "required": true, "options": ["Home Visit", "Online", "Not sure"] },
         { "type": "text", "name": "postcode", "label": "Postcode", "placeholder": "e.g. N3 1AB", "required": false, "showWhen": { "field": "appointment_type", "equals": "Home Visit" } },
         { "type": "radio-group", "name": "contact_pref", "label": "Preferred contact method", "required": false, "options": ["Phone", "Email", "Either"], "default": "Either" },
         { "type": "select", "name": "best_time", "label": "Best time to contact", "required": false, "options": ["Any time", "Morning (8–12)", "Afternoon (12–4)", "Evening (4–7)"], "default": "" },
@@ -355,7 +424,7 @@
     "footer": {
       "brand": {
         "logo": "https://static1.squarespace.com/static/6847f68b1080fe0cccc5899d/t/6853d7df0344223ecfa53cc5/1750325217105/Correct+Branding.png",
-        "blurb": "Professional physiotherapy services in London. Offering comprehensive treatment with in-clinic, home visit and online options."
+        "blurb": "Private physiotherapy at home and online across North London. Neurological rehab, MSK care, falls prevention and elderly support."
       },
       "social": [
         { "platform": "instagram", "label": "Instagram", "href": "https://www.instagram.com/ask_alex_physiotherapy" },
